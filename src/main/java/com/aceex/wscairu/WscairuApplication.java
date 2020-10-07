@@ -8,6 +8,7 @@ public class WscairuApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WscairuApplication.class, args);
+		System.out.println("APP iniciado");
 	}
 
 }

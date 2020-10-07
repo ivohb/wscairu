@@ -1,0 +1,186 @@
+CREATE TABLE logix.vdp_cli_parametro
+
+(cliente varchar(15) NOT NULL,
+parametro varchar(20) NOT NULL,
+des_parametro varchar(60) NOT NULL,
+tip_parametro varchar(1) NULL,
+texto_parametro varchar(70) NULL,
+val_parametro decimal() identity(15) NULL,
+num_parametro decimal() identity(25) NULL,
+dat_parametro smalldatetime NULL,
+PRIMARY KEY (cliente,parametro))
+
+GO
+
+CREATE TABLE logix.vdp_cliente
+
+(cliente varchar(15) NOT NULL,
+classe varchar(1) NOT NULL,
+tip_cliente smallint identity(5) NULL,
+marca varchar(12) NULL,
+frete_posto varchar(25) NULL,
+portador smallint identity(5) NULL,
+tip_portador varchar(1) NULL,
+cliente_matriz varchar(15) NULL,
+consignatario varchar(15) NULL,
+sit_cliente varchar(1) NOT NULL,
+rota int identity(10) NOT NULL,
+praca int identity(10) NULL,
+dat_cadastro smalldatetime NOT NULL,
+dat_atualiz smalldatetime NOT NULL,
+PRIMARY KEY (cliente))
+
+GO
+
+CREATE TABLE logix.vdp_cliente_compl
+
+(cliente varchar(15) NOT NULL,
+email varchar(40) NULL,
+email_secund varchar(40) NULL,
+endereco_web varchar(75) NULL,
+PRIMARY KEY (cliente))
+
+GO
+
+CREATE TABLE logix.audit_logix
+
+(cod_empresa varchar(2) NOT NULL,
+texto varchar(200) NOT NULL,
+num_programa varchar(10) NOT NULL,
+data smalldatetime NOT NULL,
+hora varchar(8) NOT NULL,
+usuario varchar(8) NOT NULL)
+
+GO
+
+CREATE TABLE logix.sup_par_fornecedor
+
+(empresa varchar(2) NOT NULL,
+fornecedor varchar(15) NOT NULL,
+parametro varchar(20) NOT NULL,
+des_parametro varchar(60) NOT NULL,
+parametro_booleano varchar(1) NULL,
+parametro_texto varchar(200) NULL,
+parametro_val decimal() identity(15) NULL,
+parametro_numerico decimal() identity(25) NULL,
+parametro_dat smalldatetime NULL,
+PRIMARY KEY (empresa,fornecedor,parametro))
+
+GO
+
+CREATE TABLE logix.vdp_cli_fornec_cpl
+
+(cliente_fornecedor varchar(15) NOT NULL,
+tip_cadastro varchar(1) NOT NULL,
+razao_social varchar(60) NULL,
+razao_social_reduz varchar(20) NULL,
+bairro varchar(50) NULL,
+correio_eletronico varchar(100) NULL,
+correi_eletr_secd varchar(100) NULL,
+correi_eletr_venda varchar(100) NULL,
+endereco_web varchar(100) NULL,
+telefone_1 varchar(15) NULL,
+telefone_2 varchar(15) NULL,
+compl_endereco varchar(30) NULL,
+tip_logradouro varchar(5) NULL,
+logradouro varchar(36) NULL,
+num_iden_lograd varchar(10) NULL,
+iden_estrangeiro varchar(20) NULL,
+ind_cprb varchar(1) NULL,
+tipo_servico decimal() identity(10) NULL,
+PRIMARY KEY (cliente_fornecedor,tip_cadastro))
+
+GO
+
+CREATE TABLE logix.audit_vdp
+
+(cod_empresa varchar(2) NOT NULL,
+num_pedido decimal() identity(6) NOT NULL,
+tipo_informacao varchar(1) NOT NULL,
+tipo_movto varchar(1) NOT NULL,
+texto varchar(200) NOT NULL,
+num_programa varchar(10) NOT NULL,
+data smalldatetime NOT NULL,
+hora varchar(8) NOT NULL,
+usuario varchar(8) NOT NULL,
+num_transacao int identity(10) NOT NULL)
+
+GO
+
+CREATE TABLE logix.cli_credito
+
+(cod_cliente varchar(15) NOT NULL,
+qtd_dias_atr_dupl decimal() identity(5) NOT NULL,
+qtd_dias_atr_med decimal() identity(6) NOT NULL,
+val_ped_carteira decimal() identity(11) NOT NULL,
+val_dup_aberto decimal() identity(11) NOT NULL,
+dat_ult_fat smalldatetime NULL,
+val_limite_cred decimal() identity(11) NOT NULL,
+dat_val_lmt_cr smalldatetime NULL,
+ies_nota_debito varchar(1) NOT NULL,
+dat_atualiz smalldatetime NOT NULL,
+PRIMARY KEY (cod_cliente))
+
+GO
+
+CREATE TABLE logix.credcad_cli
+
+(cod_cliente varchar(15) NOT NULL,
+val_capital_regist decimal() identity(15) NOT NULL,
+dat_capital_regist smalldatetime NULL,
+val_credito_conced decimal() identity(15) NOT NULL,
+dat_credito_conced smalldatetime NULL,
+val_ult_pedido decimal() identity(15) NOT NULL,
+dat_ult_pedido smalldatetime NULL,
+val_pedidos decimal() identity(15) NOT NULL,
+val_pedidos_aprov decimal() identity(15) NOT NULL,
+val_estoque decimal() identity(15) NOT NULL,
+val_vendas_a_vista decimal() identity(15) NOT NULL,
+val_vendas_a_prazo decimal() identity(15) NOT NULL,
+val_ult_fat decimal() identity(15) NOT NULL,
+dat_ult_fat smalldatetime NULL,
+val_maior_fat decimal() identity(15) NOT NULL,
+dat_maior_fat smalldatetime NULL,
+val_faturado_mes decimal() identity(15) NOT NULL,
+val_pago_mes decimal() identity(15) NOT NULL,
+qtd_dupl_pagas_mes decimal() identity(5) NOT NULL,
+dat_ult_pagto smalldatetime NULL,
+val_maior_acumulo decimal() identity(15) NOT NULL,
+dat_maior_acumulo smalldatetime NULL,
+val_debito_vencido decimal() identity(15) NOT NULL,
+val_debito_a_venc decimal() identity(15) NOT NULL,
+val_juro_nao_pag decimal() identity(15) NOT NULL,
+val_cheques decimal() identity(15) NOT NULL,
+val_creditos decimal() identity(15) NOT NULL,
+val_lucros_perdas decimal() identity(15) NOT NULL,
+dat_lucros_perdas smalldatetime NULL,
+qtd_dias_maior_atr decimal() identity(5) NOT NULL,
+dat_maior_atraso smalldatetime NULL,
+qtd_dias_atras_med decimal() identity(6) NOT NULL,
+dat_ult_atu_manual smalldatetime NULL,
+dat_ult_atu_autom smalldatetime NULL,
+ies_titulos_c_advo varchar(1) NOT NULL,
+cod_situa_cred decimal() identity(2) NULL,
+ies_atua_sit_cre varchar(1) NULL,
+ies_situa_cliente varchar(1) NOT NULL,
+ies_cheque_devolv varchar(1) NOT NULL,
+ies_aprovacao varchar(1) NOT NULL,
+qtd_cons_solic_mes decimal() identity(5) NOT NULL,
+ies_cli_colig varchar(1) NOT NULL,
+dat_ult_inf_solic smalldatetime NULL,
+PRIMARY KEY (cod_cliente))
+
+GO
+
+CREATE TABLE logix.credcad_cod_cli
+
+(cod_cliente varchar(15) NOT NULL,
+cod_empresa varchar(2) NOT NULL,
+num_docum varchar(14) NOT NULL,
+ies_tip_docum varchar(2) NOT NULL,
+ies_ctr_atual_emis varchar(1) NULL,
+ies_ctr_atual_bxa varchar(1) NULL,
+PRIMARY KEY (cod_cliente,cod_empresa,num_docum,ies_tip_docum))
+
+GO
+
