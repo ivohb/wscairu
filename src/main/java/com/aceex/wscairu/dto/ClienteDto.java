@@ -31,7 +31,6 @@ public class ClienteDto implements Serializable {
 
 	private String bairro;
 
-	@NotEmpty(message = "campo_obrigatorio")
 	private String cidadeIbge;
 
 	@NotEmpty(message = "campo_obrigatorio")

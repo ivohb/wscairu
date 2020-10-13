@@ -25,7 +25,7 @@ public class Cliente implements Serializable {
 	private String codClasse;
 	
 	@Column(name = "nom_cliente", length = 36)
-	private String nome;
+	private String razSocial;
 
 	@Column(name = "end_cliente", length = 36)
 	private String endereco;
@@ -61,7 +61,7 @@ public class Cliente implements Serializable {
 	private String marca;
 
 	@Column(name = "nom_reduzido", length = 12)
-	private String codinome;
+	private String nomeReduz;
 
 	@Column(name = "den_frete_posto", length = 14)
 	private String fretePosto;
@@ -122,14 +122,14 @@ public class Cliente implements Serializable {
 			
     public Cliente() {}
 
-    public Cliente(String id, String codinome) {
+    public Cliente(String id, String nomeReduz) {
     	this.id = id;
-    	this.codinome = codinome;
+    	this.nomeReduz = nomeReduz;
     }
 
-    public Cliente(String id, String nome, String cnpj) {
+    public Cliente(String id, String razSocial, String cnpj) {
     	this.id = id;
-    	this.nome = nome;
+    	this.razSocial = razSocial;
     	this.cnpj = cnpj;
     }
 
@@ -149,12 +149,12 @@ public class Cliente implements Serializable {
 		this.codClasse = codClasse;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getRazSocial() {
+		return razSocial;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setRazSocial(String razSocial) {
+		this.razSocial = razSocial;
 	}
 
 	public String getEndereco() {
@@ -245,12 +245,12 @@ public class Cliente implements Serializable {
 		this.marca = marca;
 	}
 
-	public String getCodinome() {
-		return codinome;
+	public String getNomeReduz() {
+		return nomeReduz;
 	}
 
-	public void setCodinome(String codinome) {
-		this.codinome = codinome;
+	public void setNomeReduz(String nomeReduz) {
+		this.nomeReduz = nomeReduz;
 	}
 
 	public String getFretePosto() {

@@ -73,34 +73,20 @@ public class ClienteService {
 		return dao.findAll();
 	}
 	
-	public String findByCnpj(String cnpj) {
-		
-		List<Cliente> clientes = dao.findByCnpj(cnpj); 
-		
-		for (Cliente cliente : clientes) {			
-			return cliente.getId();
-		}
-		
-		return "";
+	public List<Cliente> findByCnpj(String cnpj) {		
+		return dao.findByCnpj(cnpj); 
 	}	
-
-	public List<Cliente> listByCnpj(String cnpj) {
-		if (cnpj.length() < 19) { 
-			cnpj = "0"+cnpj;
-		}		
-		return dao.findByCnpj(cnpj); 		
-	}
 
 	public Cliente fromDTO(ClienteDto dto) {
 		Cliente obj = new Cliente();
 		obj.setBairro(dto.getBairro());
 		obj.setCep(dto.getCep());
 		obj.setCnpj(dto.getCpfCnpj());
-		obj.setCodinome(dto.getNomeReduz());
+		obj.setNomeReduz(dto.getNomeReduz());
 		obj.setContato(dto.getContato());
 		obj.setEndereco(dto.getLogradouro());
 		obj.setInscEstadual(dto.getInscEstadual());
-		obj.setNome(dto.getRazSocial());
+		obj.setRazSocial(dto.getRazSocial());
 		obj.setFone(dto.getTelefone());
 		return obj;
 	}
@@ -114,16 +100,10 @@ public class ClienteService {
 		obj.setDatAtualiz(obj.getDatCadastro());
 		
 		if (obj.getContato() == null || obj.getContato().isEmpty()) {
-			obj.setContato(obj.getCodinome());
+			obj.setContato(obj.getNomeReduz());
 		}
 		
-		CidadeIbge ci = ibgeDao.findByKey(dto.getUf(), dto.getCidadeIbge());
-		
-		if (ci == null) {
-			obj.setCodCidade(" ");
-		} else {
-			obj.setCodCidade(ci.getCidLogix());
-		}
+		obj.setCodCidade(getCidade(dto.getUf(), dto.getCidadeIbge()));
 		
 		obj.setCodClasse("D");		
 		obj.setCodTipo("12");
@@ -145,6 +125,15 @@ public class ClienteService {
 		return obj;
 	}
 
+	private String getCidade(String uf, String ibge) {
+		CidadeIbge ci = ibgeDao.findByKey(uf, ibge);		
+		if (ci == null) {
+			return " ";
+		} else {
+			return ci.getCidLogix();
+		}
+	}
+	
 	private void grvCliCompl(String id, String email) {
 		ClienteCompl obj = new ClienteCompl();
 		obj.setId(id);
@@ -229,4 +218,22 @@ public class ClienteService {
 		cccDao.save(obj);
 	}
 	
+	@Transactional
+	public Cliente update(ClienteDto dto, String id) {
+		Cliente newObj = findById(id);
+		newObj.setBairro(dto.getBairro());
+		newObj.setCep(dto.getCep());
+		newObj.setCodTipo(dto.getTipo());
+		newObj.setContato(dto.getContato());
+		newObj.setDatAtualiz(bib.dataAtual());
+		newObj.setEndereco(dto.getLogradouro());
+		newObj.setFone(dto.getTelefone());
+		newObj.setInscEstadual(dto.getInscEstadual());
+		newObj.setNomeReduz(dto.getNomeReduz());
+		newObj.setRazSocial(dto.getRazSocial());
+		newObj.setCodCidade(getCidade(dto.getUf(), dto.getCidadeIbge()));
+		grvCliCompl(id,dto.getEmail());
+		return dao.save(newObj);
+	}
+
 }

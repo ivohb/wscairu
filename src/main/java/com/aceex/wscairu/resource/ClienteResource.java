@@ -42,10 +42,10 @@ public class ClienteResource {
 	}
 
 	@RequestMapping(value="/cnpj", method=RequestMethod.GET)
-	public ResponseEntity<List<Cliente>> listByCnpj(
+	public ResponseEntity<List<Cliente>> findByCnpj(
 			@RequestParam(value="cnpj", defaultValue="") String cnpj) {
 				
-		List<Cliente> list = service.listByCnpj(cnpj);
+		List<Cliente> list = service.findByCnpj(cnpj);
 		return ResponseEntity.ok().body(list);
 		
 	}
@@ -58,13 +58,20 @@ public class ClienteResource {
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Void> insert(@Valid @RequestBody ClienteDto dto) {
-		
-		Cliente obj = service.insert(dto);
-				
+	public ResponseEntity<Void> insert(@Valid @RequestBody ClienteDto dto) {		
+		Cliente obj = service.insert(dto);				
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 			.path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<Void> update(
+			@Valid @RequestBody ClienteDto dto, @PathVariable String id) {
+		
+		service.update(dto, id);
+		return ResponseEntity.noContent().build();
+	}
+
 
 }
