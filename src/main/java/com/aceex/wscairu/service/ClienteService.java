@@ -84,7 +84,7 @@ public class ClienteService {
 		obj.setCnpj(dto.getCpfCnpj());
 		obj.setNomeReduz(dto.getNomeReduz());
 		obj.setContato(dto.getContato());
-		obj.setEndereco(dto.getLogradouro());
+		obj.setLogradouro(dto.getLogradouro());
 		obj.setInscEstadual(dto.getInscEstadual());
 		obj.setRazSocial(dto.getRazSocial());
 		obj.setFone(dto.getTelefone());
@@ -226,7 +226,7 @@ public class ClienteService {
 		newObj.setCodTipo(dto.getTipo());
 		newObj.setContato(dto.getContato());
 		newObj.setDatAtualiz(bib.dataAtual());
-		newObj.setEndereco(dto.getLogradouro());
+		newObj.setLogradouro(dto.getLogradouro());
 		newObj.setFone(dto.getTelefone());
 		newObj.setInscEstadual(dto.getInscEstadual());
 		newObj.setNomeReduz(dto.getNomeReduz());

@@ -38,7 +38,7 @@ public class Parametro implements Serializable {
 	private Integer linPage;
 
 	@Column(name = "max_lin_page")
-	private Integer amxLinha;
+	private Integer maxLinha;
 
 	public Parametro() { }
 
@@ -106,12 +106,12 @@ public class Parametro implements Serializable {
 		this.linPage = linPage;
 	}
 
-	public Integer getAmxLinha() {
-		return amxLinha;
+	public Integer getMaxLinha() {
+		return maxLinha;
 	}
 
-	public void setAmxLinha(Integer amxLinha) {
-		this.amxLinha = amxLinha;
+	public void setMaxLinha(Integer maxLinha) {
+		this.maxLinha = maxLinha;
 	}
 	
 }

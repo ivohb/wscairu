@@ -1,0 +1,82 @@
+{
+"pedido":{
+ "cnpjEmpresa":"060.456.876/0001-90",
+ "cnpjCliente":"050.678.453/0000-89",
+ "natOperacao":null,
+ "finalidade":null,
+ "cndPgto":null,
+ "tipEntrega":null,
+ "tipVenda":null,
+ "tipCarteira":null,
+ "descFinanc":null,
+ "descAdic":null,
+ "listPreco":null,
+ "moeda":null,
+ "temComissao":null,
+ "codRepres1":null,
+ "pctComis1":null,
+ "codRepres2":null,
+ "pctComis2":null,
+ "codRepres3":null,
+ "pctComis3":null,
+ "pedidoRepres":"123456",
+ "pedidoCliente":"EA765W76",
+ "datEmissao":"2020-10-29",
+ "codTranspor":null,
+ "codConsig":null,
+ "tipFrete":null,
+ "pctFrete":null,
+ "tipEmbal":null
+},
+"entrega":{
+ "endereco":"Rua dos Bandeirantes, 114",
+ "bairro":null,
+ "cidade":"67654",
+ "cepEntrega":"08654-000",
+ "cnpjEntrga":null,
+ "inscEstadual":null
+},
+"observacao":{
+ "obs1":"ENTREGAR PREFERENCIALMENTE ATÉ AS 14 HORAS",
+ "obs2":null
+},
+"produto":[
+{
+ "codigo":"001.123.20",
+ "quantidade":"1",
+ "datEntrega":"2020-10-26",
+ "preUnit":"1867.78",
+ "txtProd1":"Quadro Aluminio - Freio a Disco Mecanico 160 MM - Guidão Aluminio",
+ "txtProd2":"Cambio Traseiro Tz31 - Cambio Dianteiro FD-Tz500",
+ "txtProd3":null,
+ "txtProd4":null,
+ "txtProd5":null
+}, 
+{
+ "codigo":"002.123.10",
+ "quantidade":"1",
+ "datEntrega":"2020-10-26",
+ "preUnit":"100.50",
+ "txtProd1":null,
+ "txtProd2":null,
+ "txtProd3":null,
+ "txtProd4":null,
+ "txtProd5":null
+}],
+"cliente":
+{
+ "cpfCnpj":"089.567.987/0000-76",
+ "inscEstadual":"83.367.982-76",
+ "Tipo":"F",
+ "razSocial":"IVO JOSE BARBOSA",
+ "nomeReduz":"IVO",
+ "contato":"IVO",
+ "logradouro":"AV SANTO ANADRÉ, 120",
+ "bairro":"CENTRO AUTO",
+ "cidadeIbge":"3543303",
+ "uf":"SP",
+ "cep":"09400-000",
+ "telefone":"(11)94179-6692",
+ "email":"ivohb.me@gmail.com"
+}
+}

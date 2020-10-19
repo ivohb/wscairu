@@ -90,8 +90,6 @@ public class UsuarioService {
 		return dao.popup();
 	}
 
-	// número da página, linhas por página, campo a ordenar, ASC/DESC
-
 	public Page<Usuario> findPage(Integer pagina, Integer 
 			qtdLinha, String ordem, String direcao) {
 		

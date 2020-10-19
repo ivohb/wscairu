@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "empresa_api_cairu")
-public class EmpresaApi implements Serializable {
+public class Empresa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -19,7 +19,7 @@ public class EmpresaApi implements Serializable {
 	@Column(name = "empresa", length = 2)
 	private String empresa;
 
-	public EmpresaApi() {}
+	public Empresa() {}
 
 	public String getId() {
 		return id;

@@ -15,8 +15,9 @@ public interface ParametroDao extends JpaRepository<Parametro, String>  {
 	public Parametro findByUserReq(String userReq);	
 
 	@Transactional(readOnly=true)
-	@Query("SELECT p FROM Parametro p"
-			+ " where p.userReq = :user and p.senhaReq = :senha ")			
-	public Parametro findByUserRequest(@Param("user") String user, @Param("senha") String senha);
+	@Query("SELECT obj FROM Parametro obj"
+			+ " where obj.userReq = :user and obj.senhaReq = :senha ")			
+	public Parametro findByUserAndPassword(@Param("user") String user, @Param("senha") String senha);
+
 
 }

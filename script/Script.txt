@@ -184,3 +184,51 @@ PRIMARY KEY (cod_cliente,cod_empresa,num_docum,ies_tip_docum))
 
 GO
 
+CREATE TABLE logix.item_barra
+
+(cod_empresa varchar(2) NOT NULL,
+cod_item varchar(15) NOT NULL,
+cod_item_barra_ser int identity(10) NOT NULL,
+cod_item_barra_dig decimal() identity(15) NULL,
+reservado_01 decimal() identity(17) NULL,
+reservado_02 decimal() identity(17) NULL,
+reservado_03 varchar(15) NULL,
+reservado_04 varchar(15) NULL,
+PRIMARY KEY (cod_empresa,cod_item))
+
+GO
+
+CREATE TABLE logix.linha_prod
+
+(cod_lin_prod decimal() identity(2) NOT NULL,
+cod_lin_recei decimal() identity(2) NOT NULL,
+cod_seg_merc decimal() identity(2) NOT NULL,
+cod_cla_uso decimal() identity(2) NOT NULL,
+den_estr_linprod varchar(20) NOT NULL,
+cod_unid_med varchar(3) NOT NULL,
+num_conta_nacional varchar(23) NULL,
+num_conta_export varchar(23) NULL,
+ies_emite_of varchar(1) NOT NULL,
+num_conta_equip varchar(23) NULL,
+num_conta_deb_icms varchar(23) NULL,
+num_conta_estoque varchar(23) NULL,
+num_conta_est_nac varchar(23) NULL,
+num_conta_est_exp varchar(23) NULL,
+num_conta_est_equi varchar(23) NULL,
+PRIMARY KEY (cod_lin_prod,cod_lin_recei,cod_seg_merc,cod_cla_uso))
+
+GO
+
+CREATE TABLE logix.linha_prod_cmi
+
+(cod_empresa varchar(2) NOT NULL,
+cod_lin_prod decimal() identity(2) NOT NULL,
+cod_lin_recei decimal() identity(2) NOT NULL,
+cod_seg_merc decimal() identity(2) NOT NULL,
+cod_cla_uso decimal() identity(2) NOT NULL,
+den_estr_linprod varchar(50) NOT NULL,
+cod_unid_med varchar(3) NOT NULL,
+ies_padrao_folha varchar(1) NULL,
+PRIMARY KEY (cod_empresa,cod_lin_prod,cod_lin_recei,cod_seg_merc,cod_cla_uso))
+
+GO

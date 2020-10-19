@@ -28,7 +28,7 @@ public class Cliente implements Serializable {
 	private String razSocial;
 
 	@Column(name = "end_cliente", length = 36)
-	private String endereco;
+	private String logradouro;
 
 	@Column(name = "den_bairro", length = 19)
 	private String bairro;
@@ -157,12 +157,12 @@ public class Cliente implements Serializable {
 		this.razSocial = razSocial;
 	}
 
-	public String getEndereco() {
-		return endereco;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
 	public String getBairro() {
