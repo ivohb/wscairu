@@ -1,3 +1,271 @@
+CREATE TABLE logix.item_embalagem
+
+(cod_empresa varchar(2) NOT NULL,
+cod_item varchar(15) NOT NULL,
+cod_embal varchar(3) NULL,
+ies_tip_embal varchar(1) NOT NULL,
+qtd_padr_embal decimal() identity(12) NOT NULL,
+vol_padr_embal decimal() identity(14) NOT NULL,
+num_transac int identity(10) NOT NULL,
+ind_multi_volume varchar(1) NOT NULL)
+
+GO
+
+CREATE TABLE logix.embalagem
+
+(cod_embal varchar(3) NOT NULL,
+den_embal varchar(26) NOT NULL,
+pes_unit decimal() identity(9) NOT NULL,
+ies_etiqueta_exp varchar(1) NOT NULL,
+cod_embal_matriz varchar(3) NULL,
+altura decimal() identity(14) NULL,
+largura decimal() identity(14) NULL,
+profundidade decimal() identity(14) NULL,
+cod_tipo_embal decimal() identity(2) NULL,
+volume decimal() identity(14) NULL,
+area decimal() identity(8) NULL,
+preco_unit_us decimal() identity(15) NULL,
+cod_nbm decimal() identity(15) NULL,
+PRIMARY KEY (cod_embal))
+
+GO
+
+
+CREATE TABLE logix.om_list
+
+(cod_empresa varchar(2) NOT NULL,
+num_om decimal() identity(6) NOT NULL,
+num_pedido decimal() identity(6) NOT NULL,
+dat_emis smalldatetime NOT NULL,
+nom_usuario varchar(8) NOT NULL)
+
+GO
+
+CREATE TABLE logix.ordem_montag_embal
+
+(cod_empresa varchar(2) NOT NULL,
+num_om decimal() identity(6) NOT NULL,
+num_sequencia decimal() identity(5) NOT NULL,
+cod_item varchar(15) NOT NULL,
+cod_embal_int varchar(3) NULL,
+qtd_embal_int decimal() identity(10) NULL,
+cod_embal_ext varchar(3) NULL,
+qtd_embal_ext decimal() identity(10) NULL,
+ies_lotacao varchar(1) NOT NULL,
+num_embal_inicio decimal() identity(5) NOT NULL,
+num_embal_final decimal() identity(5) NOT NULL,
+qtd_pecas decimal() identity(15) NOT NULL)
+
+GO
+
+CREATE TABLE logix.ordem_montag_item
+
+(cod_empresa varchar(2) NOT NULL,
+num_om decimal() identity(6) NOT NULL,
+num_pedido decimal() identity(6) NOT NULL,
+num_sequencia decimal() identity(5) NOT NULL,
+cod_item varchar(15) NOT NULL,
+qtd_volume_item decimal() identity(20) NOT NULL,
+qtd_reservada decimal() identity(15) NOT NULL,
+ies_bonificacao varchar(1) NOT NULL,
+pes_total_item decimal() identity(15) NOT NULL,
+PRIMARY KEY (cod_empresa,num_om,num_pedido,num_sequencia,cod_item,ies_bonificacao))
+
+GO
+
+CREATE TABLE logix.ordem_montag_itref
+
+(cod_empresa varchar(2) NOT NULL,
+num_om decimal() identity(6) NOT NULL,
+num_pedido decimal() identity(6) NOT NULL,
+num_sequencia decimal() identity(5) NOT NULL,
+qtd_reservada decimal() identity(15) NOT NULL,
+PRIMARY KEY (cod_empresa,num_om,num_pedido,num_sequencia))
+
+GO
+
+CREATE TABLE logix.ordem_montag_lote
+
+(cod_empresa varchar(2) NOT NULL,
+num_lote_om decimal() identity(6) NOT NULL,
+ies_sit_lote varchar(2) NOT NULL,
+cod_transpor varchar(15) NOT NULL,
+dat_emis smalldatetime NULL,
+cod_entrega decimal() identity(4) NOT NULL,
+cod_tip_carteira varchar(2) NOT NULL,
+num_placa varchar(7) NULL,
+val_frete_lote decimal() identity(15) NOT NULL,
+cod_consig varchar(15) NOT NULL,
+val_frete_lote_con decimal() identity(15) NOT NULL,
+PRIMARY KEY (cod_empresa,num_lote_om))
+
+GO
+
+CREATE TABLE logix.ordem_montag_mest
+
+(cod_empresa varchar(2) NOT NULL,
+num_om decimal() identity(6) NOT NULL,
+num_lote_om decimal() identity(6) NOT NULL,
+ies_sit_om varchar(1) NOT NULL,
+cod_transpor varchar(15) NULL,
+qtd_volume_om decimal() identity(20) NOT NULL,
+dat_emis smalldatetime NULL,
+num_nff decimal() identity(6) NULL,
+PRIMARY KEY (cod_empresa,num_om))
+
+GO
+
+CREATE TABLE logix.ordem_montag_grade
+
+(cod_empresa varchar(2) NOT NULL,
+num_om decimal() identity(6) NOT NULL,
+num_pedido decimal() identity(6) NOT NULL,
+num_sequencia decimal() identity(5) NOT NULL,
+cod_item varchar(15) NOT NULL,
+qtd_reservada decimal() identity(15) NOT NULL,
+num_reserva int identity(10) NOT NULL,
+cod_grade_1 varchar(15) NULL,
+cod_grade_2 varchar(15) NULL,
+cod_grade_3 varchar(15) NULL,
+cod_grade_4 varchar(15) NULL,
+cod_grade_5 varchar(15) NULL,
+cod_composicao varchar(10) NULL)
+
+GO
+CREATE TABLE logix.est_loc_reser_end
+
+(cod_empresa varchar(2) NOT NULL,
+num_reserva int identity(10) NOT NULL,
+endereco varchar(15) NOT NULL,
+num_volume int identity(10) NOT NULL,
+cod_grade_1 varchar(15) NOT NULL,
+cod_grade_2 varchar(15) NOT NULL,
+cod_grade_3 varchar(15) NOT NULL,
+cod_grade_4 varchar(15) NOT NULL,
+cod_grade_5 varchar(15) NOT NULL,
+dat_hor_producao smalldatetime NOT NULL,
+num_ped_ven decimal() identity(6) NOT NULL,
+num_seq_ped_ven decimal() identity(5) NOT NULL,
+dat_hor_validade smalldatetime NOT NULL,
+num_peca varchar(15) NOT NULL,
+num_serie varchar(25) NOT NULL,
+comprimento decimal() identity(15) NOT NULL,
+largura decimal() identity(15) NOT NULL,
+altura decimal() identity(15) NOT NULL,
+diametro decimal() identity(15) NOT NULL,
+dat_hor_reserv_1 smalldatetime NOT NULL,
+dat_hor_reserv_2 smalldatetime NOT NULL,
+dat_hor_reserv_3 smalldatetime NOT NULL,
+qtd_reserv_1 decimal() identity(15) NOT NULL,
+qtd_reserv_2 decimal() identity(15) NOT NULL,
+qtd_reserv_3 decimal() identity(15) NOT NULL,
+num_reserv_1 int identity(10) NOT NULL,
+num_reserv_2 int identity(10) NOT NULL,
+num_reserv_3 int identity(10) NOT NULL,
+tex_reservado varchar(100) NOT NULL,
+identif_estoque varchar(30) NULL,
+deposit varchar(15) NULL,
+PRIMARY KEY (cod_empresa,num_reserva))
+
+GO
+
+CREATE TABLE logix.estoque
+
+(cod_empresa varchar(2) NOT NULL,
+cod_item varchar(15) NOT NULL,
+qtd_liberada decimal() identity(15) NOT NULL,
+qtd_impedida decimal() identity(15) NOT NULL,
+qtd_rejeitada decimal() identity(15) NOT NULL,
+qtd_lib_excep decimal() identity(15) NOT NULL,
+qtd_disp_venda decimal() identity(15) NOT NULL,
+qtd_reservada decimal() identity(15) NOT NULL,
+dat_ult_invent smalldatetime NULL,
+dat_ult_entrada smalldatetime NULL,
+dat_ult_saida smalldatetime NULL,
+PRIMARY KEY (cod_empresa,cod_item))
+
+GO
+
+CREATE TABLE logix.estoque_loc_reser
+
+(cod_empresa varchar(2) NOT NULL,
+num_reserva int identity(10) NOT NULL,
+cod_item varchar(15) NOT NULL,
+cod_local varchar(10) NOT NULL,
+qtd_reservada decimal() identity(15) NOT NULL,
+num_lote varchar(15) NULL,
+ies_origem varchar(1) NOT NULL,
+num_docum varchar(10) NULL,
+num_referencia varchar(15) NULL,
+ies_situacao varchar(1) NOT NULL,
+dat_prev_baixa smalldatetime NULL,
+num_conta_deb varchar(23) NULL,
+cod_uni_funcio varchar(10) NULL,
+nom_solicitante varchar(8) NULL,
+dat_solicitacao smalldatetime NOT NULL,
+nom_aprovante varchar(8) NULL,
+dat_aprovacao smalldatetime NULL,
+qtd_atendida decimal() identity(15) NULL,
+dat_ult_atualiz smalldatetime NULL,
+PRIMARY KEY (cod_empresa,num_reserva))
+
+GO
+
+CREATE TABLE logix.estoque_lote
+
+(cod_empresa varchar(2) NOT NULL,
+cod_item varchar(15) NOT NULL,
+cod_local varchar(10) NOT NULL,
+num_lote varchar(15) NULL,
+ies_situa_qtd varchar(1) NOT NULL,
+qtd_saldo decimal() identity(15) NOT NULL,
+num_transac int identity(10) NOT NULL)
+
+GO
+
+CREATE TABLE logix.estoque_lote_ender
+
+(cod_empresa varchar(2) NOT NULL,
+cod_item varchar(15) NOT NULL,
+cod_local varchar(10) NOT NULL,
+num_lote varchar(15) NULL,
+endereco varchar(15) NOT NULL,
+num_volume int identity(10) NOT NULL,
+cod_grade_1 varchar(15) NOT NULL,
+cod_grade_2 varchar(15) NOT NULL,
+cod_grade_3 varchar(15) NOT NULL,
+cod_grade_4 varchar(15) NOT NULL,
+cod_grade_5 varchar(15) NOT NULL,
+dat_hor_producao smalldatetime NOT NULL,
+num_ped_ven decimal() identity(6) NOT NULL,
+num_seq_ped_ven decimal() identity(5) NOT NULL,
+ies_situa_qtd varchar(1) NOT NULL,
+qtd_saldo decimal() identity(15) NOT NULL,
+num_transac int identity(10) NOT NULL,
+ies_origem_entrada varchar(1) NOT NULL,
+dat_hor_validade smalldatetime NOT NULL,
+num_peca varchar(15) NOT NULL,
+num_serie varchar(25) NOT NULL,
+comprimento decimal() identity(15) NOT NULL,
+largura decimal() identity(15) NOT NULL,
+altura decimal() identity(15) NOT NULL,
+diametro decimal() identity(15) NOT NULL,
+dat_hor_reserv_1 smalldatetime NOT NULL,
+dat_hor_reserv_2 smalldatetime NOT NULL,
+dat_hor_reserv_3 smalldatetime NOT NULL,
+qtd_reserv_1 decimal() identity(15) NOT NULL,
+qtd_reserv_2 decimal() identity(15) NOT NULL,
+qtd_reserv_3 decimal() identity(15) NOT NULL,
+num_reserv_1 int identity(10) NOT NULL,
+num_reserv_2 int identity(10) NOT NULL,
+num_reserv_3 int identity(10) NOT NULL,
+tex_reservado varchar(100) NOT NULL,
+identif_estoque varchar(30) NULL,
+deposit varchar(15) NULL)
+
+GO
+
+
 CREATE TABLE logix.vdp_cli_parametro
 
 (cliente varchar(15) NOT NULL,
@@ -232,3 +500,282 @@ ies_padrao_folha varchar(1) NULL,
 PRIMARY KEY (cod_empresa,cod_lin_prod,cod_lin_recei,cod_seg_merc,cod_cla_uso))
 
 GO
+
+CREATE TABLE logix.desc_preco_item
+
+(cod_empresa varchar(2) NOT NULL,
+num_list_preco decimal() identity(4) NOT NULL,
+cod_uni_feder varchar(2) NULL,
+cod_cliente varchar(15) NULL,
+cod_lin_prod decimal() identity(2) NOT NULL,
+cod_lin_recei decimal() identity(2) NOT NULL,
+cod_seg_merc decimal() identity(2) NOT NULL,
+cod_cla_uso decimal() identity(2) NOT NULL,
+cod_item varchar(15) NULL,
+pre_unit decimal() identity(17) NOT NULL,
+pct_desc decimal() identity(9) NOT NULL,
+pct_desc_adic decimal() identity(5) NOT NULL,
+cod_grupo varchar(2) NOT NULL,
+cod_acabam varchar(2) NOT NULL,
+cod_cnd_pgto decimal() identity(3) NOT NULL,
+pre_unit_adic decimal() identity(17) NOT NULL,
+pre_unit_ant decimal() identity(17) NOT NULL,
+pre_unit_adic_ant decimal() identity(17) NOT NULL,
+num_transacao int identity(10) NOT NULL)
+
+GO
+
+CREATE TABLE logix.desc_preco_mest
+
+(cod_empresa varchar(2) NOT NULL,
+num_list_preco decimal() identity(4) NOT NULL,
+den_list_preco varchar(15) NULL,
+dat_ini_vig smalldatetime NOT NULL,
+dat_fim_vig smalldatetime NOT NULL,
+ies_bloq_pedido varchar(1) NOT NULL,
+ies_bloq_fatur varchar(1) NOT NULL,
+PRIMARY KEY (cod_empresa,num_list_preco))
+
+GO
+
+
+CREATE TABLE logix.par_cli_pedidos
+
+(cod_empresa varchar(2) NOT NULL,
+cod_cliente varchar(15) NOT NULL,
+pct_comissao decimal() identity(4) NOT NULL,
+cod_nat_oper int identity(10) NOT NULL,
+ies_finalidade decimal() identity(1) NOT NULL,
+ies_frete decimal() identity(1) NOT NULL,
+cod_cnd_pgto decimal() identity(3) NOT NULL,
+ies_tip_entrega decimal() identity(1) NOT NULL,
+pct_desc_adic decimal() identity(4) NOT NULL,
+num_list_preco decimal() identity(4) NULL,
+cod_repres decimal() identity(4) NULL,
+cod_tip_venda decimal() identity(2) NULL,
+cod_moeda decimal() identity(3) NOT NULL,
+ies_comissao varchar(1) NULL,
+pct_frete decimal() identity(4) NOT NULL,
+cod_tip_carteira varchar(2) NOT NULL,
+PRIMARY KEY (cod_empresa,cod_cliente))
+
+GO
+
+CREATE TABLE logix.par_clientes
+
+(cod_cliente varchar(15) NOT NULL,
+par_cliente_txt varchar(500) NOT NULL,
+PRIMARY KEY (cod_cliente))
+
+GO
+
+CREATE TABLE logix.par_con
+
+(cod_empresa varchar(2) NOT NULL,
+ult_num_per_fech varchar(8) NOT NULL,
+ult_num_seg_fech decimal() identity(2) NOT NULL,
+ult_num_per varchar(8) NOT NULL,
+ult_num_seg_per decimal() identity(2) NOT NULL,
+ult_num_lanc decimal() identity(7) NOT NULL,
+ult_num_lote decimal() identity(5) NOT NULL,
+ult_num_pag_dia decimal() identity(6) NOT NULL,
+num_pagina_ini decimal() identity(6) NOT NULL,
+num_diario decimal() identity(3) NOT NULL,
+ult_num_reduzid varchar(9) NOT NULL,
+ies_conta_autom varchar(1) NOT NULL,
+ies_lote_autom varchar(1) NOT NULL,
+qtd_tot_pag_dia decimal() identity(5) NOT NULL,
+val_tot_dif decimal() identity(15) NOT NULL,
+dat_movto_dif smalldatetime NULL,
+cod_moeda_padrao decimal() identity(2) NOT NULL,
+cod_moeda_cmi decimal() identity(2) NULL,
+cod_moeda_vp decimal() identity(2) NULL,
+cod_moeda_val_orc decimal() identity(2) NULL,
+ies_val_orcamen varchar(1) NOT NULL,
+mascara_conta_cc varchar(23) NULL,
+mascara_conta_os varchar(23) NULL,
+mascara_conta varchar(23) NULL,
+mascara_item_ger varchar(13) NULL,
+cod_empresa_dist varchar(2) NULL,
+cod_empresa_hist varchar(2) NULL,
+cod_empresa_plano varchar(2) NULL,
+cod_empresa_rateio varchar(2) NULL,
+ies_contab_inst varchar(1) NOT NULL,
+ies_sumarizado varchar(1) NOT NULL,
+cod_empresa_mestre varchar(2) NULL,
+ies_contab_aen varchar(1) NOT NULL,
+ies_integracao_aut varchar(1) NOT NULL,
+cod_modulo_dig_ver decimal() identity(2) NULL,
+cod_moeda_vp_urv decimal() identity(2) NULL,
+ies_mao_obra varchar(1) NOT NULL,
+ies_seguranca_ger varchar(1) NOT NULL,
+qtd_segto_lancam decimal() identity(2) NULL,
+ies_bloqueio_ger varchar(1) NULL,
+ies_rel_conta_cc varchar(1) NULL,
+ies_rel_conta_os varchar(1) NULL,
+area_livre varchar(23) NULL,
+PRIMARY KEY (cod_empresa))
+
+GO
+
+CREATE TABLE logix.par_estoque
+
+(cod_empresa varchar(2) NOT NULL,
+ies_custo_medio varchar(1) NOT NULL,
+ies_modulo_man varchar(1) NOT NULL,
+dat_fecha_ult_man smalldatetime NULL,
+ies_modulo_vdp varchar(1) NOT NULL,
+dat_fecha_ult_vdp smalldatetime NULL,
+ies_modulo_sup varchar(1) NOT NULL,
+dat_fecha_ult_sup smalldatetime NULL,
+dat_prx_fecha_est smalldatetime NULL,
+PRIMARY KEY (cod_empresa))
+
+GO
+
+CREATE TABLE logix.par_fornecedor
+
+(ies_cod_cgc varchar(1) NOT NULL,
+ies_cod_fornec varchar(1) NULL,
+num_cod_fornec decimal() identity(6) NULL,
+qtd_meses_fornec decimal() identity(2) NOT NULL)
+
+GO
+
+CREATE TABLE logix.par_sup
+
+(cod_empresa varchar(2) NOT NULL,
+prx_num_oc decimal() identity(9) NOT NULL,
+prx_num_pc decimal() identity(6) NOT NULL,
+prx_num_fornec decimal() identity(6) NOT NULL,
+prx_num_ar decimal() identity(6) NOT NULL,
+num_texto_padrao decimal() identity(3) NULL,
+ies_cont_sintetica varchar(1) NULL,
+ies_modulo_compras varchar(1) NOT NULL,
+ies_fornec_cred varchar(1) NOT NULL,
+ies_modulo_estoque varchar(1) NOT NULL,
+ies_modulo_livro_f varchar(1) NOT NULL,
+ies_modulo_contab varchar(1) NOT NULL,
+ies_modulo_cta_pag varchar(1) NOT NULL,
+ies_entrada_sem_pc varchar(1) NOT NULL,
+ies_vinc_fiscal varchar(1) NOT NULL,
+ies_frete_estoque varchar(1) NOT NULL,
+ies_insp_bloq_pgto varchar(1) NOT NULL,
+ies_diverg_preco_c varchar(1) NOT NULL,
+ies_diverg_preco_b varchar(1) NOT NULL,
+val_fixo_div_maior decimal() identity(17) NOT NULL,
+val_fixo_div_menor decimal() identity(17) NOT NULL,
+ies_diverg_c_pgt_c varchar(1) NOT NULL,
+ies_diverg_c_pgt_b varchar(1) NOT NULL,
+ies_diverg_m_emb_c varchar(1) NOT NULL,
+ies_diverg_m_emb_b varchar(1) NOT NULL,
+ies_diverg_qtd_c varchar(1) NOT NULL,
+ies_diverg_qtd_b varchar(1) NOT NULL,
+pct_maximo_div_q decimal() identity(5) NOT NULL,
+ies_diverg_datnf_c varchar(1) NOT NULL,
+ies_diverg_datnf_b varchar(1) NOT NULL,
+qtd_dias_consumo decimal() identity(2) NOT NULL,
+qtd_dias_dat_nf decimal() identity(3) NOT NULL,
+ies_diverg_dat_e_c varchar(1) NOT NULL,
+ies_diverg_dat_e_b varchar(1) NOT NULL,
+qtd_dias_apos decimal() identity(3) NOT NULL,
+qtd_dias_antes decimal() identity(3) NOT NULL,
+cod_operac_estoq_c varchar(4) NULL,
+cod_operac_estoq_l varchar(4) NULL,
+cod_operac_estoq_v varchar(4) NULL,
+dat_fecha_ultimo smalldatetime NOT NULL,
+qtd_tot_ordens decimal() identity(2) NOT NULL,
+qtd_meses_ped_sup decimal() identity(2) NOT NULL,
+qtd_meses_prv_cons decimal() identity(2) NOT NULL,
+qtd_meses_hist_con decimal() identity(2) NOT NULL,
+qtd_meses_mov_est decimal() identity(2) NOT NULL,
+qtd_anos_re_ano decimal() identity(2) NOT NULL,
+prx_num_lanc_cont decimal() identity(5) NOT NULL,
+num_conta_adiant varchar(23) NOT NULL,
+num_conta_deb_icms varchar(23) NOT NULL,
+num_conta_cre_icms varchar(23) NOT NULL,
+num_conta_deb_ipi varchar(23) NOT NULL,
+num_conta_cre_ipi varchar(23) NOT NULL,
+num_conta_banco varchar(23) NOT NULL,
+num_conta_d_estoq varchar(23) NOT NULL,
+num_conta_c_icms_c varchar(23) NOT NULL,
+num_conta_c_cli varchar(23) NOT NULL,
+cod_regist_entrada decimal() identity(2) NULL,
+qtd_dias_incl_nf decimal() identity(3) NOT NULL,
+num_lote_cont decimal() identity(3) NOT NULL,
+dat_fecha_ult_ipi smalldatetime NOT NULL,
+ies_frete_compras varchar(1) NOT NULL,
+ies_bloq_consumo varchar(1) NOT NULL,
+val_min_adm_frete decimal() identity(13) NULL,
+prx_num_carta_corr decimal() identity(6) NOT NULL,
+ies_carta_correcao varchar(1) NOT NULL,
+qtd_dias_ant_dupl decimal() identity(3) NOT NULL,
+qtd_dias_apos_dupl decimal() identity(3) NOT NULL,
+ies_nf_cnd_pgt_dif varchar(1) NOT NULL,
+ies_tolerancia_nf varchar(1) NOT NULL,
+pct_tolerancia decimal() identity(6) NULL,
+val_tolerancia_nf decimal() identity(13) NULL,
+val_tolerancia_imp decimal() identity(13) NULL,
+cod_moeda_toleranc decimal() identity(2) NULL,
+ies_diverg_trans_c varchar(1) NOT NULL,
+qtd_meses_est_forn decimal() identity(2) NOT NULL,
+cod_tip_desp_frt_c decimal() identity(4) NOT NULL,
+cod_tip_desp_frt_v decimal() identity(4) NULL,
+cod_tip_desp_nf decimal() identity(4) NOT NULL,
+ies_cont_bloq_pgto varchar(1) NOT NULL,
+ies_pendencia_cc varchar(1) NOT NULL,
+ies_bloqueio_oc varchar(1) NOT NULL,
+cod_grp_despesa decimal() identity(2) NOT NULL,
+num_conta_icms_esp varchar(23) NOT NULL,
+PRIMARY KEY (cod_empresa))
+
+GO
+
+CREATE TABLE logix.par_sup_pad
+
+(cod_empresa varchar(2) NOT NULL,
+cod_parametro varchar(20) NOT NULL,
+den_parametro varchar(60) NOT NULL,
+par_ies varchar(1) NULL,
+par_txt varchar(70) NULL,
+par_val decimal() identity(15) NULL,
+par_num decimal() identity(25) NULL,
+par_data smalldatetime NULL,
+PRIMARY KEY (cod_empresa,cod_parametro))
+
+GO
+
+CREATE TABLE logix.par_vdp
+
+(cod_empresa varchar(2) NOT NULL,
+mes_estoque decimal() identity(2) NULL,
+ano_estoque decimal() identity(4) NULL,
+num_nff decimal() identity(6) NULL,
+mes_faturamento decimal() identity(2) NULL,
+ano_faturamento decimal() identity(4) NULL,
+qtd_linhas_nff decimal() identity(3) NULL,
+num_ult_lote_lc decimal() identity(5) NULL,
+num_folha_registr decimal() identity(5) NULL,
+qtd_folhas_registr decimal() identity(5) NULL,
+qtd_dias_atr_dupl decimal() identity(3) NULL,
+qtd_dias_atr_med decimal() identity(3) NULL,
+num_ult_om decimal() identity(6) NULL,
+val_min_om decimal() identity(15) NULL,
+pct_comis decimal() identity(3) NULL,
+pct_desc_financ decimal() identity(3) NULL,
+pct_desc_adic decimal() identity(3) NULL,
+num_lote_ped decimal() identity(3) NULL,
+mes_pedido decimal() identity(2) NULL,
+ano_pedido decimal() identity(4) NULL,
+cod_moeda decimal() identity(2) NULL,
+cod_estoq_prod varchar(4) NULL,
+num_prx_pedido decimal() identity(6) NULL,
+num_prx_cliente decimal() identity(15) NULL,
+ies_dig_verif_cli varchar(1) NULL,
+ies_dig_verif_ped varchar(1) NULL,
+par_vdp_txt varchar(500) NULL,
+PRIMARY KEY (cod_empresa))
+
+GO
+
+

@@ -55,4 +55,13 @@ public class ItemResource {
 		return ResponseEntity.ok().body(dto);
 	}
 
+	@RequestMapping(value="/categoria", method=RequestMethod.GET)
+	public ResponseEntity<List<ItemDto>> findBySistemaAndCnpj(
+			@RequestParam(value="cnpjEmpresa", defaultValue="") String cnpjEmpresa,
+			@RequestParam(value="categoria", defaultValue="") Integer categoria) {
+		List<ItemDto> list = service.findByCategoria(cnpjEmpresa, categoria);
+		return ResponseEntity.ok().body(list);
+
+	}
+
 }

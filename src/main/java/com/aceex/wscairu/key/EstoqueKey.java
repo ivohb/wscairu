@@ -7,22 +7,22 @@ import javax.persistence.Embeddable;
 import javax.persistence.Table;
 
 @Embeddable
-@Table(name = "ped_observacao")
-public class PedObservacaoKey implements Serializable {
+@Table(name = "estoque")
+public class EstoqueKey implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Column(name = "cod_empresa", length = 2)
 	private String empresa;
 	
-	@Column(name = "num_pedido")
-	private Integer numero;
-	
-	public PedObservacaoKey() { }
+	@Column(name = "cod_item", length = 15)
+	private String codigo;
 
-	public PedObservacaoKey(String empresa, Integer numero) {
+	public EstoqueKey() { }
+
+	public EstoqueKey(String empresa, String codigo) {
 		super();
 		this.empresa = empresa;
-		this.numero = numero;
+		this.codigo = codigo;
 	}
 
 	public String getEmpresa() {
@@ -33,12 +33,12 @@ public class PedObservacaoKey implements Serializable {
 		this.empresa = empresa;
 	}
 
-	public Integer getNumero() {
-		return numero;
+	public String getCodigo() {
+		return codigo;
 	}
 
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
-	
+		
 }

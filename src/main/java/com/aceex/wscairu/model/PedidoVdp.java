@@ -19,75 +19,108 @@ public class PedidoVdp implements Serializable {
 
 	@EmbeddedId
 	private PedidoVdpKey id = new PedidoVdpKey();
+	
 	@Column(name = "cod_cliente", length = 15)
 	private String cliente;
+	
 	@Column(name = "pct_comissao")
 	private Double pctComissao;
+	
 	@Column(name = "num_pedido_repres", length = 10)
 	private String pedRepres;
+	
 	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name = "dat_emis_repres")
 	private Date emisRepres;
+	
 	@Column(name = "cod_nat_oper")
 	private Integer natOper;
+	
 	@Column(name = "cod_transpor", length = 15)
 	private String transportador;
+	
 	@Column(name = "cod_consig", length = 15)
 	private String consignatario;
+	
 	@Column(name = "ies_finalidade")
 	private Double finalidade;
+	
 	@Column(name = "ies_frete")
 	private Double tipFrete;
+	
 	@Column(name = "ies_preco", length = 1 )
 	private String tipPreco;
+	
 	@Column(name = "cod_cnd_pgto")
 	private Double codPgto;
+	
 	@Column(name = "pct_desc_financ")
 	private Double pctDescFinanc;
+	
 	@Column(name = "ies_embal_padrao", length = 1 )
 	private String embalPadrao;
+	
 	@Column(name = "ies_tip_entrega")
 	private Double tipEntrega;
+	
 	@Column(name = "ies_aceite", length = 1 )
 	private String aceite;
+	
 	@Column(name = "ies_sit_pedido", length = 1 )
 	private String situacao;
+	
 	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name = "dat_pedido")
 	private Date emissao;
+	
 	@Column(name = "num_pedido_cli", length = 25)
 	private String pedCliente;
+	
 	@Column(name = "pct_desc_adic")
 	private Double pctDescAdic;
+	
 	@Column(name = "num_list_preco")
-	private Double lista;
+	private Integer lista;
+	
 	@Column(name = "cod_repres")
 	private Double representante;
+	
 	@Column(name = "cod_repres_adic")
 	private Double represAdicional;
+	
 	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name = "dat_alt_sit")
 	private Date datAltSit;
+	
 	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name = "dat_cancel")
 	private Date datCancel;
+	
 	@Column(name = "cod_tip_venda")
 	private Double tipVenda;
+	
 	@Column(name = "cod_motivo_can")
 	private Double motCancel;
+	
 	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name = "dat_ult_fatur")
 	private Date datUltFat;
+	
 	@Column(name = "cod_moeda")
 	private Double moeda;
+	
 	@Column(name = "ies_comissao", length = 1)
 	private String temComissao;
+	
 	@Column(name = "pct_frete")
 	private Double pctFrete;
+	
 	@Column(name = "cod_tip_carteira", length = 2)
 	private String carteira;
+	
 	@Column(name = "num_versao_lista")
-	private Double versaoLista;
+	private Integer versaoLista;
+	
 	@Column(name = "cod_local_estoq", length = 10)
 	private String localEstoque;
 	
@@ -221,10 +254,10 @@ public class PedidoVdp implements Serializable {
 	public void setPctDescAdic(Double pctDescAdic) {
 		this.pctDescAdic = pctDescAdic;
 	}
-	public Double getLista() {
+	public Integer getLista() {
 		return lista;
 	}
-	public void setLista(Double lista) {
+	public void setLista(Integer lista) {
 		this.lista = lista;
 	}
 	public Double getRepresentante() {
@@ -293,10 +326,10 @@ public class PedidoVdp implements Serializable {
 	public void setCarteira(String carteira) {
 		this.carteira = carteira;
 	}
-	public Double getVersaoLista() {
+	public Integer getVersaoLista() {
 		return versaoLista;
 	}
-	public void setVersaoLista(Double versaoLista) {
+	public void setVersaoLista(Integer versaoLista) {
 		this.versaoLista = versaoLista;
 	}
 	public String getLocalEstoque() {

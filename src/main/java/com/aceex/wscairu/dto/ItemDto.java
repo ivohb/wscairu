@@ -18,6 +18,7 @@ public class ItemDto implements Serializable {
 	private Agrupamento agrupamento;
 	private Tamanho tamanho;
 	private Cor cor;
+	private Saldo estoque;
 	
 	public ItemDto() { }
 
@@ -134,6 +135,14 @@ public class ItemDto implements Serializable {
 
 	public void setCor(Cor cor) {
 		this.cor = cor;
+	}
+
+	public Saldo getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Saldo estoque) {
+		this.estoque = estoque;
 	}
 	
 }

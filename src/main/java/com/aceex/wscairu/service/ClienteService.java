@@ -49,7 +49,7 @@ public class ClienteService {
 	@Autowired
 	private CredcadCliDao cccDao;
 
-	Biblioteca bib = new Biblioteca();
+	private Biblioteca bib = new Biblioteca();
 
 	public Cliente findById(String id) {
 		Optional<Cliente> obj = dao.findById(id);
@@ -73,7 +73,7 @@ public class ClienteService {
 		return dao.findAll();
 	}
 	
-	public List<Cliente> findByCnpj(String cnpj) {		
+	public Cliente findByCnpj(String cnpj) {		
 		return dao.findByCnpj(cnpj); 
 	}	
 
@@ -92,8 +92,12 @@ public class ClienteService {
 	}
 
 	@Transactional
-	public Cliente insert(ClienteDto dto) {
-		
+	public Cliente insert(ClienteDto dto) {		
+		Cliente obj = insCliente(dto);
+		return obj;
+	}
+
+	public Cliente insCliente(ClienteDto dto) {
 		Cliente obj = fromDTO(dto);
 		obj.setId(bib.tiraFormato(obj.getCnpj()));
 		obj.setDatCadastro(bib.dataAtual());
@@ -124,7 +128,7 @@ public class ClienteService {
 		
 		return obj;
 	}
-
+	
 	private String getCidade(String uf, String ibge) {
 		CidadeIbge ci = ibgeDao.findByKey(uf, ibge);		
 		if (ci == null) {
@@ -220,20 +224,24 @@ public class ClienteService {
 	
 	@Transactional
 	public Cliente update(ClienteDto dto, String id) {
-		Cliente newObj = findById(id);
-		newObj.setBairro(dto.getBairro());
-		newObj.setCep(dto.getCep());
-		newObj.setCodTipo(dto.getTipo());
-		newObj.setContato(dto.getContato());
-		newObj.setDatAtualiz(bib.dataAtual());
-		newObj.setLogradouro(dto.getLogradouro());
-		newObj.setFone(dto.getTelefone());
-		newObj.setInscEstadual(dto.getInscEstadual());
-		newObj.setNomeReduz(dto.getNomeReduz());
-		newObj.setRazSocial(dto.getRazSocial());
-		newObj.setCodCidade(getCidade(dto.getUf(), dto.getCidadeIbge()));
-		grvCliCompl(id,dto.getEmail());
-		return dao.save(newObj);
+		Cliente obj = atuCliente(dto, id);
+		return dao.save(obj);
 	}
 
+	public Cliente atuCliente(ClienteDto dto, String id) {
+		Cliente obj = findById(id);
+		obj.setBairro(dto.getBairro());
+		obj.setCep(dto.getCep());
+		obj.setCodTipo(dto.getTipo());
+		obj.setContato(dto.getContato());
+		obj.setDatAtualiz(bib.dataAtual());
+		obj.setLogradouro(dto.getLogradouro());
+		obj.setFone(dto.getTelefone());
+		obj.setInscEstadual(dto.getInscEstadual());
+		obj.setNomeReduz(dto.getNomeReduz());
+		obj.setRazSocial(dto.getRazSocial());
+		obj.setCodCidade(getCidade(dto.getUf(), dto.getCidadeIbge()));
+		grvCliCompl(id,dto.getEmail());
+		return obj;
+	}
 }

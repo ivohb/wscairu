@@ -39,6 +39,9 @@ public class Item implements Serializable {
 	@Column(name = "cod_cla_uso")
 	private Integer cor;
 
+	@Column(name = "ies_situacao", length = 1)
+	private String situacao;
+
 	public Item() { }
 
 	public ItemKey getId() {
@@ -103,6 +106,14 @@ public class Item implements Serializable {
 
 	public void setCor(Integer cor) {
 		this.cor = cor;
+	}
+
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
 	}
 	
 }

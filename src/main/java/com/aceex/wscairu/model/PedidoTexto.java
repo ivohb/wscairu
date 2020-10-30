@@ -7,7 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.aceex.wscairu.key.PedItemKey;
+import com.aceex.wscairu.key.PedidoTextoKey;
 
 @Entity
 @Table(name = "ped_itens_texto")
@@ -15,7 +15,7 @@ public class PedidoTexto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private PedItemKey id = new PedItemKey();
+	private PedidoTextoKey id = new PedidoTextoKey();
 	@Column(name = "den_texto_1", length = 76)
 	private String txtPed1;
 	@Column(name = "den_texto_2", length = 76)
@@ -29,10 +29,10 @@ public class PedidoTexto implements Serializable {
 	
 	public PedidoTexto() {}
 	
-	public PedItemKey getId() {
+	public PedidoTextoKey getId() {
 		return id;
 	}
-	public void setId(PedItemKey id) {
+	public void setId(PedidoTextoKey id) {
 		this.id = id;
 	}
 	public String getTxtPed1() {

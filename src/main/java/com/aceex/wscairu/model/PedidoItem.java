@@ -19,30 +19,43 @@ public class PedidoItem implements Serializable {
 
 	@EmbeddedId
 	private PedItemKey id = new PedItemKey();
+	
 	@Column(name = "cod_item", length = 15)
 	private String item;
+	
 	@Column(name = "pct_desc_adic")
 	private Double pctDescAdic;
+	
 	@Column(name = "pre_unit")
 	private Double preUnit;
+	
 	@Column(name = "qtd_pecas_solic")
 	private Double qtdSolicit;
+	
 	@Column(name = "qtd_pecas_atend")
 	private Double qtdAtendida;
+	
 	@Column(name = "qtd_pecas_cancel")
 	private Double qtdCancelada;
+	
 	@Column(name = "qtd_pecas_reserv")
 	private Double qtdReservada;
+	
 	@Column(name = "prz_entrega")
 	private Date przEntrega;
+	
 	@Column(name = "val_desc_com_unit")
 	private Double descComUnit;
+	
 	@Column(name = "val_frete_unit")
 	private Double valFreteUnit;
+	
 	@Column(name = "val_seguro_unit")
 	private Double valSeguroUnit;
+	
 	@Column(name = "qtd_pecas_romaneio")
 	private Double qtdRomaneio;
+	
 	@Column(name = "pct_desc_bruto")
 	private Double pctDescBruto;
 	

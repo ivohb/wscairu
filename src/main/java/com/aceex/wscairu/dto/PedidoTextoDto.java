@@ -2,7 +2,7 @@ package com.aceex.wscairu.dto;
 
 import java.io.Serializable;
 
-public class PedTextoDto implements Serializable {
+public class PedidoTextoDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String txtPed1;
 	private String txtPed2;
@@ -10,7 +10,7 @@ public class PedTextoDto implements Serializable {
 	private String txtPed4;
 	private String txtPed5;
 	
-	public PedTextoDto() { }
+	public PedidoTextoDto() { }
 	
 	public String getTxtPed1() {
 		return txtPed1;

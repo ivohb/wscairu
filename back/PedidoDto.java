@@ -3,6 +3,9 @@ package com.aceex.wscairu.dto;
 import java.io.Serializable;
 import java.util.List;
 
+import com.aceex.wscairu.validation.PedidoValidation;
+
+@PedidoValidation
 public class PedidoDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 

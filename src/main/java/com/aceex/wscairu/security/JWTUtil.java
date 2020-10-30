@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.aceex.wscairu.dao.ParametroDao;
-import com.aceex.wscairu.model.Parametro;
+import com.aceex.wscairu.dao.SystemaDao;
+import com.aceex.wscairu.model.Systema;
 import com.aceex.wscairu.util.Criptografia;
 
 import io.jsonwebtoken.Claims;
@@ -25,7 +25,7 @@ public class JWTUtil {
 	private Long expiration;
 
 	@Autowired
-	private ParametroDao pDao;
+	private SystemaDao pDao;
 
 	public String generateToken(String codigo) {
 		return Jwts.builder()
@@ -67,7 +67,7 @@ public class JWTUtil {
 	
 	public boolean UserRequestExist(String codigo, String senha) {
 		senha = Criptografia.criptografar(senha);
-		Parametro p = pDao.findByUserAndPassword(codigo, senha);
+		Systema p = pDao.findByUserAndPassword(codigo, senha);
 		if (p == null) {
 			return false;
 		}

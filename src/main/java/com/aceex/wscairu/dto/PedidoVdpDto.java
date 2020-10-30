@@ -1,11 +1,20 @@
 package com.aceex.wscairu.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import com.aceex.wscairu.validation.PedidoVdpValidation;
+
+@PedidoVdpValidation
 public class PedidoVdpDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@NotEmpty(message = "campo_obrigatorio")
 	private String cnpjEmpresa;
+	@NotEmpty(message = "campo_obrigatorio")
 	private String cnpjCliente;
 	private Integer natOperacao;
 	private Integer finalidade;
@@ -26,12 +35,20 @@ public class PedidoVdpDto implements Serializable {
 	private Double pctComis3;
 	private String pedidoRepres;
 	private String pedidoCliente;
+	@NotEmpty(message = "campo_obrigatorio")
 	private String datEmissao;
 	private String codTranspor;
 	private String codConsig;
 	private Integer tipFrete;
 	private Double pctFrete;
 	private String tipEmbal;
+	
+	private PedidoEntregaDto entrega;
+	private PedidoObservDto observacao;
+	private PedidoTextoDto texto;
+	@NotNull(message = "campo_obrigatorio")
+	private List<PedidoItemDto> produto ;
+	private ClienteDto cliente;	
 	
 	public PedidoVdpDto() { }
 	
@@ -197,5 +214,35 @@ public class PedidoVdpDto implements Serializable {
 	public void setTipEmbal(String tipEmbal) {
 		this.tipEmbal = tipEmbal;
 	}
-
+	public PedidoEntregaDto getEntrega() {
+		return entrega;
+	}
+	public void setEntrega(PedidoEntregaDto entrega) {
+		this.entrega = entrega;
+	}
+	public PedidoObservDto getObservacao() {
+		return observacao;
+	}
+	public void setObservacao(PedidoObservDto observacao) {
+		this.observacao = observacao;
+	}
+	public PedidoTextoDto getTexto() {
+		return texto;
+	}
+	public void setTexto(PedidoTextoDto texto) {
+		this.texto = texto;
+	}
+	public List<PedidoItemDto> getProduto() {
+		return produto;
+	}
+	public void setProduto(List<PedidoItemDto> produto) {
+		this.produto = produto;
+	}
+	public ClienteDto getCliente() {
+		return cliente;
+	}
+	public void setCliente(ClienteDto cliente) {
+		this.cliente = cliente;
+	}
+	
 }

@@ -42,11 +42,11 @@ public class ClienteResource {
 	}
 
 	@RequestMapping(value="/cnpj", method=RequestMethod.GET)
-	public ResponseEntity<List<Cliente>> findByCnpj(
+	public ResponseEntity<Cliente> findByCnpj(
 			@RequestParam(value="cnpj", defaultValue="") String cnpj) {
 				
-		List<Cliente> list = service.findByCnpj(cnpj);
-		return ResponseEntity.ok().body(list);
+		Cliente obj = service.findByCnpj(cnpj);
+		return ResponseEntity.ok().body(obj);
 		
 	}
 

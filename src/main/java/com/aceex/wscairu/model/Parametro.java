@@ -13,106 +13,152 @@ public class Parametro implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "nom_sys", length = 15)
-	private String id;	
+	@Column(name = "cnpj_empresa", length = 19)
+	private String id;
+
+	@Column(name = "pct_comissao")
+	private Double pctComissao;
+	@Column(name = "cod_nat_oper")
+	private Integer natOper;
+	@Column(name = "ies_finalidade")
+	private Double finalidade;
+	@Column(name = "ies_frete")
+	private Double tipFrete;
+	@Column(name = "ies_preco", length = 1 )
+	private String tipPreco;
+	@Column(name = "cod_cnd_pgto")
+	private Double codPgto;
+	@Column(name = "ies_embal_padrao", length = 1 )
+	private String embalPadrao;
+	@Column(name = "ies_tip_entrega")
+	private Double tipEntrega;
+	@Column(name = "ies_sit_pedido", length = 1 )
+	private String situacao;
+	@Column(name = "num_list_preco")
+	private Integer lista;
+	@Column(name = "cod_repres")
+	private Double representante;
+	@Column(name = "cod_tip_venda")
+	private Double tipVenda;
+	@Column(name = "cod_moeda")
+	private Double moeda;
+	@Column(name = "ies_comissao", length = 1)
+	private String temComissao;
+	@Column(name = "cod_tip_carteira", length = 2)
+	private String carteira;
+	@Column(name = "cod_local_estoq", length = 10)
+	private String localEstoque;
+	@Column(name = "bloqueio_estoque", length = 1)
+	private String bloqEstoque;
 	
-	@Column(name = "user_envio", length = 15)
-	private String userEnvio;
+	public Parametro() {}
 	
-	@Column(name = "senha_envio", length = 80)
-	private String senhaEnvio;
-
-	@Column(name = "uri_env_prod", length = 80)
-	private String uriEnvProd;
-
-	@Column(name = "uri_env_estoq", length = 80)
-	private String uriEnvEstoq;
-
-	@Column(name = "user_req_serv", length = 15)
-	private String userReq;
-	
-	@Column(name = "senha_req_serv", length = 80)
-	private String senhaReq;
-
-	@Column(name = "qtd_lin_page")
-	private Integer linPage;
-
-	@Column(name = "max_lin_page")
-	private Integer maxLinha;
-
-	public Parametro() { }
-
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
-	public String getUserEnvio() {
-		return userEnvio;
+	public Double getPctComissao() {
+		return pctComissao;
 	}
-
-	public void setUserEnvio(String userEnvio) {
-		this.userEnvio = userEnvio;
+	public void setPctComissao(Double pctComissao) {
+		this.pctComissao = pctComissao;
 	}
-
-	public String getSenhaEnvio() {
-		return senhaEnvio;
+	public Integer getNatOper() {
+		return natOper;
 	}
-
-	public void setSenhaEnvio(String senhaEnvio) {
-		this.senhaEnvio = senhaEnvio;
+	public void setNatOper(Integer natOper) {
+		this.natOper = natOper;
 	}
-
-	public String getUriEnvProd() {
-		return uriEnvProd;
+	public Double getFinalidade() {
+		return finalidade;
 	}
-
-	public void setUriEnvProd(String uriEnvProd) {
-		this.uriEnvProd = uriEnvProd;
+	public void setFinalidade(Double finalidade) {
+		this.finalidade = finalidade;
 	}
-
-	public String getUriEnvEstoq() {
-		return uriEnvEstoq;
+	public Double getTipFrete() {
+		return tipFrete;
 	}
-
-	public void setUriEnvEstoq(String uriEnvEstoq) {
-		this.uriEnvEstoq = uriEnvEstoq;
+	public void setTipFrete(Double tipFrete) {
+		this.tipFrete = tipFrete;
 	}
-
-	public String getUserReq() {
-		return userReq;
+	public String getTipPreco() {
+		return tipPreco;
 	}
-
-	public void setUserReq(String userReq) {
-		this.userReq = userReq;
+	public void setTipPreco(String tipPreco) {
+		this.tipPreco = tipPreco;
 	}
-
-	public String getSenhaReq() {
-		return senhaReq;
+	public Double getCodPgto() {
+		return codPgto;
 	}
-
-	public void setSenhaReq(String senhaReq) {
-		this.senhaReq = senhaReq;
+	public void setCodPgto(Double codPgto) {
+		this.codPgto = codPgto;
 	}
-
-	public Integer getLinPage() {
-		return linPage;
+	public String getEmbalPadrao() {
+		return embalPadrao;
 	}
-
-	public void setLinPage(Integer linPage) {
-		this.linPage = linPage;
+	public void setEmbalPadrao(String embalPadrao) {
+		this.embalPadrao = embalPadrao;
 	}
-
-	public Integer getMaxLinha() {
-		return maxLinha;
+	public Double getTipEntrega() {
+		return tipEntrega;
 	}
-
-	public void setMaxLinha(Integer maxLinha) {
-		this.maxLinha = maxLinha;
+	public void setTipEntrega(Double tipEntrega) {
+		this.tipEntrega = tipEntrega;
 	}
-	
+	public String getSituacao() {
+		return situacao;
+	}
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
+	public Integer getLista() {
+		return lista;
+	}
+	public void setLista(Integer lista) {
+		this.lista = lista;
+	}
+	public Double getRepresentante() {
+		return representante;
+	}
+	public void setRepresentante(Double representante) {
+		this.representante = representante;
+	}
+	public Double getTipVenda() {
+		return tipVenda;
+	}
+	public void setTipVenda(Double tipVenda) {
+		this.tipVenda = tipVenda;
+	}
+	public Double getMoeda() {
+		return moeda;
+	}
+	public void setMoeda(Double moeda) {
+		this.moeda = moeda;
+	}
+	public String getTemComissao() {
+		return temComissao;
+	}
+	public void setTemComissao(String temComissao) {
+		this.temComissao = temComissao;
+	}
+	public String getCarteira() {
+		return carteira;
+	}
+	public void setCarteira(String carteira) {
+		this.carteira = carteira;
+	}
+	public String getLocalEstoque() {
+		return localEstoque;
+	}
+	public void setLocalEstoque(String localEstoque) {
+		this.localEstoque = localEstoque;
+	}
+	public String getBloqEstoque() {
+		return bloqEstoque;
+	}
+	public void setBloqEstoque(String bloqEstoque) {
+		this.bloqEstoque = bloqEstoque;
+	}
 }
-

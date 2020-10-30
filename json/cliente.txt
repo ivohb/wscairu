@@ -1,0 +1,15 @@
+{
+ "cpfCnpj": "001.376.876/0000-09",
+ "inscEstadual": "11.376.876-09",
+ "tipo": "F",
+ "razSocial": "JOSE JOAO DE SOUSA",
+ "nomeReduz": "JOSE JOAO",
+ "contato": "JOSE",
+ "logradouro": "AV. BRASIL, 300",
+ "bairro": "CENTRO",
+ "cidadeIbge": "1200104",
+ "uf": "SP",
+ "cep": "01234-900",
+ "telefone": "(11)92345-9876",
+ "email": "xxx@yyyy.com.br"
+}

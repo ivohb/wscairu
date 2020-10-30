@@ -10,20 +10,27 @@ import org.springframework.stereotype.Service;
 
 import com.aceex.wscairu.dao.EmpresaDao;
 import com.aceex.wscairu.dao.EspecTecnicaDao;
-import com.aceex.wscairu.dao.LinhaProdDao;
-import com.aceex.wscairu.dao.ParametroDao;
+import com.aceex.wscairu.dao.EstoqueDao;
 import com.aceex.wscairu.dao.ItemDao;
+import com.aceex.wscairu.dao.LinhaProdDao;
+import com.aceex.wscairu.dao.ListaItemDao;
+import com.aceex.wscairu.dao.ParametroDao;
+import com.aceex.wscairu.dao.SystemaDao;
 import com.aceex.wscairu.dto.Agrupamento;
 import com.aceex.wscairu.dto.Categoria;
 import com.aceex.wscairu.dto.Cor;
+import com.aceex.wscairu.dto.EstoqueDto;
 import com.aceex.wscairu.dto.ItemDto;
+import com.aceex.wscairu.dto.Saldo;
 import com.aceex.wscairu.dto.Tamanho;
 import com.aceex.wscairu.exception.ObjectNotFoundException;
 import com.aceex.wscairu.model.Empresa;
 import com.aceex.wscairu.model.EspecTecnica;
-import com.aceex.wscairu.model.LinhaProd;
-import com.aceex.wscairu.model.Parametro;
 import com.aceex.wscairu.model.Item;
+import com.aceex.wscairu.model.LinhaProd;
+import com.aceex.wscairu.model.ListaItem;
+import com.aceex.wscairu.model.Parametro;
+import com.aceex.wscairu.model.Systema;
 import com.aceex.wscairu.security.UsuarioSS;
 
 @Service
@@ -38,8 +45,14 @@ public class ItemService {
 	@Autowired
 	private EspecTecnicaDao etDao;
 	@Autowired
+	private SystemaDao sysDao;
+	@Autowired
 	private ParametroDao parDao;
-
+	@Autowired
+	private ListaItemDao lstDao;
+	@Autowired
+	private EstoqueDao eDao;
+	
 	public Item findByCodigo(String cnpjEmpresa, String codigo) {
 		Item prod = null;
 		Empresa empresa = empDao.findByCnpj(cnpjEmpresa);
@@ -60,24 +73,60 @@ public class ItemService {
 		return dao.findAll();
 	}
 
+	public List<ItemDto> findByCategoria(String cnpjEmpresa, Integer categoria) {
+		UsuarioSS user = UserSecurityService.authenticated();
+		Systema sys = sysDao.findByUserReq(user.getUsername());
+
+		String codEmpresa = "ZZ";
+		Item produto = null;
+		Empresa empresa = null;
+		
+		if (cnpjEmpresa == null || cnpjEmpresa.isEmpty()) {
+		} else {
+			empresa = empDao.findByCnpj(cnpjEmpresa);
+			if (empresa != null) {
+				codEmpresa = empresa.getEmpresa();				
+			}			 
+		}
+
+		List<ItemDto> dto = dao.findByCategoria(
+				sys.getId(), cnpjEmpresa, codEmpresa, categoria);
+		
+		for (ItemDto pDto : dto) {
+			produto = dao.findByKey(pDto.getCodEmpresa(), pDto.getCodigo());			
+			pDto.setCnpjEmpresa(empresa.getId());
+			pDto.setCategoria(getCategoria(produto));
+			pDto.setAgrupamento(getAgrupamento(produto));
+			pDto.setTamanho(getTamanho(produto));
+			pDto.setCor(getCor(produto));
+			pDto.setEstoque(getEstoque(empresa.getId(), 
+					empresa.getEmpresa(), produto.getId().getCodigo(), sys.getId()));
+			pDto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), produto.getId().getCodigo()));		
+			pDto.setPreco(getPreco(empresa, produto));
+		}
+		
+		return dto;				
+
+	}
+	
 	public Page<ItemDto> findPage(Integer pagina, Integer qtdLinha, String ordem, 
 			String direcao, String cnpjEmpresa, String codigo, String descricao) {
 
 		UsuarioSS user = UserSecurityService.authenticated();
-		Parametro par = parDao.findByUserReq(user.getUsername());
+		Systema sys = sysDao.findByUserReq(user.getUsername());
 
 		if (qtdLinha == null || qtdLinha == 0) {
-			qtdLinha = par.getLinPage();
+			qtdLinha = sys.getLinPage();
 		}
 		
-		if (qtdLinha > par.getMaxLinha()) {
-			qtdLinha = par.getMaxLinha();
+		if (qtdLinha > sys.getMaxLinha()) {
+			qtdLinha = sys.getMaxLinha();
 		}
 		
 		PageRequest pageRequest = PageRequest.of(pagina, qtdLinha, 
 				Direction.valueOf(direcao), ordem);
 
-		String codEmpresa = "";
+		String codEmpresa = "ZZ";
 		Item produto = null;
 		Empresa empresa = null;
 		
@@ -89,7 +138,8 @@ public class ItemService {
 			}			 
 		}
 			
-		Page<ItemDto> dto = dao.findPage(codEmpresa, codigo, descricao, par.getId(), pageRequest);
+		Page<ItemDto> dto = dao.findPage(cnpjEmpresa,
+				codEmpresa, codigo, descricao, sys.getId(), pageRequest);
 		
 		for (ItemDto pDto : dto) {
 			empresa = empDao.findByEmpresa(pDto.getCodEmpresa());
@@ -99,21 +149,24 @@ public class ItemService {
 			pDto.setAgrupamento(getAgrupamento(produto));
 			pDto.setTamanho(getTamanho(produto));
 			pDto.setCor(getCor(produto));
-			pDto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), codigo));			
+			pDto.setEstoque(getEstoque(empresa.getId(), 
+					empresa.getEmpresa(), produto.getId().getCodigo(), sys.getId()));
+			pDto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), produto.getId().getCodigo()));		
+			pDto.setPreco(getPreco(empresa, produto));
 		}
-
+		
 		return dto;				
 	}
 
-	public ItemDto findByProduct(String cnpjEmpresa, String codigo) {
+	public ItemDto findByProduct(String cnpjEmpresa, String codigo) { 
 		UsuarioSS user = UserSecurityService.authenticated();
-		Parametro par = parDao.findByUserReq(user.getUsername());
+		Systema sys = sysDao.findByUserReq(user.getUsername());
 		ItemDto dto = null;
 		Item produto = null;
 		Empresa empresa = empDao.findByCnpj(cnpjEmpresa);
 		
 		if (empresa != null) {
-			dto = dao.findByProduct(empresa.getEmpresa(), codigo, par.getId());
+			dto = dao.findByProduct(cnpjEmpresa, empresa.getEmpresa(), codigo, sys.getId());
 			if (dto != null) {
 				produto = dao.findByKey(empresa.getEmpresa(), codigo);
 				dto.setCnpjEmpresa(empresa.getId());
@@ -121,7 +174,10 @@ public class ItemService {
 				dto.setAgrupamento(getAgrupamento(produto));
 				dto.setTamanho(getTamanho(produto));
 				dto.setCor(getCor(produto));
-				dto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), codigo));			
+				dto.setEstoque(getEstoque(empresa.getId(), 
+						empresa.getEmpresa(), produto.getId().getCodigo(), sys.getId()));
+				dto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), codigo));		
+				dto.setPreco(getPreco(empresa, produto));
 			}
 		}
 		
@@ -167,11 +223,31 @@ public class ItemService {
 		return cor;
 	}
 
+	private Saldo getEstoque(String cnpj, String empresa, String codigo, String sistema
+) {
+		EstoqueDto dto = eDao.findByProduct(cnpj, empresa, codigo, sistema);
+		Saldo sdo = new Saldo();
+		sdo.setQtdLiberada(dto.getQtdLiberada());
+		sdo.setQtdReservada(dto.getQtdReservada());
+		sdo.setQtdDisponivel(dto.getQtdLiberada() - dto.getQtdReservada());
+		return sdo;
+	}
+
 	private String getEspecTecnica(String empresa, String item) {
 		EspecTecnica et = etDao.findByKey(empresa, item);
 		if (et == null) {
 			return "";
 		}
 		return et.getDescTecnica();
+	}
+	
+	private Double getPreco(Empresa empresa, Item item) {
+		Parametro par = parDao.findByEmpresa(empresa.getId());
+		ListaItem lst = lstDao.findByEmpresaAndNumeroAndItem(
+				empresa.getEmpresa(), par.getLista(), item.getId().getCodigo());
+		if (lst == null) {
+			return 0.0;
+		}
+		return lst.getPreUnit();		
 	}
 }

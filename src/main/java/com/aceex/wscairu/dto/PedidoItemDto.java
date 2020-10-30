@@ -2,7 +2,7 @@ package com.aceex.wscairu.dto;
 
 import java.io.Serializable;
 
-public class ProdutoDto implements Serializable {
+public class PedidoItemDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String codigo;
@@ -15,7 +15,7 @@ public class ProdutoDto implements Serializable {
 	private String txtProd4;
 	private String txtProd5;
 
-	public ProdutoDto() { }
+	public PedidoItemDto() { }
 
 	public String getCodigo() {
 		return codigo;

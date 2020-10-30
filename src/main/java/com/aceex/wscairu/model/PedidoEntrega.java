@@ -7,7 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.aceex.wscairu.key.PedItemKey;
+import com.aceex.wscairu.key.PedidoEntregaKey;
 
 @Entity
 @Table(name = "ped_end_ent")
@@ -15,26 +15,32 @@ public class PedidoEntrega implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private PedItemKey id = new PedItemKey();
+	private PedidoEntregaKey id = new PedidoEntregaKey();
+	
 	@Column(name = "end_entrega", length = 36)
 	private String endereco;
+	
 	@Column(name = "den_bairro", length = 19)
 	private String bairro;
+	
 	@Column(name = "cod_cidade", length = 5)
 	private String cidade;
+	
 	@Column(name = "cod_cep", length = 9)
 	private String cep;
+	
 	@Column(name = "num_cgc", length = 19)
 	private String cnpj;
+	
 	@Column(name = "ins_estadual", length = 19)
 	private String incricao;
 	
 	public PedidoEntrega() {}
 	
-	public PedItemKey getId() {
+	public PedidoEntregaKey getId() {
 		return id;
 	}
-	public void setId(PedItemKey id) {
+	public void setId(PedidoEntregaKey id) {
 		this.id = id;
 	}
 	public String getEndereco() {

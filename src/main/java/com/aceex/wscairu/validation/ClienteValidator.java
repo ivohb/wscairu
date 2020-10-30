@@ -50,9 +50,9 @@ public class ClienteValidator implements ConstraintValidator<ClienteValidation, 
 
 		if (dto.getCpfCnpj() == null || dto.getCpfCnpj().isEmpty() ) {
 		} else {
-			List<Cliente> lista  = dao.findByCnpj(dto.getCpfCnpj());
+			Cliente cliente  = dao.findByCnpj(dto.getCpfCnpj());
 			if (uriId == null) {
-				if (lista.size() > 0) {
+				if (cliente == null) {
 					list.add(new FieldMessage("cpfCnpj", "cliente_ja_existe"));
 				} else {
 					Biblioteca bib = new Biblioteca();
@@ -71,7 +71,7 @@ public class ClienteValidator implements ConstraintValidator<ClienteValidation, 
 					}
 				}
 			} else {
-				if (lista.size() == 0) {
+				if (cliente == null) {
 					list.add(new FieldMessage("cpfCnpj", "cliente_nao_existe"));
 				}
 			}

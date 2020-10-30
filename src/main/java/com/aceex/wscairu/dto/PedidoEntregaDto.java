@@ -2,7 +2,7 @@ package com.aceex.wscairu.dto;
 
 import java.io.Serializable;
 
-public class PedEntregaDto implements Serializable {
+public class PedidoEntregaDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 
@@ -10,10 +10,11 @@ public class PedEntregaDto implements Serializable {
 	private String bairro;
 	private String cidade;
 	private String cepEntrega;
+	private String ufEntrega;
 	private String cnpjEntrga;
 	private String inscEstadual;
 	
-	public PedEntregaDto() { }
+	public PedidoEntregaDto() { }
 	
 	public String getEndereco() {
 		return endereco;
@@ -38,6 +39,12 @@ public class PedEntregaDto implements Serializable {
 	}
 	public void setCepEntrega(String cepEntrega) {
 		this.cepEntrega = cepEntrega;
+	}
+	public String getUfEntrega() {
+		return ufEntrega;
+	}
+	public void setUfEntrega(String ufEntrega) {
+		this.ufEntrega = ufEntrega;
 	}
 	public String getCnpjEntrga() {
 		return cnpjEntrga;

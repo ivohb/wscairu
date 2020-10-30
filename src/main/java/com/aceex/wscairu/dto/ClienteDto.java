@@ -16,7 +16,7 @@ public class ClienteDto implements Serializable {
 
 	@NotEmpty(message = "campo_obrigatorio")
 	@Pattern(regexp="[FJ]", message = "conteudo_invalido")
-	private String Tipo;
+	private String tipo;
 
 	@NotEmpty(message = "campo_obrigatorio")
 	private String razSocial;
@@ -52,11 +52,11 @@ public class ClienteDto implements Serializable {
 	}
 
 	public String getTipo() {
-		return Tipo;
+		return tipo;
 	}
 
 	public void setTipo(String tipo) {
-		Tipo = tipo;
+		this.tipo = tipo;
 	}
 
 	public String getRazSocial() {

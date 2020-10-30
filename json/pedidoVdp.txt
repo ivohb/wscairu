@@ -1,7 +1,6 @@
 {
-"pedido":{
  "cnpjEmpresa":"060.456.876/0001-90",
- "cnpjCliente":"050.678.453/0000-89",
+ "cnpjCliente":"001.674.098/0000-08",
  "natOperacao":null,
  "finalidade":null,
  "cndPgto":null,
@@ -26,19 +25,19 @@
  "codConsig":null,
  "tipFrete":null,
  "pctFrete":null,
- "tipEmbal":null
-},
+ "tipEmbal":null,
 "entrega":{
  "endereco":"Rua dos Bandeirantes, 114",
  "bairro":null,
  "cidade":"67654",
  "cepEntrega":"08654-000",
+ "ufEntrega":"SP",
  "cnpjEntrga":null,
  "inscEstadual":null
 },
 "observacao":{
- "obs1":"ENTREGAR PREFERENCIALMENTE ATÉ AS 14 HORAS",
- "obs2":null
+ "txtObs1":"ENTREGAR PREFERENCIALMENTE ATÉ AS 14 HORAS",
+ "txtObs2":null
 },
 "produto":[
 {

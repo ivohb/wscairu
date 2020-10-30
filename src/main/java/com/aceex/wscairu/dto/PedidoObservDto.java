@@ -2,13 +2,13 @@ package com.aceex.wscairu.dto;
 
 import java.io.Serializable;
 
-public class PedObservacaoDto implements Serializable {
+public class PedidoObservDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String txtObs1;
 	private String txtObs2;
 	
-	public PedObservacaoDto() { }
+	public PedidoObservDto() { }
 	
 	public String getTxtObs1() {
 		return txtObs1;

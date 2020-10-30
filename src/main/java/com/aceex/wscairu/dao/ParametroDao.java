@@ -8,16 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.aceex.wscairu.model.Parametro;
 
-@Repository                                     //entidade tipo do id
+@Repository                                      
 public interface ParametroDao extends JpaRepository<Parametro, String>  {
 
 	@Transactional(readOnly=true)
-	public Parametro findByUserReq(String userReq);	
-
-	@Transactional(readOnly=true)
-	@Query("SELECT obj FROM Parametro obj"
-			+ " where obj.userReq = :user and obj.senhaReq = :senha ")			
-	public Parametro findByUserAndPassword(@Param("user") String user, @Param("senha") String senha);
-
+	@Query("FROM Parametro obj WHERE obj.id = :cnpj")
+	public Parametro findByEmpresa(@Param("cnpj") String cnpj);
 
 }

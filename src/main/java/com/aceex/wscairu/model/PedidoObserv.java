@@ -7,26 +7,26 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.aceex.wscairu.key.PedObservacaoKey;
+import com.aceex.wscairu.key.PedObservKey;
 
 @Entity
 @Table(name = "ped_observacao")
-public class PedObservacao implements Serializable {
+public class PedidoObserv implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private PedObservacaoKey id = new PedObservacaoKey();
+	private PedObservKey id = new PedObservKey();
 	@Column(name = "tex_observ_1", length = 76)
 	private String txtObs1;
 	@Column(name = "tex_observ_2", length = 76)
 	private String txtObs2;
 	
-	public PedObservacao() { }
+	public PedidoObserv() { }
 	
-	public PedObservacaoKey getId() {
+	public PedObservKey getId() {
 		return id;
 	}
-	public void setId(PedObservacaoKey id) {
+	public void setId(PedObservKey id) {
 		this.id = id;
 	}
 	public String getTxtObs1() {
