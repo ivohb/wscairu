@@ -17,6 +17,12 @@ public class OrdMontagItem implements Serializable {
 	@EmbeddedId
 	private OrdMontagItemKey id = new OrdMontagItemKey();
 
+	@Column(name = "num_pedido", nullable = false)
+	private Integer pedido;
+
+	@Column(name = "cod_item", length = 15, nullable = false)
+	private String item;
+
 	@Column(name = "qtd_volume_item", nullable = false)
 	private Double qtdVolume;
 
@@ -25,6 +31,9 @@ public class OrdMontagItem implements Serializable {
 
 	@Column(name = "pes_total_item", nullable = false)
 	private Double pesTotal;
+
+	@Column(name = "ies_bonificacao", length = 1, nullable = false)
+	private String bonificacao;
 	
 	public OrdMontagItem() {}
 	
@@ -33,6 +42,18 @@ public class OrdMontagItem implements Serializable {
 	}
 	public void setId(OrdMontagItemKey id) {
 		this.id = id;
+	}	
+	public Integer getPedido() {
+		return pedido;
+	}
+	public void setPedido(Integer pedido) {
+		this.pedido = pedido;
+	}
+	public String getItem() {
+		return item;
+	}
+	public void setItem(String item) {
+		this.item = item;
 	}
 	public Double getQtdVolume() {
 		return qtdVolume;
@@ -51,5 +72,12 @@ public class OrdMontagItem implements Serializable {
 	}
 	public void setPesTotal(Double pesTotal) {
 		this.pesTotal = pesTotal;
-	}	
+	}
+	public String getBonificacao() {
+		return bonificacao;
+	}
+	public void setBonificacao(String bonificacao) {
+		this.bonificacao = bonificacao;
+	}
+	
 }

@@ -101,6 +101,12 @@ public class ParVdp implements Serializable {
 		this.numPrxPedido = numPrxPedido;
 	}
 
+	public ParVdp(Integer numPrxPedido, Integer numUltOm) {
+		super();
+		this.numPrxPedido = numPrxPedido;
+		this.numUltOm = numUltOm;
+	}
+
 	public String getId() {
 		return id;
 	}

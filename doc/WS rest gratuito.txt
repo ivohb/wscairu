@@ -1,0 +1,185 @@
+https://viacep.com.br/ws/01001000/json/
+http://jsonplaceholder.typicode.com/posts/1
+https://gturnquist-quoters.cfapps.io/api/random
+
+Exemplo de crud WS e consumo: http://javainsimpleway.com/spring-resttemplate-crud-operations-with-json/
+
+- WS
+ import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+ 
+import com.kb.rest.model.User;
+import com.kb.rest.model.UserDetailsResponse;
+import com.kb.rest.service.UserService;
+ 
+@Controller
+@RequestMapping("/user")
+public class RestController {
+ 
+    @Autowired
+    private UserService userService;
+   
+    // CRUD -- CREATE operation
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public @ResponseBody User createUser(@RequestBody User user) {
+        User userResponse = userService.createUser(user);
+        return userResponse;
+    }
+ 
+    // CRUD -- READ operation
+    @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
+    public @ResponseBody UserDetailsResponse getAllUsers() {
+        List<User> userList = userService.getAllUsers();
+        UserDetailsResponse userDetailsResponse = new UserDetailsResponse();
+        userDetailsResponse.setUsers(userList);
+        return userDetailsResponse;
+    }
+ 
+    // CRUD -- READ operation
+    @RequestMapping(value = "/getSpecificUser/{id}", method = RequestMethod.GET)
+    public @ResponseBody User getUserForId(@PathVariable ("id") int id) {
+        User user = userService.getUserForId(id);
+        return user;
+    }
+ 
+    // CRUD -- UPDATE operation
+    @RequestMapping(value = "/updateUser", method = RequestMethod.PUT)
+    public @ResponseBody User updateUser(@RequestBody User user) {
+        User userResponse = userService.updateUser(user);
+        return userResponse;
+    }
+ 
+    // CRUD -- DELETE operation
+    @RequestMapping(value = "/deleteUser/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody User deleteeUser(@PathVariable("id") int id) {
+        User userResponse = userService.deleteUser(id);
+        return userResponse;
+    }
+}
+
+- CONSUMO
+
+Inclusao
+
+public class PostUserClient {
+    public static void main(String[] args) {
+        RestTemplate restTemplate = new RestTemplate();
+        final String url = "http://localhost:8080/SpringRestCRUDJSON/user/create";
+        User user = new User();
+        user.setId(1);
+        user.setAge(45);
+        user.setName("John");
+        User addedUser = restTemplate.postForObject(url, user, User.class);
+        System.out.println("User Inserted is : " + addedUser.getName());
+    }
+}
+
+
+public class GetUsersClient {
+    public static void main(String[] args) {
+        RestTemplate restTemplate = new RestTemplate();
+        final String url = "http://localhost:8080/SpringRestCRUDJSON/user/getAllUsers";
+        UserDetailsResponse userDetailsResponse = restTemplate.getForObject(url, UserDetailsResponse.class);
+        System.out.println("User retrieved details : ");
+        for (User user : userDetailsResponse.getUsers()) {
+            System.out.println(user.getName() + " " + user.getAge() + " " + user.getId());
+        }
+ 
+    }
+ 
+}
+
+public class GetSpecificUserClient {
+    public static void main(String[] args) {
+        RestTemplate restTemplate = new RestTemplate();
+        final String url = "http://localhost:8080/SpringRestCRUDJSON/user/getSpecificUser/1";
+        User user = restTemplate.getForObject(url, User.class);
+        System.out.println("User retrieved details : ");
+        System.out.println(user.getName() + " " + user.getAge() + " " + user.getId());
+ 
+    }
+}
+
+ 
+public class PutUserClient {
+    public static void main(String[] args) {
+        RestTemplate restTemplate = new RestTemplate();
+        final String url = "http://localhost:8080/SpringRestCRUDJSON/user/updateUser";
+        User user = new User();
+        user.setId(1);
+        user.setAge(20);
+        user.setName("John1");
+        restTemplate.put(url, user);
+ 
+        // Verify updated user details
+        final String getUrl = "http://localhost:8080/SpringRestCRUDJSON/user/getSpecificUser/1";
+        User updatedUser = restTemplate.getForObject(getUrl, User.class);
+        System.out.println("User updated details : ");
+        System.out.println(updatedUser.getName() + " " + updatedUser.getAge() + " " + updatedUser.getId());
+ 
+    }
+}
+
+
+public class DeleteUserClient {
+    public static void main(String[] args) {
+        RestTemplate restTemplate = new RestTemplate();
+        final String url = "http://localhost:8080/SpringRestCRUDJSON/user/deleteUser/3";
+        restTemplate.delete(url);
+ 
+        // Verify updated user details
+        final String getUrl = "http://localhost:8080/SpringRestCRUDJSON/user/getSpecificUser/3";
+        User deletedUser = restTemplate.getForObject(getUrl, User.class);
+        System.out.println("Deleted user details : " + deletedUser);
+ 
+    }
+}
+
+pojo
+
+public class User {
+    private String name;
+    private int age;
+    private int id;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+ 
+}
+
+package com.kb.rest.model;
+ 
+import java.util.List;
+ 
+public class UserDetailsResponse {
+    private List<User> users;
+ 
+    public List<User> getUsers() {
+        return users;
+    }
+ 
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+ 
+}

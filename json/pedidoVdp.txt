@@ -1,6 +1,6 @@
 {
- "cnpjEmpresa":"060.456.876/0001-90",
- "cnpjCliente":"001.674.098/0000-08",
+ "cnpjEmpresa":"035.503.800/0001-00",
+ "cnpjCliente":"841.904.780/000-59",
  "natOperacao":null,
  "finalidade":null,
  "cndPgto":null,

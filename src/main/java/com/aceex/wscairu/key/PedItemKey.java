@@ -13,8 +13,10 @@ public class PedItemKey implements Serializable {
 
 	@Column(name = "cod_empresa", length = 2)
 	private String empresa;
+	
 	@Column(name = "num_pedido")
 	private Integer numero;
+	
 	@Column(name = "num_sequencia")
 	private Integer sequencia;
 	

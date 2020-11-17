@@ -23,6 +23,16 @@ public class EstoqueDto implements Serializable {
 		this.qtdReservada = qtdReservada;
 	}
 
+	public EstoqueDto(String codEmpresa, String codigo, 
+			Double qtdLiberada, Double qtdReservada, Double qtdDisponivel) {
+		super();
+		this.codEmpresa = codEmpresa;
+		this.codigo = codigo;
+		this.qtdLiberada = qtdLiberada;
+		this.qtdReservada = qtdReservada;
+		this.qtdDisponivel = qtdDisponivel;
+	}
+
 	public String getCnpjEmpresa() {
 		return cnpjEmpresa;
 	}

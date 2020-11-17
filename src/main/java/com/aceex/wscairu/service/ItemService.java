@@ -19,13 +19,14 @@ import com.aceex.wscairu.dao.SystemaDao;
 import com.aceex.wscairu.dto.Agrupamento;
 import com.aceex.wscairu.dto.Categoria;
 import com.aceex.wscairu.dto.Cor;
-import com.aceex.wscairu.dto.EstoqueDto;
 import com.aceex.wscairu.dto.ItemDto;
+import com.aceex.wscairu.dto.ProdutoDto;
 import com.aceex.wscairu.dto.Saldo;
 import com.aceex.wscairu.dto.Tamanho;
 import com.aceex.wscairu.exception.ObjectNotFoundException;
 import com.aceex.wscairu.model.Empresa;
 import com.aceex.wscairu.model.EspecTecnica;
+import com.aceex.wscairu.model.Estoque;
 import com.aceex.wscairu.model.Item;
 import com.aceex.wscairu.model.LinhaProd;
 import com.aceex.wscairu.model.ListaItem;
@@ -123,8 +124,7 @@ public class ItemService {
 			qtdLinha = sys.getMaxLinha();
 		}
 		
-		PageRequest pageRequest = PageRequest.of(pagina, qtdLinha, 
-				Direction.valueOf(direcao), ordem);
+		PageRequest pageRequest = PageRequest.of(pagina, qtdLinha);//, Direction.valueOf(direcao), ordem);
 
 		String codEmpresa = "ZZ";
 		Item produto = null;
@@ -142,7 +142,6 @@ public class ItemService {
 				codEmpresa, codigo, descricao, sys.getId(), pageRequest);
 		
 		for (ItemDto pDto : dto) {
-			empresa = empDao.findByEmpresa(pDto.getCodEmpresa());
 			produto = dao.findByKey(pDto.getCodEmpresa(), pDto.getCodigo());			
 			pDto.setCnpjEmpresa(empresa.getId());
 			pDto.setCategoria(getCategoria(produto));
@@ -151,7 +150,6 @@ public class ItemService {
 			pDto.setCor(getCor(produto));
 			pDto.setEstoque(getEstoque(empresa.getId(), 
 					empresa.getEmpresa(), produto.getId().getCodigo(), sys.getId()));
-			pDto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), produto.getId().getCodigo()));		
 			pDto.setPreco(getPreco(empresa, produto));
 		}
 		
@@ -223,13 +221,20 @@ public class ItemService {
 		return cor;
 	}
 
-	private Saldo getEstoque(String cnpj, String empresa, String codigo, String sistema
-) {
-		EstoqueDto dto = eDao.findByProduct(cnpj, empresa, codigo, sistema);
+	private Saldo getEstoque(String cnpj, 
+			String empresa, String codigo, String sistema) {
+
+		Double zero = 0.0;
+		Estoque obj = eDao.findEstoque(empresa, codigo);
 		Saldo sdo = new Saldo();
-		sdo.setQtdLiberada(dto.getQtdLiberada());
-		sdo.setQtdReservada(dto.getQtdReservada());
-		sdo.setQtdDisponivel(dto.getQtdLiberada() - dto.getQtdReservada());
+		if (obj == null) {
+			sdo.setQtdLiberada(zero);
+			sdo.setQtdReservada(zero);
+		} else {
+			sdo.setQtdLiberada(obj.getQtdLiberada());
+			sdo.setQtdReservada(obj.getQtdReservada());			
+		}
+		sdo.setQtdDisponivel(sdo.getQtdLiberada() - sdo.getQtdReservada());
 		return sdo;
 	}
 
@@ -250,4 +255,68 @@ public class ItemService {
 		}
 		return lst.getPreUnit();		
 	}
+	
+	public Page<ProdutoDto> findProduto(Integer pagina, Integer qtdLinha, String ordem, 
+			String direcao, String cnpjEmpresa, String codigo, String descricao) {
+
+		UsuarioSS user = UserSecurityService.authenticated();
+		Systema sys = sysDao.findByUserReq(user.getUsername());
+
+		if (qtdLinha == null || qtdLinha == 0) {
+			qtdLinha = sys.getLinPage();
+		}
+		
+		if (qtdLinha > sys.getMaxLinha()) {
+			qtdLinha = sys.getMaxLinha();
+		}
+		
+		PageRequest pageRequest = PageRequest.of(pagina, qtdLinha, 
+				Direction.valueOf(direcao), ordem);
+
+		String codEmpresa = "ZZ";
+		Item produto = null;
+		Empresa empresa = null;
+		
+		if (cnpjEmpresa == null || cnpjEmpresa.isEmpty()) {
+		} else {
+			empresa = empDao.findByCnpj(cnpjEmpresa);
+			if (empresa != null) {
+				codEmpresa = empresa.getEmpresa();				
+			}			 
+		}
+			
+		Page<ProdutoDto> dto = dao.findProduto(cnpjEmpresa,
+				codEmpresa, codigo, descricao, sys.getId(), pageRequest);
+		
+		for (ProdutoDto pDto : dto) {
+			pDto.setCnpjEmpresa(empresa.getId());
+			LinhaProd lp = linDao.findByKey(pDto.getCategoria(), 0, 0, 0);			
+			pDto.setDescCategoria(lp.getDescricao());
+			lp = linDao.findByKey(pDto.getCategoria(), pDto.getAgrupamento(), 0, 0);
+			pDto.setDescAgrupamento(lp.getDescricao());
+			lp = linDao.findByKey(pDto.getCategoria(), pDto.getAgrupamento(), pDto.getTamanho(), 0);
+			pDto.setDescTamanho(lp.getDescricao());
+			lp = linDao.findByKey(pDto.getCategoria(), pDto.getAgrupamento(), pDto.getTamanho(), pDto.getCor());
+			pDto.setDescCor(lp.getDescricao());
+			pDto.setPreco(getPreco(empresa, pDto.getCodigo()));
+			if (pDto.getLiberado() != null && pDto.getReservada() != null) {
+				pDto.setDisponivel(pDto.getLiberado() - pDto.getReservada());
+			} else {
+				pDto.setDisponivel(0.0);
+			}
+		}
+		
+		return dto;				
+	}
+
+	private Double getPreco(Empresa empresa, String codigo) {
+		Parametro par = parDao.findByEmpresa(empresa.getId());
+		ListaItem lst = lstDao.findByEmpresaAndNumeroAndItem(
+				empresa.getEmpresa(), par.getLista(), codigo);
+		if (lst == null) {
+			return 0.0;
+		}
+		return lst.getPreUnit();		
+	}
+
 }

@@ -44,7 +44,7 @@ public class EstoqLocReser implements Serializable {
 	@Column(name = "num_referencia", length = 15)
 	private String numReferencia;
 
-	@Column(name = "ies_situacao", length = 1, nullable = false)
+	@Column(name = "ies_situacao", length = 1)
 	private String situacao;
 
 	@Column(name = "dat_prev_baixa")
@@ -75,6 +75,10 @@ public class EstoqLocReser implements Serializable {
 	private Date datAtualiz;
 	
 	public EstoqLocReser() {}
+
+	public EstoqLocReser(Double qtdReservada) {
+		this.qtdReservada = qtdReservada;
+	}
 	
 	public Integer getId() {
 		return id;

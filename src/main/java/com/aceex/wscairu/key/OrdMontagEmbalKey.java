@@ -18,28 +18,15 @@ public class OrdMontagEmbalKey implements Serializable {
 	private Integer ordem;
 
 	@Column(name = "num_sequencia", nullable = false)
-	private Integer sequencia;
-
-	@Column(name = "cod_item", length = 15, nullable = false)
-	private String item;
-
-	@Column(name = "cod_embal_int", length = 3, nullable = false)
-	private String embalInt;
-
-	@Column(name = "cod_embal_ext", length = 3, nullable = false)
-	private String embalExt;
+	private Integer sequencia;	
 	
 	public OrdMontagEmbalKey() { }
 	
-	public OrdMontagEmbalKey(String empresa, Integer ordem, Integer sequencia, String item, String embalInt,
-			String embalExt) {
+	public OrdMontagEmbalKey(String empresa, Integer ordem, Integer sequencia) {
 		super();
 		this.empresa = empresa;
 		this.ordem = ordem;
 		this.sequencia = sequencia;
-		this.item = item;
-		this.embalInt = embalInt;
-		this.embalExt = embalExt;
 	}
 
 	public String getEmpresa() {
@@ -60,24 +47,6 @@ public class OrdMontagEmbalKey implements Serializable {
 	public void setSequencia(Integer sequencia) {
 		this.sequencia = sequencia;
 	}
-	public String getItem() {
-		return item;
-	}
-	public void setItem(String item) {
-		this.item = item;
-	}
-	public String getEmbalInt() {
-		return embalInt;
-	}
-	public void setEmbalInt(String embalInt) {
-		this.embalInt = embalInt;
-	}
-	public String getEmbalExt() {
-		return embalExt;
-	}
-	public void setEmbalExt(String embalExt) {
-		this.embalExt = embalExt;
-	}
-	 
+	
 }
 

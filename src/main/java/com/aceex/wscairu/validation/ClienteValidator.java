@@ -52,7 +52,7 @@ public class ClienteValidator implements ConstraintValidator<ClienteValidation, 
 		} else {
 			Cliente cliente  = dao.findByCnpj(dto.getCpfCnpj());
 			if (uriId == null) {
-				if (cliente == null) {
+				if (cliente != null) {
 					list.add(new FieldMessage("cpfCnpj", "cliente_ja_existe"));
 				} else {
 					Biblioteca bib = new Biblioteca();

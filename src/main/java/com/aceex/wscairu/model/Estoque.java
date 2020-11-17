@@ -47,6 +47,12 @@ public class Estoque implements Serializable {
 	
 	public Estoque() { }
 	
+	public Estoque(Double qtdLiberada, Double qtdReservada) {
+		super();
+		this.qtdLiberada = qtdLiberada;
+		this.qtdReservada = qtdReservada;
+	}
+
 	public EstoqueKey getId() {
 		return id;
 	}

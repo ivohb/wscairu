@@ -33,6 +33,18 @@ public class ItemDto implements Serializable {
 		this.unidade = unidade;
 	}
 
+	public ItemDto(Integer ean, String codEmpresa, String codigo, 
+			String descricao, String descReduz, String unidade, String descTecnica) {
+		super();
+		this.ean = ean;
+		this.codEmpresa = codEmpresa;
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.descReduz = descReduz;
+		this.unidade = unidade;
+		this.descTecnica = descTecnica;
+	}
+
 	public String getCnpjEmpresa() {
 		return cnpjEmpresa;
 	}

@@ -7,19 +7,19 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aceex.wscairu.model.ParVdp;
+import com.aceex.wscairu.model.TransProces;
 
 @Repository                                      
-public interface ParVdpDao extends JpaRepository<ParVdp, String>  {
+public interface TransProcesDao extends JpaRepository<TransProces, Integer>  {
 
 	@Transactional(readOnly=true)
-	@Query("SELECT new ParVdp(obj.numPrxPedido, obj.numUltOm) FROM ParVdp obj WHERE obj.id = :id")
-	public ParVdp findByKey(@Param("id") String id);
+	@Query("SELECT obj FROM TransProces obj "
+			+ "WHERE obj.empresa = :empresa")
+	public TransProces findByEmpresa(@Param("empresa") String empresa);
 
 	@Modifying
 	@Transactional(readOnly=false)
-	@Query("UPDATE ParVdp SET numPrxPedido = :prxNumPed, numUltOm = :prxNumOm WHERE id = :id ")
-	public void updateParVdp(@Param("id") String id, 
-			@Param("prxNumPed") Integer prxNumPed, @Param("prxNumOm") Integer prxNumOm);
+	@Query("UPDATE TransProces SET id = :id WHERE empresa = :empresa ")
+	public void update(@Param("id") Integer id, @Param("empresa") String empresa);
 
 }

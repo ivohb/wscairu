@@ -22,6 +22,9 @@ public class Empresa implements Serializable {
 	@Column(name = "uf", length = 2)
 	private String uf;
 
+	@Column(name = "enviar", length = 1)
+	private String enviar;
+
 	public Empresa() {}
 
 	public String getId() {
@@ -46,6 +49,14 @@ public class Empresa implements Serializable {
 
 	public void setUf(String uf) {
 		this.uf = uf;
+	}
+
+	public String getEnviar() {
+		return enviar;
+	}
+
+	public void setEnviar(String enviar) {
+		this.enviar = enviar;
 	}
 	
 }

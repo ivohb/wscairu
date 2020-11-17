@@ -28,7 +28,7 @@ public class OrdMontagLote implements Serializable {
 	private Date emissao;
 
 	@Column(name = "cod_entrega", nullable = false)
-	private Double entrega;
+	private Integer entrega;
 
 	@Column(name = "cod_tip_carteira", length = 2, nullable = false)
 	private String carteira;
@@ -71,10 +71,10 @@ public class OrdMontagLote implements Serializable {
 	public void setEmissao(Date emissao) {
 		this.emissao = emissao;
 	}
-	public Double getEntrega() {
+	public Integer getEntrega() {
 		return entrega;
 	}
-	public void setEntrega(Double entrega) {
+	public void setEntrega(Integer entrega) {
 		this.entrega = entrega;
 	}
 	public String getCarteira() {

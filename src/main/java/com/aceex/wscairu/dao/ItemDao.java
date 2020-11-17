@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.aceex.wscairu.dto.ItemDto;
+import com.aceex.wscairu.dto.ProdutoDto;
 import com.aceex.wscairu.key.ItemKey;
 import com.aceex.wscairu.model.Item;
 
@@ -67,10 +68,51 @@ public interface ItemDao extends JpaRepository<Item, ItemKey>  {
 			+ " AND a.id.linhaProd = p.categoria  "
 			+ " AND a.id.cnpj = :cnpj "
 			+ " AND a.id.sistema = :sistema")
+	public Page<ItemDto> findPag(
+			@Param("cnpj") String cnpj, @Param("empresa") String empresa, 
+			@Param("codigo") String codigo, @Param("descricao") String descricao, 
+			@Param("sistema") String sistema, Pageable pageRequest);
+
+	@Query("SELECT new com.aceex.wscairu.dto.ItemDto(e.ean, p.id.empresa, "
+			+ "p.id.codigo, p.descricao, p.descReduz, p.unidade, t.descTecnica) "
+			+ " FROM Item p "
+			+ " inner join Ean e on e.id.empresa = p.id.empresa and e.id.codigo = p.id.codigo"
+			+ " inner join Aen a on a.id.linhaProd = p.categoria  "
+				+ " AND a.id.cnpj = :cnpj "
+				+ " AND a.id.sistema = :sistema"
+			+ " left join EspecTecnica t on t.id.empresa = p.id.empresa "
+				+ " AND t.id.item = p.id.codigo AND t.id.sequencia = 99"
+			+ "WHERE p.situacao = 'A'"
+			+ " AND p.id.empresa = :empresa "
+			+ " AND p.id.codigo LIKE %:codigo%"
+			+ " AND p.descricao LIKE %:descricao%")
 	public Page<ItemDto> findPage(
 			@Param("cnpj") String cnpj, @Param("empresa") String empresa, 
 			@Param("codigo") String codigo, @Param("descricao") String descricao, 
 			@Param("sistema") String sistema, Pageable pageRequest);
+
+
+	@Query("SELECT new com.aceex.wscairu.dto.ProdutoDto(e.ean, p.id.empresa, "
+			+ "p.id.codigo, p.descricao, p.descReduz, p.unidade, t.descTecnica, "
+			+ " p.categoria, p.agrupamento, p.tamanho, p.cor, q.qtdLiberada, q.qtdReservada) "
+			+ " FROM Item p "
+			+ " inner join Ean e on e.id.empresa = p.id.empresa and e.id.codigo = p.id.codigo"
+			+ " inner join Aen a on a.id.linhaProd = p.categoria  "
+				+ " AND a.id.cnpj = :cnpj "
+				+ " AND a.id.sistema = :sistema"
+			+ " left join EspecTecnica t on t.id.empresa = p.id.empresa "
+				+ " AND t.id.item = p.id.codigo AND t.id.sequencia = 99"
+			+ " left join Estoque q on q.id.empresa = p.id.empresa "
+				+ " AND q.id.codigo = p.id.codigo "
+			+ "WHERE p.situacao = 'A'"
+			+ " AND p.id.empresa = :empresa "
+			+ " AND p.id.codigo LIKE %:codigo%"
+			+ " AND p.descricao LIKE %:descricao%")
+	public Page<ProdutoDto> findProduto(
+			@Param("cnpj") String cnpj, @Param("empresa") String empresa, 
+			@Param("codigo") String codigo, @Param("descricao") String descricao, 
+			@Param("sistema") String sistema, Pageable pageRequest);
+
 
 
 }

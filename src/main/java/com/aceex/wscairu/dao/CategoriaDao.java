@@ -32,4 +32,12 @@ public interface CategoriaDao extends JpaRepository<Aen, AenKey>  {
 			@Param("sistema") String sistema,
 			@Param("cnpj") String cnpj);
 
+	@Transactional(readOnly=true)
+	@Query("SELECT obj FROM Aen obj "
+			+ "WHERE obj.id.cnpj = :cnpj"
+			+ " AND obj.id.linhaProd = :categoria")
+	public List<Aen> findSistemas(@Param("cnpj") String cnpj,
+			@Param("categoria") Integer categoria);
+	
+
 }

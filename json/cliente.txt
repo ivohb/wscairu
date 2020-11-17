@@ -1,5 +1,5 @@
 {
- "cpfCnpj": "001.376.876/0000-09",
+ "cpfCnpj": "841.904.780/000-59",
  "inscEstadual": "11.376.876-09",
  "tipo": "F",
  "razSocial": "JOSE JOAO DE SOUSA",

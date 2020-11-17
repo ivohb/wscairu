@@ -19,5 +19,9 @@ public interface SystemaDao extends JpaRepository<Systema, String>  {
 			+ " where obj.userReq = :user and obj.senhaReq = :senha ")			
 	public Systema findByUserAndPassword(@Param("user") String user, @Param("senha") String senha);
 
+	@Transactional(readOnly=true)
+	@Query("SELECT obj FROM Systema obj"
+			+ " where obj.id = :id ")			
+	public Systema findByKey(@Param("id") String id);
 
 }

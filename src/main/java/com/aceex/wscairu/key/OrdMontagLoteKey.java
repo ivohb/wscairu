@@ -18,7 +18,11 @@ public class OrdMontagLoteKey implements Serializable {
 	private Integer lote;	
 	
 	public OrdMontagLoteKey() { }
-	
+
+	public OrdMontagLoteKey(Integer lote) {
+		this.lote = lote;
+	}
+
 	public OrdMontagLoteKey(String empresa, Integer lote) {
 		super();
 		this.empresa = empresa;

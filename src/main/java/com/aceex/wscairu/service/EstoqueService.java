@@ -14,6 +14,7 @@ import com.aceex.wscairu.dao.SystemaDao;
 import com.aceex.wscairu.dto.EstoqueDto;
 import com.aceex.wscairu.exception.ObjectNotFoundException;
 import com.aceex.wscairu.model.Empresa;
+import com.aceex.wscairu.model.EnvioEstoque;
 import com.aceex.wscairu.model.Estoque;
 import com.aceex.wscairu.model.Systema;
 import com.aceex.wscairu.security.UsuarioSS;
@@ -114,4 +115,16 @@ public class EstoqueService {
 		return dto;
 	}
 
+	public String PosicaoEstoq(List<EnvioEstoque> lista, String cnpj) {
+		System.out.println(cnpj);
+		for (EnvioEstoque ee : lista) {
+			System.out.println(ee.getSistema());
+			System.out.println(ee.getEmpresa());	
+			System.out.println(ee.getItem());	
+			System.out.println(ee.getQtdLiberada());	
+			System.out.println(ee.getQtdReservada());	
+			System.out.println(ee.getQtdDisponivel());	
+		}
+		return "OK";
+	}
 }

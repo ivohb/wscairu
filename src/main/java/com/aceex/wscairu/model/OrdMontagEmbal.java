@@ -17,6 +17,15 @@ public class OrdMontagEmbal implements Serializable {
 	@EmbeddedId
 	private OrdMontagEmbalKey id = new OrdMontagEmbalKey();
 
+	@Column(name = "cod_item", length = 15, nullable = false)
+	private String item;
+
+	@Column(name = "cod_embal_int", length = 3, nullable = false)
+	private String embalInt;
+
+	@Column(name = "cod_embal_ext", length = 3, nullable = false)
+	private String embalExt;
+
 	@Column(name = "qtd_embal_int", nullable = false)
 	private Double qtdEmbalInt;
 
@@ -27,13 +36,13 @@ public class OrdMontagEmbal implements Serializable {
 	private String iesLotacao;
 
 	@Column(name = "num_embal_inicio", nullable = false)
-	private Double NumEmbalInicio;
+	private Integer NumEmbalInicio;
 
 	@Column(name = "num_embal_final", nullable = false)
-	private Double NumEmbalFinal;
+	private Integer NumEmbalFinal;
 
-	@Column(name = "qtd_embal_ext", nullable = false)
-	private Double qtdPecas;
+	@Column(name = "qtd_pecas", nullable = false)
+	private Double qtdPecas;	
 	
 	public OrdMontagEmbal() {}
 	
@@ -42,6 +51,24 @@ public class OrdMontagEmbal implements Serializable {
 	}
 	public void setId(OrdMontagEmbalKey id) {
 		this.id = id;
+	}
+	public String getItem() {
+		return item;
+	}
+	public void setItem(String item) {
+		this.item = item;
+	}
+	public String getEmbalInt() {
+		return embalInt;
+	}
+	public void setEmbalInt(String embalInt) {
+		this.embalInt = embalInt;
+	}
+	public String getEmbalExt() {
+		return embalExt;
+	}
+	public void setEmbalExt(String embalExt) {
+		this.embalExt = embalExt;
 	}
 	public Double getQtdEmbalInt() {
 		return qtdEmbalInt;
@@ -61,16 +88,16 @@ public class OrdMontagEmbal implements Serializable {
 	public void setIesLotacao(String iesLotacao) {
 		this.iesLotacao = iesLotacao;
 	}
-	public Double getNumEmbalInicio() {
+	public Integer getNumEmbalInicio() {
 		return NumEmbalInicio;
 	}
-	public void setNumEmbalInicio(Double numEmbalInicio) {
+	public void setNumEmbalInicio(Integer numEmbalInicio) {
 		NumEmbalInicio = numEmbalInicio;
 	}
-	public Double getNumEmbalFinal() {
+	public Integer getNumEmbalFinal() {
 		return NumEmbalFinal;
 	}
-	public void setNumEmbalFinal(Double numEmbalFinal) {
+	public void setNumEmbalFinal(Integer numEmbalFinal) {
 		NumEmbalFinal = numEmbalFinal;
 	}
 	public Double getQtdPecas() {
@@ -78,5 +105,6 @@ public class OrdMontagEmbal implements Serializable {
 	}
 	public void setQtdPecas(Double qtdPecas) {
 		this.qtdPecas = qtdPecas;
-	}	
+	}
+	
 }
