@@ -54,13 +54,15 @@ public class ExportaService {
 	
 	public void exporta() {
 		System.out.println("ExportaService "+new java.util.Date());
+		log.info("Expotando estoque para o ecommerce.");
 
 		List<Empresa> empresas = eDao.findAll();
 		for (Empresa empresa : empresas) {
 			if ("AE".contains(empresa.getEnviar())) {
 				expEstoque(empresa);
 			}
-		}		
+		}
+		log.info("Exportação de estoque comcluída.");
 	}
 	
 	@Transactional
@@ -74,9 +76,9 @@ public class ExportaService {
 			if (et.getId() > transac) {
 				transac = et.getId();
 			}
-			Item item = itemDao.findByKey(empresa.getEmpresa(), et.getItem());
-			
+			Item item = itemDao.findByKey(empresa.getEmpresa(), et.getItem());			
 			List<Aen> cats = catDao.findSistemas(empresa.getId(), item.getCategoria());
+			
 			for (Aen cat : cats) {
 				Systema sys = sysDao.findByKey(cat.getId().getSistema());
 				if (sys != null) {
@@ -97,11 +99,17 @@ public class ExportaService {
 			}
 		}
 		
+		if (transac == 0) {
+			return;
+		}
+		
 		List<EnvioEstoque> lstEstoq = eeDao.findSistema();
+		
 		for (EnvioEstoque ee : lstEstoq) {
 			List<EnvioEstoque> lista = eeDao.findBySistema(ee.getSistema());
 			Systema sys = sysDao.findByKey(ee.getSistema());
-
+			log.info("Exportando item: "+ee.getItem());
+			log.info("Disponivel: "+ee.getQtdDisponivel());
 	        RestTemplate restTemplate = new RestTemplate();
 	        String uri = sys.getUriAltEstoq().trim();
 	        uri=uri+"?cnpj="+empresa.getId();
@@ -109,14 +117,19 @@ public class ExportaService {
 	        headers.set("User", "tray");      
 	        headers.set("Password", "Tray@123");      
 	        HttpEntity<List<EnvioEstoque>> request = new HttpEntity<>(lista, headers);
-	        	        
-	        ResponseEntity<String> response = 
-	        		restTemplate.exchange(uri, HttpMethod.PUT, request, String.class);
-	        System.out.println(response.getStatusCode());
-	        
-	        String codHttp = ""+response.getStatusCode();
-	        if (codHttp.contains("204")) {
-				tpDao.update(transac, empresa.getEmpresa());
+	      
+	        try {
+		        ResponseEntity<String> response = 
+		        		restTemplate.exchange(uri, HttpMethod.PUT, request, String.class);
+		        System.out.println(response.getStatusCode());
+		        
+		        String codHttp = ""+response.getStatusCode();
+		        if (codHttp.contains("204")) {
+					tpDao.update(transac, empresa.getEmpresa());
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 	}

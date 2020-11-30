@@ -21,8 +21,8 @@ import com.aceex.wscairu.model.TransProces;
 import com.aceex.wscairu.service.ExportaService;
 
 @Configuration
-@Profile("sql")
-public class SqlConfig {
+@Profile("ace")
+public class AceConfig {
 
 	@Autowired
 	private ExportaService exportaService;

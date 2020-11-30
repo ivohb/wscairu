@@ -1,0 +1,5 @@
+		<dependency>
+			<groupId>com.ibm.informix</groupId>
+			<artifactId>jdbc</artifactId>
+			<version>4.10.10</version>
+		</dependency>

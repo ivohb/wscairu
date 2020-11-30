@@ -25,6 +25,9 @@ public class Empresa implements Serializable {
 	@Column(name = "enviar", length = 1)
 	private String enviar;
 
+	@Column(name = "gerar", length = 1)
+	private String gerar;
+
 	public Empresa() {}
 
 	public String getId() {
@@ -58,5 +61,13 @@ public class Empresa implements Serializable {
 	public void setEnviar(String enviar) {
 		this.enviar = enviar;
 	}
-	
+
+	public String getGerar() {
+		return gerar;
+	}
+
+	public void setGerar(String gerar) {
+		this.gerar = gerar;
+	}
+
 }
