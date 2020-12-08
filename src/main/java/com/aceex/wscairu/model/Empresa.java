@@ -22,11 +22,8 @@ public class Empresa implements Serializable {
 	@Column(name = "uf", length = 2)
 	private String uf;
 
-	@Column(name = "enviar", length = 1)
-	private String enviar;
-
-	@Column(name = "gerar", length = 1)
-	private String gerar;
+	@Column(name = "gerar_om", length = 1)
+	private String gerarOm;
 
 	public Empresa() {}
 
@@ -54,20 +51,12 @@ public class Empresa implements Serializable {
 		this.uf = uf;
 	}
 
-	public String getEnviar() {
-		return enviar;
+	public String getGerarOm() {
+		return gerarOm;
 	}
 
-	public void setEnviar(String enviar) {
-		this.enviar = enviar;
-	}
-
-	public String getGerar() {
-		return gerar;
-	}
-
-	public void setGerar(String gerar) {
-		this.gerar = gerar;
+	public void setGerarOm(String gerarOm) {
+		this.gerarOm = gerarOm;
 	}
 
 }

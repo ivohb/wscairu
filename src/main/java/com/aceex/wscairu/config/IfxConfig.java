@@ -40,7 +40,7 @@ public class IfxConfig {
 	public boolean instantiateDatabase() throws ParseException {
 
 		checaProces();
-		//exporta();
+		exporta();
 
 		if (!"create".equals(strategy)) {
 			return false;

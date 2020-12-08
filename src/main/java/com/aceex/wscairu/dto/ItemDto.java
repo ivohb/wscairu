@@ -14,6 +14,7 @@ public class ItemDto implements Serializable {
 	private String unidade;
 	private Double preco;
 	private String descTecnica;
+	private Integer revisao;
 	private Categoria categoria;
 	private Agrupamento agrupamento;
 	private Tamanho tamanho;
@@ -115,6 +116,14 @@ public class ItemDto implements Serializable {
 
 	public void setDescTecnica(String descTecnica) {
 		this.descTecnica = descTecnica;
+	}
+
+	public Integer getRevisao() {
+		return revisao;
+	}
+
+	public void setRevisao(Integer revisao) {
+		this.revisao = revisao;
 	}
 
 	public Categoria getCategoria() {

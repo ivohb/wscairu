@@ -19,6 +19,7 @@ import com.aceex.wscairu.model.Empresa;
 import com.aceex.wscairu.model.EstoqTrans;
 import com.aceex.wscairu.model.TransProces;
 import com.aceex.wscairu.service.ExportaService;
+import com.aceex.wscairu.util.Biblioteca;
 
 @Configuration
 @Profile("sql")
@@ -40,7 +41,7 @@ public class SqlConfig {
 	public boolean instantiateDatabase() throws ParseException {
 
 		checaProces();
-		//exporta();
+		exporta();
 
 		if (!"create".equals(strategy)) {
 			return false;
@@ -50,6 +51,7 @@ public class SqlConfig {
 	}	
 	
 	private void checaProces() {
+		Biblioteca bib = new Biblioteca();
 		List<Empresa> empresas = eDao.findAll();
 		for (Empresa empresa : empresas) {
 			TransProces tp = tpDao.findByEmpresa(empresa.getEmpresa());
@@ -62,6 +64,9 @@ public class SqlConfig {
 					tp.setId(0);
 				}
 				tp.setEmpresa(empresa.getEmpresa());
+				String emissao = bib.dateToStr(new java.util.Date(), "yyyy-MM-dd");
+				tp.setDatAtualiz(bib.ansiToDate(emissao, "dd/MM/yyyy"));
+				tp.setHorAtualiz(bib.horaAtual("hh:mm:ss"));
 				tpDao.save(tp);
 			}
 		}

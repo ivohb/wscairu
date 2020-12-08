@@ -19,8 +19,12 @@ public class Aen implements Serializable {
 
 	@Column(name = "desc_linha", length = 30)
 	private String descricao;
-	
+
 	public Aen() {}
+
+	public Aen(String sistema) {
+		this.id.setSistema(sistema);
+	}
 
 	public AenKey getId() {
 		return id;
@@ -37,6 +41,5 @@ public class Aen implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
 	
 }

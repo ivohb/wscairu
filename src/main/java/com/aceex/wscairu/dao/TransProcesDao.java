@@ -1,5 +1,7 @@
 package com.aceex.wscairu.dao;
 
+import java.util.Date;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -21,5 +23,12 @@ public interface TransProcesDao extends JpaRepository<TransProces, Integer>  {
 	@Transactional(readOnly=false)
 	@Query("UPDATE TransProces SET id = :id WHERE empresa = :empresa ")
 	public void update(@Param("id") Integer id, @Param("empresa") String empresa);
+
+	@Modifying
+	@Transactional(readOnly=false)
+	@Query("UPDATE TransProces SET datAtualiz = :data, horAtualiz = :hora"
+			+ " WHERE empresa = :empresa ")
+	public void update(@Param("empresa") String empresa, 
+			@Param("data") Date data, @Param("hora") String hora);
 
 }

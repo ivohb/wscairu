@@ -205,7 +205,7 @@ public class PedidoVdpService {
 		
 		insPedidoVdp(dto);
 		
-		if (empresa.getGerar().equalsIgnoreCase("S")) {
+		if (empresa.getGerarOm().equalsIgnoreCase("S")) {
 			insRomaneio();			
 		}
 		

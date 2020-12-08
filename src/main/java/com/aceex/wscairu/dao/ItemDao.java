@@ -25,6 +25,18 @@ public interface ItemDao extends JpaRepository<Item, ItemKey>  {
 	public Item findByKey(@Param("empresa") String empresa,
 			@Param("codigo") String codigo);
 
+	@Query("SELECT new com.aceex.wscairu.dto.ItemDto(e.ean, p.id.empresa, p.id.codigo, "
+			+ " p.descricao, p.descReduz, p.unidade) "
+			+ " FROM Item p, Ean e "
+			+ "WHERE p.situacao = 'A' "
+			+ " AND p.id.empresa = e.id.empresa "
+			+ " AND p.id.codigo = e.id.codigo"
+			+ " AND p.id.empresa = :empresa"
+			+ " AND p.id.codigo = :codigo")
+	public ItemDto findByEmpresaAndCodigo(@Param("empresa") String empresa,
+			@Param("codigo") String codigo);
+
+
 	@Transactional(readOnly=true)
 	@Query("SELECT new com.aceex.wscairu.dto.ItemDto(e.ean, p.id.empresa, "
 			+ "p.id.codigo, p.descricao, p.descReduz, p.unidade) "
@@ -55,23 +67,6 @@ public interface ItemDao extends JpaRepository<Item, ItemKey>  {
 	public List<ItemDto> findByCategoria(
 			@Param("sistema") String sistema, @Param("cnpj") String cnpj, 
 			@Param("empresa") String empresa, @Param("categoria") Integer categoria);
-
-	@Query("SELECT new com.aceex.wscairu.dto.ItemDto(e.ean, p.id.empresa, "
-			+ "p.id.codigo, p.descricao, p.descReduz, p.unidade) "
-			+ " FROM Item p, Ean e, Aen a "
-			+ "WHERE p.situacao = 'A'"
-			+ " AND p.id.empresa = e.id.empresa "
-			+ " AND p.id.codigo = e.id.codigo"
-			+ " AND p.id.empresa = :empresa "
-			+ " AND p.id.codigo LIKE %:codigo%"
-			+ " AND p.descricao LIKE %:descricao%"
-			+ " AND a.id.linhaProd = p.categoria  "
-			+ " AND a.id.cnpj = :cnpj "
-			+ " AND a.id.sistema = :sistema")
-	public Page<ItemDto> findPag(
-			@Param("cnpj") String cnpj, @Param("empresa") String empresa, 
-			@Param("codigo") String codigo, @Param("descricao") String descricao, 
-			@Param("sistema") String sistema, Pageable pageRequest);
 
 	@Query("SELECT new com.aceex.wscairu.dto.ItemDto(e.ean, p.id.empresa, "
 			+ "p.id.codigo, p.descricao, p.descReduz, p.unidade, t.descTecnica) "

@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aceex.wscairu.dto.ItemDto;
-import com.aceex.wscairu.dto.ProdutoDto;
 import com.aceex.wscairu.model.Item;
 import com.aceex.wscairu.service.ItemService;
 
@@ -56,21 +56,6 @@ public class ItemResource {
 		return ResponseEntity.ok().body(dto);
 	}
 
-	@RequestMapping(value="/pag", method=RequestMethod.GET)
-	public ResponseEntity<Page<ProdutoDto>> findProduto(
-			@RequestParam(value="pagina", defaultValue="0") Integer pagina, 
-			@RequestParam(value="linhas", defaultValue="0") Integer qtdLinha, 
-			@RequestParam(value="ordem", defaultValue="id.codigo") String ordem, 
-			@RequestParam(value="direcao", defaultValue="ASC") String direcao,
-			@RequestParam(value="cnpjEmpresa", defaultValue="") String cnpjEmpresa,
-			@RequestParam(value="codigo", defaultValue="") String codigo,
-			@RequestParam(value="descricao", defaultValue="") String descricao) {
-		
-		Page<ProdutoDto> dto = service.findProduto(
-				pagina, qtdLinha, ordem, direcao, cnpjEmpresa, codigo, descricao);
-		return ResponseEntity.ok().body(dto);
-	}
-
 	@RequestMapping(value="/categoria", method=RequestMethod.GET)
 	public ResponseEntity<List<ItemDto>> findBySistemaAndCnpj(
 			@RequestParam(value="cnpjEmpresa", defaultValue="") String cnpjEmpresa,
@@ -78,6 +63,15 @@ public class ItemResource {
 		List<ItemDto> list = service.findByCategoria(cnpjEmpresa, categoria);
 		return ResponseEntity.ok().body(list);
 
+	}
+
+	@RequestMapping(method=RequestMethod.PUT)
+	public ResponseEntity<String> update(
+			@RequestBody List<ItemDto> lista, 
+			@RequestParam(value="cnpj", defaultValue="") String cnpj) {
+		
+		service.update(lista, cnpj);
+		return ResponseEntity.noContent().build();
 	}
 
 }

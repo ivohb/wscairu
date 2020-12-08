@@ -1,0 +1,2 @@
+Empresa SC: implantar saldo
+Empresa SP: reservar a quantidade implantada em SC (SUP5740 SUP50004)

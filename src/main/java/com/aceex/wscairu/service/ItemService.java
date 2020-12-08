@@ -5,32 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.aceex.wscairu.dao.EmpresaDao;
-import com.aceex.wscairu.dao.EspecTecnicaDao;
-import com.aceex.wscairu.dao.EstoqueDao;
 import com.aceex.wscairu.dao.ItemDao;
-import com.aceex.wscairu.dao.LinhaProdDao;
-import com.aceex.wscairu.dao.ListaItemDao;
-import com.aceex.wscairu.dao.ParametroDao;
 import com.aceex.wscairu.dao.SystemaDao;
-import com.aceex.wscairu.dto.Agrupamento;
-import com.aceex.wscairu.dto.Categoria;
-import com.aceex.wscairu.dto.Cor;
 import com.aceex.wscairu.dto.ItemDto;
-import com.aceex.wscairu.dto.ProdutoDto;
-import com.aceex.wscairu.dto.Saldo;
-import com.aceex.wscairu.dto.Tamanho;
 import com.aceex.wscairu.exception.ObjectNotFoundException;
 import com.aceex.wscairu.model.Empresa;
-import com.aceex.wscairu.model.EspecTecnica;
-import com.aceex.wscairu.model.Estoque;
+import com.aceex.wscairu.model.EnvioEstoque;
 import com.aceex.wscairu.model.Item;
-import com.aceex.wscairu.model.LinhaProd;
-import com.aceex.wscairu.model.ListaItem;
-import com.aceex.wscairu.model.Parametro;
 import com.aceex.wscairu.model.Systema;
 import com.aceex.wscairu.security.UsuarioSS;
 
@@ -42,18 +26,11 @@ public class ItemService {
 	@Autowired
 	private EmpresaDao empDao;
 	@Autowired
-	private LinhaProdDao linDao;
-	@Autowired
-	private EspecTecnicaDao etDao;
-	@Autowired
 	private SystemaDao sysDao;
+
 	@Autowired
-	private ParametroDao parDao;
-	@Autowired
-	private ListaItemDao lstDao;
-	@Autowired
-	private EstoqueDao eDao;
-	
+	private ItemComplService icService;
+
 	public Item findByCodigo(String cnpjEmpresa, String codigo) {
 		Item prod = null;
 		Empresa empresa = empDao.findByCnpj(cnpjEmpresa);
@@ -96,14 +73,15 @@ public class ItemService {
 		for (ItemDto pDto : dto) {
 			produto = dao.findByKey(pDto.getCodEmpresa(), pDto.getCodigo());			
 			pDto.setCnpjEmpresa(empresa.getId());
-			pDto.setCategoria(getCategoria(produto));
-			pDto.setAgrupamento(getAgrupamento(produto));
-			pDto.setTamanho(getTamanho(produto));
-			pDto.setCor(getCor(produto));
-			pDto.setEstoque(getEstoque(empresa.getId(), 
-					empresa.getEmpresa(), produto.getId().getCodigo(), sys.getId()));
-			pDto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), produto.getId().getCodigo()));		
-			pDto.setPreco(getPreco(empresa, produto));
+			pDto.setCategoria(icService.getCategoria(produto));
+			pDto.setAgrupamento(icService.getAgrupamento(produto));
+			pDto.setTamanho(icService.getTamanho(produto));
+			pDto.setCor(icService.getCor(produto));
+			pDto.setEstoque(icService.getEstoque(
+					empresa.getEmpresa(), produto.getId().getCodigo()));
+			pDto.setDescTecnica(icService.getEspecTecnica(
+					empresa.getEmpresa(),  produto.getId().getCodigo()));	
+			pDto.setPreco(icService.getPreco(empresa, produto.getId().getCodigo()));
 		}
 		
 		return dto;				
@@ -144,13 +122,17 @@ public class ItemService {
 		for (ItemDto pDto : dto) {
 			produto = dao.findByKey(pDto.getCodEmpresa(), pDto.getCodigo());			
 			pDto.setCnpjEmpresa(empresa.getId());
-			pDto.setCategoria(getCategoria(produto));
-			pDto.setAgrupamento(getAgrupamento(produto));
-			pDto.setTamanho(getTamanho(produto));
-			pDto.setCor(getCor(produto));
-			pDto.setEstoque(getEstoque(empresa.getId(), 
-					empresa.getEmpresa(), produto.getId().getCodigo(), sys.getId()));
-			pDto.setPreco(getPreco(empresa, produto));
+
+			pDto.setCategoria(icService.getCategoria(produto));
+			pDto.setAgrupamento(icService.getAgrupamento(produto));
+			pDto.setTamanho(icService.getTamanho(produto));
+			pDto.setCor(icService.getCor(produto));
+			pDto.setEstoque(icService.getEstoque(
+					empresa.getEmpresa(), produto.getId().getCodigo()));
+			pDto.setDescTecnica(icService.getEspecTecnica(
+					empresa.getEmpresa(),  produto.getId().getCodigo()));	
+			pDto.setPreco(icService.getPreco(empresa, produto.getId().getCodigo()));
+
 		}
 		
 		return dto;				
@@ -168,14 +150,16 @@ public class ItemService {
 			if (dto != null) {
 				produto = dao.findByKey(empresa.getEmpresa(), codigo);
 				dto.setCnpjEmpresa(empresa.getId());
-				dto.setCategoria(getCategoria(produto));
-				dto.setAgrupamento(getAgrupamento(produto));
-				dto.setTamanho(getTamanho(produto));
-				dto.setCor(getCor(produto));
-				dto.setEstoque(getEstoque(empresa.getId(), 
-						empresa.getEmpresa(), produto.getId().getCodigo(), sys.getId()));
-				dto.setDescTecnica(getEspecTecnica(empresa.getEmpresa(), codigo));		
-				dto.setPreco(getPreco(empresa, produto));
+
+				dto.setCategoria(icService.getCategoria(produto));
+				dto.setAgrupamento(icService.getAgrupamento(produto));
+				dto.setTamanho(icService.getTamanho(produto));
+				dto.setCor(icService.getCor(produto));
+				dto.setEstoque(icService.getEstoque(
+						empresa.getEmpresa(), produto.getId().getCodigo()));
+				dto.setDescTecnica(icService.getEspecTecnica(
+						empresa.getEmpresa(),  produto.getId().getCodigo()));	
+				dto.setPreco(icService.getPreco(empresa, produto.getId().getCodigo()));
 			}
 		}
 		
@@ -186,137 +170,17 @@ public class ItemService {
 		}
 		return dto;
 	}
-
-	private Categoria getCategoria(Item obj) {
-		LinhaProd lp = linDao.findByKey(obj.getCategoria(), 0, 0, 0);			
-		Categoria cat = new Categoria();
-		cat.setCodigo(obj.getCategoria());
-		cat.setDescricao(lp.getDescricao());
-		return cat;
-	}
 	
-	private Agrupamento getAgrupamento(Item obj) {
-		LinhaProd lp = linDao.findByKey(obj.getCategoria(), obj.getAgrupamento(), 0, 0);			
-		Agrupamento agru = new Agrupamento();
-		agru.setCodigo(obj.getAgrupamento());
-		agru.setDescricao(lp.getDescricao());
-		return agru;
-	}
-
-	private Tamanho getTamanho(Item obj) {
-		LinhaProd lp = linDao.findByKey(obj.getCategoria(), 
-				obj.getAgrupamento(), obj.getTamanho(), 0);			
-		Tamanho tam = new Tamanho();
-		tam.setCodigo(obj.getTamanho());
-		tam.setDescricao(lp.getDescricao());
-		return tam;
-	}
-
-	private Cor getCor(Item obj) {
-		LinhaProd lp = linDao.findByKey(obj.getCategoria(), 
-				obj.getAgrupamento(), obj.getTamanho(), obj.getCor());			
-		Cor cor = new Cor();
-		cor.setCodigo(obj.getCor());
-		cor.setDescricao(lp.getDescricao());
-		return cor;
-	}
-
-	private Saldo getEstoque(String cnpj, 
-			String empresa, String codigo, String sistema) {
-
-		Double zero = 0.0;
-		Estoque obj = eDao.findEstoque(empresa, codigo);
-		Saldo sdo = new Saldo();
-		if (obj == null) {
-			sdo.setQtdLiberada(zero);
-			sdo.setQtdReservada(zero);
-		} else {
-			sdo.setQtdLiberada(obj.getQtdLiberada());
-			sdo.setQtdReservada(obj.getQtdReservada());			
+	public String update(List<ItemDto> lista, String cnpj) {
+		System.out.println(cnpj);
+		for (ItemDto dto : lista) {
+			System.out.println(dto.getCnpjEmpresa());
+			System.out.println(dto. getCodigo());	
+			System.out.println(dto.getRevisao());	
+			System.out.println(dto.getDescricao());	
+			System.out.println(dto.getCor().getDescricao());	
 		}
-		sdo.setQtdDisponivel(sdo.getQtdLiberada() - sdo.getQtdReservada());
-		return sdo;
-	}
-
-	private String getEspecTecnica(String empresa, String item) {
-		EspecTecnica et = etDao.findByKey(empresa, item);
-		if (et == null) {
-			return "";
-		}
-		return et.getDescTecnica();
-	}
-	
-	private Double getPreco(Empresa empresa, Item item) {
-		Parametro par = parDao.findByEmpresa(empresa.getId());
-		ListaItem lst = lstDao.findByEmpresaAndNumeroAndItem(
-				empresa.getEmpresa(), par.getLista(), item.getId().getCodigo());
-		if (lst == null) {
-			return 0.0;
-		}
-		return lst.getPreUnit();		
-	}
-	
-	public Page<ProdutoDto> findProduto(Integer pagina, Integer qtdLinha, String ordem, 
-			String direcao, String cnpjEmpresa, String codigo, String descricao) {
-
-		UsuarioSS user = UserSecurityService.authenticated();
-		Systema sys = sysDao.findByUserReq(user.getUsername());
-
-		if (qtdLinha == null || qtdLinha == 0) {
-			qtdLinha = sys.getLinPage();
-		}
-		
-		if (qtdLinha > sys.getMaxLinha()) {
-			qtdLinha = sys.getMaxLinha();
-		}
-		
-		PageRequest pageRequest = PageRequest.of(pagina, qtdLinha, 
-				Direction.valueOf(direcao), ordem);
-
-		String codEmpresa = "ZZ";
-		Item produto = null;
-		Empresa empresa = null;
-		
-		if (cnpjEmpresa == null || cnpjEmpresa.isEmpty()) {
-		} else {
-			empresa = empDao.findByCnpj(cnpjEmpresa);
-			if (empresa != null) {
-				codEmpresa = empresa.getEmpresa();				
-			}			 
-		}
-			
-		Page<ProdutoDto> dto = dao.findProduto(cnpjEmpresa,
-				codEmpresa, codigo, descricao, sys.getId(), pageRequest);
-		
-		for (ProdutoDto pDto : dto) {
-			pDto.setCnpjEmpresa(empresa.getId());
-			LinhaProd lp = linDao.findByKey(pDto.getCategoria(), 0, 0, 0);			
-			pDto.setDescCategoria(lp.getDescricao());
-			lp = linDao.findByKey(pDto.getCategoria(), pDto.getAgrupamento(), 0, 0);
-			pDto.setDescAgrupamento(lp.getDescricao());
-			lp = linDao.findByKey(pDto.getCategoria(), pDto.getAgrupamento(), pDto.getTamanho(), 0);
-			pDto.setDescTamanho(lp.getDescricao());
-			lp = linDao.findByKey(pDto.getCategoria(), pDto.getAgrupamento(), pDto.getTamanho(), pDto.getCor());
-			pDto.setDescCor(lp.getDescricao());
-			pDto.setPreco(getPreco(empresa, pDto.getCodigo()));
-			if (pDto.getLiberado() != null && pDto.getReservada() != null) {
-				pDto.setDisponivel(pDto.getLiberado() - pDto.getReservada());
-			} else {
-				pDto.setDisponivel(0.0);
-			}
-		}
-		
-		return dto;				
-	}
-
-	private Double getPreco(Empresa empresa, String codigo) {
-		Parametro par = parDao.findByEmpresa(empresa.getId());
-		ListaItem lst = lstDao.findByEmpresaAndNumeroAndItem(
-				empresa.getEmpresa(), par.getLista(), codigo);
-		if (lst == null) {
-			return 0.0;
-		}
-		return lst.getPreUnit();		
+		return "OK";
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.aceex.wscairu.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,6 +19,12 @@ public class TransProces implements Serializable {
 
 	@Column(name = "cod_empresa", length = 2, nullable = false)
 	private String empresa;
+
+	@Column(name = "dat_atualiz")
+	private Date datAtualiz;
+
+	@Column(name = "hor_atualiz", length = 8)
+	private String horAtualiz;
 
 	public TransProces() { }
 	
@@ -37,5 +44,18 @@ public class TransProces implements Serializable {
 	}
 	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
+	}
+
+	public Date getDatAtualiz() {
+		return datAtualiz;
+	}
+	public void setDatAtualiz(Date datAtualiz) {
+		this.datAtualiz = datAtualiz;
+	}
+	public String getHorAtualiz() {
+		return horAtualiz;
+	}
+	public void setHorAtualiz(String horAtualiz) {
+		this.horAtualiz = horAtualiz;
 	}
 }
