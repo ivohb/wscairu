@@ -13,7 +13,7 @@
 	<groupId>com.aceex</groupId>
 	<artifactId>wscairu</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>wscairu</name>
 	<description>API de integração com ecommerce</description>
 
@@ -22,6 +22,12 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		
 		<dependency>
 			<groupId>com.ibm.informix</groupId>

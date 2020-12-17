@@ -22,8 +22,8 @@ import com.aceex.wscairu.service.ExportaService;
 import com.aceex.wscairu.util.Biblioteca;
 
 @Configuration
-@Profile("sql")
-public class SqlConfig {
+@Profile("prd")
+public class PrdConfig {
 
 	@Autowired
 	private ExportaService exportaService;
@@ -39,7 +39,7 @@ public class SqlConfig {
 	
 	@Bean
 	public boolean instantiateDatabase() throws ParseException {
-
+		System.out.println("PrdConfig");
 		checaProces();
 		//exporta();
 
