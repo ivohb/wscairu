@@ -12,7 +12,7 @@
 	
 	<groupId>com.aceex</groupId>
 	<artifactId>wscairu</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.000</version>
 	<packaging>war</packaging>
 	<name>wscairu</name>
 	<description>API de integração com ecommerce</description>

@@ -6,8 +6,11 @@ import java.util.List;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.aceex.wscairu.WscairuApplication;
 import com.aceex.wscairu.dao.ClienteDao;
 import com.aceex.wscairu.dao.EmpresaDao;
 import com.aceex.wscairu.dao.EstoqueDao;
@@ -29,6 +32,8 @@ import com.aceex.wscairu.service.UserSecurityService;
 
 public class PedidoVdpValidator implements ConstraintValidator<PedidoVdpValidation, PedidoVdpDto> {
 
+	private static final Logger log = LoggerFactory.getLogger(PedidoVdpValidator.class);
+	
 	@Autowired
 	private EmpresaDao empDao;
 	@Autowired
@@ -50,6 +55,8 @@ public class PedidoVdpValidator implements ConstraintValidator<PedidoVdpValidati
 	@Override
 	public boolean isValid(PedidoVdpDto dto, ConstraintValidatorContext context) {
 
+		log.debug("Capitura do usuário");
+		
 		UsuarioSS user = UserSecurityService.authenticated();
 		Systema sys = sysDao.findByUserReq(user.getUsername());
 
