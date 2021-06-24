@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.aceex.wscairu.dao.EmpresaDao;
+import com.aceex.wscairu.dao.EnvioEstoqueDao;
 import com.aceex.wscairu.dao.EstoqueDao;
 import com.aceex.wscairu.dao.SystemaDao;
 import com.aceex.wscairu.dto.EstoqueDto;
@@ -24,6 +25,8 @@ public class EstoqueService {
 
 	@Autowired
 	private EstoqueDao dao;
+	@Autowired
+	private EnvioEstoqueDao eeDao;
 	@Autowired
 	private EmpresaDao empDao;
 	@Autowired
@@ -47,6 +50,10 @@ public class EstoqueService {
 
 	public List<Estoque> findAll() {
 		return dao.findAll();
+	}
+
+	public List<EnvioEstoque> findEstoq() {
+		return eeDao.findAll();
 	}
 
 	public Page<EstoqueDto> findPage(Integer pagina, Integer qtdLinha, String ordem, 

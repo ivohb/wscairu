@@ -14,11 +14,11 @@ public interface ClienteDao extends JpaRepository<Cliente, String>  {
 	//Na Entidade Cliente, o codigo foi mapeado como id
 	
 	@Transactional(readOnly=true)
-	@Query("FROM Cliente obj WHERE obj.situacao = 'A' AND obj.id = :codigo")
+	@Query("FROM Cliente obj WHERE obj.id = :codigo")
 	public Cliente findByCodigo(@Param("codigo") String codigo);
 
 	@Transactional(readOnly=true)
-	@Query("FROM Cliente obj WHERE obj.situacao = 'A' AND obj.cnpj = :cnpj")
+	@Query("FROM Cliente obj WHERE obj.cnpj = :cnpj")
 	public Cliente findByCnpj(@Param("cnpj") String cnpj);
 
 }

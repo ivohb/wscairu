@@ -20,6 +20,7 @@ public class ItemDto implements Serializable {
 	private Tamanho tamanho;
 	private Cor cor;
 	private Saldo estoque;
+	private FichaTecnicaDto fichaTecnica;
 	
 	public ItemDto() { }
 
@@ -164,6 +165,14 @@ public class ItemDto implements Serializable {
 
 	public void setEstoque(Saldo estoque) {
 		this.estoque = estoque;
+	}
+
+	public FichaTecnicaDto getFichaTecnica() {
+		return fichaTecnica;
+	}
+
+	public void setFichaTecnica(FichaTecnicaDto fichaTecnica) {
+		this.fichaTecnica = fichaTecnica;
 	}
 	
 }

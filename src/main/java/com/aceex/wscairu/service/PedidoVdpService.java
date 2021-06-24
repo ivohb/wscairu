@@ -502,7 +502,7 @@ public class PedidoVdpService {
 		
 		insOrdMontagMest();
 		insOmList();
-		insPedidoOm();
+		//insPedidoOm(); temporária
 	}
 	
 	private Integer insLoteOm() {

@@ -1,5 +1,5 @@
 {
- "cnpjEmpresa":"035.503.800/0001-00",
+ "cnpjEmpresa":"060.856.531/0001-02",
  "cnpjCliente":"841.904.780/000-59",
  "natOperacao":null,
  "finalidade":null,
@@ -20,7 +20,7 @@
  "pctComis3":null,
  "pedidoRepres":"123456",
  "pedidoCliente":"EA765W76",
- "datEmissao":"2020-10-29",
+ "datEmissao":"2020-05-12",
  "codTranspor":null,
  "codConsig":null,
  "tipFrete":null,
@@ -41,7 +41,7 @@
 },
 "produto":[
 {
- "codigo":"001.123.20",
+ "codigo":"201.001.0",
  "quantidade":"1",
  "datEntrega":"2020-10-26",
  "preUnit":"1867.78",
@@ -52,7 +52,7 @@
  "txtProd5":null
 }, 
 {
- "codigo":"002.123.10",
+ "codigo":"201.000.0",
  "quantidade":"1",
  "datEntrega":"2020-10-26",
  "preUnit":"100.50",

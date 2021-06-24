@@ -5,17 +5,20 @@ import org.springframework.stereotype.Service;
 
 import com.aceex.wscairu.dao.EspecTecnicaDao;
 import com.aceex.wscairu.dao.EstoqueDao;
+import com.aceex.wscairu.dao.FichaTecnicaDao;
 import com.aceex.wscairu.dao.LinhaProdDao;
 import com.aceex.wscairu.dao.ListaItemDao;
 import com.aceex.wscairu.dao.ParametroDao;
 import com.aceex.wscairu.dto.Agrupamento;
 import com.aceex.wscairu.dto.Categoria;
 import com.aceex.wscairu.dto.Cor;
+import com.aceex.wscairu.dto.FichaTecnicaDto;
 import com.aceex.wscairu.dto.Saldo;
 import com.aceex.wscairu.dto.Tamanho;
 import com.aceex.wscairu.model.Empresa;
 import com.aceex.wscairu.model.EspecTecnica;
 import com.aceex.wscairu.model.Estoque;
+import com.aceex.wscairu.model.FichaTecnica;
 import com.aceex.wscairu.model.Item;
 import com.aceex.wscairu.model.LinhaProd;
 import com.aceex.wscairu.model.ListaItem;
@@ -34,7 +37,8 @@ public class ItemComplService {
 	private ListaItemDao lstDao;
 	@Autowired
 	private EstoqueDao eDao;
-	
+	@Autowired
+	private FichaTecnicaDao fichaDao;	
 
 	public Categoria getCategoria(Item obj) {
 		LinhaProd lp = linDao.findByKey(obj.getCategoria(), 0, 0, 0);			
@@ -105,4 +109,9 @@ public class ItemComplService {
 		return lst.getPreUnit();		
 	}
 
+	public FichaTecnicaDto getFichaTecnica(String empresa, String codigo) {
+		FichaTecnica obj = fichaDao.findByKey(empresa, codigo);
+		FichaTecnicaDto dto = new FichaTecnicaDto(obj);
+		return dto;
+	}
 }

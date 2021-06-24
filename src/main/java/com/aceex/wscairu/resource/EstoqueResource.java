@@ -57,6 +57,12 @@ public class EstoqueResource {
 		return ResponseEntity.ok().body(dto);
 	}
 
+	@RequestMapping(value="/envio", method=RequestMethod.GET)
+	public ResponseEntity<List<EnvioEstoque>> findEstoq() {
+		List<EnvioEstoque> list = service.findEstoq();
+		return ResponseEntity.ok().body(list);
+	}
+
 	@RequestMapping(method=RequestMethod.PUT)
 	public ResponseEntity<String> PosicaoEstoq(
 			@RequestBody List<EnvioEstoque> lista, 

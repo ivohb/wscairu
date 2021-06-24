@@ -41,7 +41,7 @@ public class TstConfig {
 	public boolean instantiateDatabase() throws ParseException {
 		System.out.println("PrdConfig");
 		checaProces();
-		//exporta();
+		exporta();
 
 		if (!"create".equals(strategy)) {
 			return false;

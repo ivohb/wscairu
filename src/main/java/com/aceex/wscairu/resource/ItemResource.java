@@ -22,7 +22,7 @@ public class ItemResource {
 	@Autowired
 	private ItemService service;
 
-	//ex: http://localhost:8080/produto/codigo?cnpjEmpresa=cnpjEmpresa&codigo=10-100-00039
+	//ex: http://localhost:8081/produto/codigo?cnpjEmpresa=033.352.881/0001-69&codigo=10014
 	
 	@RequestMapping(value="/codigo", method=RequestMethod.GET)
 	public ResponseEntity<ItemDto> findByProduct(

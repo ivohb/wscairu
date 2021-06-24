@@ -1,0 +1,68 @@
+2021-06-11 08:45:02.669 [] INFO  - com.aceex.wscairu.WscairuApplicationTests - Starting WscairuApplicationTests on DESKTOP-QSSSMPN with PID 9628 (started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-11 08:45:02.672 [] INFO  - com.aceex.wscairu.WscairuApplicationTests - The following profiles are active: sql
+2021-06-11 08:45:04.307 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-11 08:45:04.642 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 318ms. Found 50 JPA repository interfaces.
+2021-06-11 08:45:05.940 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-11 08:45:06.077 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 08:45:06.280 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-11 08:45:06.676 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-11 08:45:07.203 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35ee466f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1491344a, org.springframework.security.web.header.HeaderWriterFilter@5fbe155, org.springframework.web.filter.CorsFilter@32e652b6, org.springframework.security.web.authentication.logout.LogoutFilter@1cdc1bbc, com.aceex.wscairu.security.JWTAuthenticationFilter@4ba02375, com.aceex.wscairu.security.JWTAuthorizationFilter@7593ea79, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1386313f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35e26d05, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3289079a, org.springframework.security.web.session.SessionManagementFilter@58a2b917, org.springframework.security.web.access.ExceptionTranslationFilter@24eb65e3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@536d97f8]
+2021-06-11 08:45:07.349 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-11 08:45:38.092 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-11 08:45:39.831 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 08:45:39.843 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 08:45:40.650 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-11 08:46:13.247 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 08:46:13.249 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-11 08:46:13.257 [] INFO  - o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-11 09:41:52.449 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 11448 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-11 09:41:52.449 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-11 09:41:52.503 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-11 09:41:52.503 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-11 09:41:52.503 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-11 09:41:52.503 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-11 09:41:53.467 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-11 09:41:53.737 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 270ms. Found 50 JPA repository interfaces.
+2021-06-11 09:41:54.608 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-11 09:41:54.624 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-11 09:41:54.624 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-11 09:41:54.754 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-11 09:41:54.754 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2251 ms
+2021-06-11 09:41:55.040 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-11 09:42:25.697 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-11 09:42:25.759 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 09:42:25.897 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-11 09:42:26.144 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-11 09:42:26.213 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5db5334d, org.springframework.security.web.context.SecurityContextPersistenceFilter@52cf3db, org.springframework.security.web.header.HeaderWriterFilter@5bc50940, org.springframework.web.filter.CorsFilter@75326f77, org.springframework.security.web.authentication.logout.LogoutFilter@7ad7b151, com.aceex.wscairu.security.JWTAuthenticationFilter@587afaeb, com.aceex.wscairu.security.JWTAuthorizationFilter@39096183, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39de65f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26c7f10d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d5212b4, org.springframework.security.web.session.SessionManagementFilter@71ce163b, org.springframework.security.web.access.ExceptionTranslationFilter@2ed26bf8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@bfc8485]
+2021-06-11 09:42:26.276 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-11 09:42:56.424 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-11 09:42:57.777 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 09:42:57.788 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 09:42:58.140 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-11 09:43:28.606 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 09:43:28.606 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-11 09:43:28.621 [] INFO  - org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2021-06-11 09:43:28.637 [] INFO  - o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-11 09:47:33.606 [] INFO  - com.aceex.wscairu.WscairuApplicationTests - Starting WscairuApplicationTests on DESKTOP-QSSSMPN with PID 2292 (started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-11 09:47:33.606 [] INFO  - com.aceex.wscairu.WscairuApplicationTests - The following profiles are active: tst
+2021-06-11 09:47:34.930 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-11 09:47:35.260 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 317ms. Found 50 JPA repository interfaces.
+2021-06-11 09:47:36.108 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-11 09:47:36.209 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-11 09:47:36.309 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-11 09:47:36.555 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-11 09:47:37.146 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f9f3928, org.springframework.security.web.context.SecurityContextPersistenceFilter@5edc70ed, org.springframework.security.web.header.HeaderWriterFilter@6d0b0da6, org.springframework.web.filter.CorsFilter@404eca05, org.springframework.security.web.authentication.logout.LogoutFilter@63a28987, com.aceex.wscairu.security.JWTAuthenticationFilter@58b91d57, com.aceex.wscairu.security.JWTAuthorizationFilter@61a91c9b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e4c72d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14998e21, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17092fff, org.springframework.security.web.session.SessionManagementFilter@2cd62003, org.springframework.security.web.access.ExceptionTranslationFilter@459b6c53, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61bcbcce]
+2021-06-11 09:47:37.221 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-11 09:47:59.408 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.InformixDialect
+2021-06-11 09:48:00.812 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-11 09:48:00.819 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 09:48:01.694 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-11 09:48:23.801 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-11 09:48:23.804 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-11 09:48:23.817 [] INFO  - o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

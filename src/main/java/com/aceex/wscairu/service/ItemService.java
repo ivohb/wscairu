@@ -13,7 +13,6 @@ import com.aceex.wscairu.dao.SystemaDao;
 import com.aceex.wscairu.dto.ItemDto;
 import com.aceex.wscairu.exception.ObjectNotFoundException;
 import com.aceex.wscairu.model.Empresa;
-import com.aceex.wscairu.model.EnvioEstoque;
 import com.aceex.wscairu.model.Item;
 import com.aceex.wscairu.model.Systema;
 import com.aceex.wscairu.security.UsuarioSS;
@@ -27,7 +26,6 @@ public class ItemService {
 	private EmpresaDao empDao;
 	@Autowired
 	private SystemaDao sysDao;
-
 	@Autowired
 	private ItemComplService icService;
 
@@ -150,7 +148,6 @@ public class ItemService {
 			if (dto != null) {
 				produto = dao.findByKey(empresa.getEmpresa(), codigo);
 				dto.setCnpjEmpresa(empresa.getId());
-
 				dto.setCategoria(icService.getCategoria(produto));
 				dto.setAgrupamento(icService.getAgrupamento(produto));
 				dto.setTamanho(icService.getTamanho(produto));
@@ -160,6 +157,8 @@ public class ItemService {
 				dto.setDescTecnica(icService.getEspecTecnica(
 						empresa.getEmpresa(),  produto.getId().getCodigo()));	
 				dto.setPreco(icService.getPreco(empresa, produto.getId().getCodigo()));
+				dto.setFichaTecnica(icService.getFichaTecnica(
+						empresa.getEmpresa(), produto.getId().getCodigo()));
 			}
 		}
 		

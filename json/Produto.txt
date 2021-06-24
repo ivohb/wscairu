@@ -1,0 +1,36 @@
+[   
+	{
+        "cnpjEmpresa": "060.856.531/0001-02",
+        "codEmpresa": "01",
+        "ean": 15434,
+        "codigo": "912.000.B      ",
+        "descricao": "KIT DT 26 DISC YONGLING DUB/SHUF                                                                                        ",
+        "descReduz": "KIT D26 DIS DUB/SH",
+        "unidade": "PC ",
+        "preco": 0.0,
+        "descTecnica": "",
+        "revisao": null,
+        "categoria": {
+            "codigo": 12,
+            "descricao": "BICICLETAS GROOVE   "
+        },
+        "agrupamento": {
+            "codigo": 0,
+            "descricao": "BICICLETAS GROOVE   "
+        },
+        "tamanho": {
+            "codigo": 0,
+            "descricao": "BICICLETAS GROOVE   "
+        },
+        "cor": {
+            "codigo": 0,
+            "descricao": "BICICLETAS GROOVE   "
+        },
+        "estoque": {
+            "qtdLiberada": 120.0,
+            "qtdReservada": 6.0,
+            "qtdDisponivel": 114.0
+        }
+ 	}     
+]
+    

@@ -13,6 +13,6 @@ public class WscairuApplication extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(WscairuApplication.class, args);
-		log.info("API VERSÃO 1.00");
+		log.info("API VERSÃO 1.02");
 	}
 }
