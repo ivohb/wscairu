@@ -37,7 +37,7 @@ public class Item implements Serializable {
 	private Integer categoria;
 
 	@Column(name = "cod_lin_recei")
-	private Integer agrupamento;
+	private Integer modelo;
 
 	@Column(name = "cod_seg_merc")
 	private Integer tamanho;
@@ -98,11 +98,11 @@ public class Item implements Serializable {
 	public void setCategoria(Integer categoria) {
 		this.categoria = categoria;
 	}
-	public Integer getAgrupamento() {
-		return agrupamento;
+	public Integer getModelo() {
+		return modelo;
 	}
-	public void setAgrupamento(Integer agrupamento) {
-		this.agrupamento = agrupamento;
+	public void setModelo(Integer modelo) {
+		this.modelo = modelo;
 	}
 	public Integer getTamanho() {
 		return tamanho;

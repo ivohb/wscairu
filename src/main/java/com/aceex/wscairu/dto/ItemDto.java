@@ -16,9 +16,9 @@ public class ItemDto implements Serializable {
 	private String descTecnica;
 	private Integer revisao;
 	private Categoria categoria;
-	private Agrupamento agrupamento;
+	private Modelo modelo;
 	private Tamanho tamanho;
-	private Cor cor;
+	private Cor cor;	
 	private Saldo estoque;
 	private FichaTecnicaDto fichaTecnica;
 	
@@ -127,6 +127,22 @@ public class ItemDto implements Serializable {
 		this.revisao = revisao;
 	}
 
+	public Saldo getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Saldo estoque) {
+		this.estoque = estoque;
+	}
+
+	public FichaTecnicaDto getFichaTecnica() {
+		return fichaTecnica;
+	}
+
+	public void setFichaTecnica(FichaTecnicaDto fichaTecnica) {
+		this.fichaTecnica = fichaTecnica;
+	}
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -135,12 +151,12 @@ public class ItemDto implements Serializable {
 		this.categoria = categoria;
 	}
 
-	public Agrupamento getAgrupamento() {
-		return agrupamento;
+	public Modelo getModelo() {
+		return modelo;
 	}
 
-	public void setAgrupamento(Agrupamento agrupamento) {
-		this.agrupamento = agrupamento;
+	public void setModelo(Modelo modelo) {
+		this.modelo = modelo;
 	}
 
 	public Tamanho getTamanho() {
@@ -157,22 +173,6 @@ public class ItemDto implements Serializable {
 
 	public void setCor(Cor cor) {
 		this.cor = cor;
-	}
-
-	public Saldo getEstoque() {
-		return estoque;
-	}
-
-	public void setEstoque(Saldo estoque) {
-		this.estoque = estoque;
-	}
-
-	public FichaTecnicaDto getFichaTecnica() {
-		return fichaTecnica;
-	}
-
-	public void setFichaTecnica(FichaTecnicaDto fichaTecnica) {
-		this.fichaTecnica = fichaTecnica;
 	}
 	
 }

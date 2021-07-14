@@ -35,7 +35,6 @@ import com.aceex.wscairu.dao.PedidoEntregaDao;
 import com.aceex.wscairu.dao.PedidoItemDao;
 import com.aceex.wscairu.dao.PedidoListDao;
 import com.aceex.wscairu.dao.PedidoObservDao;
-import com.aceex.wscairu.dao.PedidoOmDao;
 import com.aceex.wscairu.dao.PedidoTextoDao;
 import com.aceex.wscairu.dao.PedidoVdpDao;
 import com.aceex.wscairu.dao.UsuarioDao;
@@ -88,7 +87,6 @@ import com.aceex.wscairu.model.PedidoEntrega;
 import com.aceex.wscairu.model.PedidoItem;
 import com.aceex.wscairu.model.PedidoList;
 import com.aceex.wscairu.model.PedidoObserv;
-import com.aceex.wscairu.model.PedidoOm;
 import com.aceex.wscairu.model.PedidoTexto;
 import com.aceex.wscairu.model.PedidoVdp;
 import com.aceex.wscairu.model.Usuario;
@@ -162,9 +160,6 @@ public class PedidoVdpService {
 	private OrdMontagMestDao ommDao;
 	@Autowired
 	private OmListDao olDao;
-	@Autowired
-	private PedidoOmDao pomDao;
-	
 	
 	private Empresa empresa;
 	private Cliente cliente;
@@ -478,7 +473,7 @@ public class PedidoVdpService {
 				pedido.getId().getNumero(), numSeq));
 		paip.setClasseUso(item.getCor());
 		paip.setLinProduto(item.getCategoria());
-		paip.setLinReceita(item.getAgrupamento());
+		paip.setLinReceita(item.getModelo());
 		paip.setSegMercado(item.getTamanho());
 		paipDao.save(paip);
 	}
@@ -502,7 +497,6 @@ public class PedidoVdpService {
 		
 		insOrdMontagMest();
 		insOmList();
-		//insPedidoOm(); temporária
 	}
 	
 	private Integer insLoteOm() {
@@ -734,14 +728,5 @@ public class PedidoVdpService {
 		obj.setEmissao(pedido.getEmissao());
 		obj.setUsuario(codUsuario);
 		olDao.save(obj);
-	}
-
-	private void insPedidoOm() {
-		PedidoOm obj = new PedidoOm();
-		obj.setData(pedido.getEmissao());
-		obj.setId(null);
-		obj.setNumOm(numOm);
-		obj.setNumPedido(pedido.getId().getNumero());
-		pomDao.save(obj);
 	}
 }

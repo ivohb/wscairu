@@ -2,13 +2,13 @@ package com.aceex.wscairu.dto;
 
 import java.io.Serializable;
 
-public class Agrupamento implements Serializable {
+public class Modelo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer codigo;
 	private String descricao;
 	
-	public Agrupamento() {}
+	public Modelo() {}
 
 	public Integer getCodigo() {
 		return codigo;

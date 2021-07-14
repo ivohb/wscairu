@@ -7,11 +7,8 @@ import com.aceex.wscairu.model.FichaTecnica;
 public class FichaTecnicaDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private String categoria;
 	private String agrupamento;
 	private String subAgrupamento;
-	private String tamanho;
-	private String cor;
 	private String quadro;
 	private String amortecTraseiro;
 	private String suspensao;
@@ -42,11 +39,8 @@ public class FichaTecnicaDto implements Serializable {
 	public FichaTecnicaDto() { }
 
 	public FichaTecnicaDto(FichaTecnica obj) { 
-		this.categoria       = obj.getCategoria();
 		this.agrupamento     = obj.getAgrupamento();
 		this.subAgrupamento  = obj.getSubAgrupamento();
-		this.tamanho         = obj.getTamanho();
-		this.cor             = obj.getCor();
 		this.quadro         = obj.getQuadro();
 		this.amortecTraseiro = obj.getAmortecTraseiro();
 		this.suspensao       = obj.getSuspensao();
@@ -75,12 +69,6 @@ public class FichaTecnicaDto implements Serializable {
 		this.garantiaCompon  = obj.getGarantiaCompon(); 
 	}
 
-	public String getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
 	public String getAgrupamento() {
 		return agrupamento;
 	}
@@ -92,18 +80,6 @@ public class FichaTecnicaDto implements Serializable {
 	}
 	public void setSubAgrupamento(String subAgrupamento) {
 		this.subAgrupamento = subAgrupamento;
-	}
-	public String getTamanho() {
-		return tamanho;
-	}
-	public void setTamanho(String tamanho) {
-		this.tamanho = tamanho;
-	}
-	public String getCor() {
-		return cor;
-	}
-	public void setCor(String cor) {
-		this.cor = cor;
 	}
 	public String getQuadro() {
 		return quadro;
@@ -130,10 +106,10 @@ public class FichaTecnicaDto implements Serializable {
 		this.travaSuspensao = travaSuspensao;
 	}
 	public String getTrocador() {
-		return trocador.trim();
+		return trocador;
 	}
 	public void setTrocador(String trocador) {
-		this.trocador = trocador.trim();
+		this.trocador = trocador;
 	}
 	public String getCambioTraseiro() {
 		return cambioTraseiro;

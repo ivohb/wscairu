@@ -39,7 +39,7 @@ public class TstConfig {
 	
 	@Bean
 	public boolean instantiateDatabase() throws ParseException {
-		System.out.println("PrdConfig");
+		System.out.println("TstConfig");
 		checaProces();
 		exporta();
 
@@ -73,7 +73,7 @@ public class TstConfig {
 	}
 	
 	private void exporta() {
-		int minuto = 2;
+		int minuto = 5;
 		
 		final long TEMPO = ((1000 * minuto ) * 60);
 		Timer timer = new Timer();

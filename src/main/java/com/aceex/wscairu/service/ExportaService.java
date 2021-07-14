@@ -72,12 +72,13 @@ public class ExportaService {
 	
 	public void exporta() {
 		System.out.println("ExportaService "+new java.util.Date());
-
+		log.info("ExportaService "+new java.util.Date());
+		
 		List<Empresa> empresas = eDao.findAll();
 
-		log.info("Expotando estoque para o ecommerce.");
+		log.info("Expotando estoque para o ecommerce.");		
 		for (Empresa empresa : empresas) {
-			//expEstoque(empresa);
+			expEstoque(empresa);
 		}
 		log.info("Exportação de estoque comcluída.");
 
@@ -124,6 +125,8 @@ public class ExportaService {
 					//busca estoque e adicina na tabela temporária
 					Estoque est = estDao.findByKey(empresa.getEmpresa(), item.getId().getCodigo());
 					if (est != null) {
+						log.info(est.getId().getCodigo());
+						System.out.println(est.getId().getCodigo());
 						EnvioEstoque ee = new EnvioEstoque();
 						ee.setCnpj(empresa.getId());
 						ee.setEmpresa(empresa.getEmpresa());
@@ -196,17 +199,19 @@ public class ExportaService {
 					empresa.getId(), tp.getDatAtualiz(), cat.getId().getSistema()); 
 					
 			for (AuditItem ai : itens) {			
-				Item item = itemDao.findByKey(empresa.getEmpresa(), ai.getItem());
+				//Item item = itemDao.findByKey(empresa.getEmpresa(), ai.getItem());
 				ItemDto dto = itemDao.findByEmpresaAndCodigo(empresa.getEmpresa(), ai.getItem());				
 				dto.setCnpjEmpresa(empresa.getId());
 				dto.setRevisao(ai.getRevisao());
-				dto.setAgrupamento(icService.getAgrupamento(item));
-				dto.setCategoria(icService.getCategoria(item));
-				dto.setCor(icService.getCor(item));
-				dto.setTamanho(icService.getTamanho(item));
 				dto.setEstoque(icService.getEstoque(empresa.getEmpresa(), ai.getItem()));
 				dto.setDescTecnica(icService.getEspecTecnica(empresa.getEmpresa(), ai.getItem()));
 				dto.setPreco(icService.getPreco(empresa, ai.getItem()));
+				dto.setFichaTecnica(icService.getFichaTecnica(
+						empresa.getEmpresa(), ai.getItem()));
+				
+				log.info(ai.getItem());
+				System.out.println(ai.getItem());
+				
 				lista.add(dto);
 			}
 			

@@ -72,14 +72,17 @@ public class ItemService {
 			produto = dao.findByKey(pDto.getCodEmpresa(), pDto.getCodigo());			
 			pDto.setCnpjEmpresa(empresa.getId());
 			pDto.setCategoria(icService.getCategoria(produto));
-			pDto.setAgrupamento(icService.getAgrupamento(produto));
+			pDto.setModelo(icService.getModelo(produto));
 			pDto.setTamanho(icService.getTamanho(produto));
-			pDto.setCor(icService.getCor(produto));
+			pDto.setCor(icService.getCor(produto));				
 			pDto.setEstoque(icService.getEstoque(
 					empresa.getEmpresa(), produto.getId().getCodigo()));
 			pDto.setDescTecnica(icService.getEspecTecnica(
 					empresa.getEmpresa(),  produto.getId().getCodigo()));	
 			pDto.setPreco(icService.getPreco(empresa, produto.getId().getCodigo()));
+			pDto.setFichaTecnica(icService.getFichaTecnica(
+					empresa.getEmpresa(), produto.getId().getCodigo()));
+						
 		}
 		
 		return dto;				
@@ -120,16 +123,17 @@ public class ItemService {
 		for (ItemDto pDto : dto) {
 			produto = dao.findByKey(pDto.getCodEmpresa(), pDto.getCodigo());			
 			pDto.setCnpjEmpresa(empresa.getId());
-
 			pDto.setCategoria(icService.getCategoria(produto));
-			pDto.setAgrupamento(icService.getAgrupamento(produto));
+			pDto.setModelo(icService.getModelo(produto));
 			pDto.setTamanho(icService.getTamanho(produto));
-			pDto.setCor(icService.getCor(produto));
+			pDto.setCor(icService.getCor(produto));				
 			pDto.setEstoque(icService.getEstoque(
 					empresa.getEmpresa(), produto.getId().getCodigo()));
 			pDto.setDescTecnica(icService.getEspecTecnica(
 					empresa.getEmpresa(),  produto.getId().getCodigo()));	
 			pDto.setPreco(icService.getPreco(empresa, produto.getId().getCodigo()));
+			pDto.setFichaTecnica(icService.getFichaTecnica(
+					empresa.getEmpresa(), produto.getId().getCodigo()));
 
 		}
 		
@@ -149,9 +153,9 @@ public class ItemService {
 				produto = dao.findByKey(empresa.getEmpresa(), codigo);
 				dto.setCnpjEmpresa(empresa.getId());
 				dto.setCategoria(icService.getCategoria(produto));
-				dto.setAgrupamento(icService.getAgrupamento(produto));
+				dto.setModelo(icService.getModelo(produto));
 				dto.setTamanho(icService.getTamanho(produto));
-				dto.setCor(icService.getCor(produto));
+				dto.setCor(icService.getCor(produto));				
 				dto.setEstoque(icService.getEstoque(
 						empresa.getEmpresa(), produto.getId().getCodigo()));
 				dto.setDescTecnica(icService.getEspecTecnica(
@@ -177,7 +181,6 @@ public class ItemService {
 			System.out.println(dto. getCodigo());	
 			System.out.println(dto.getRevisao());	
 			System.out.println(dto.getDescricao());	
-			System.out.println(dto.getCor().getDescricao());	
 		}
 		return "OK";
 	}

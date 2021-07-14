@@ -1,0 +1,581 @@
+2021-06-23 08:14:44.119 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 3592 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 08:14:44.122 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: tst
+2021-06-23 08:14:44.172 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 08:14:44.196 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 08:14:44.208 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 08:14:44.208 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 08:14:45.459 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 08:14:45.736 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 260ms. Found 50 JPA repository interfaces.
+2021-06-23 08:14:46.559 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 08:14:46.570 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 08:14:46.571 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 08:14:46.701 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 08:14:46.702 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2493 ms
+2021-06-23 08:14:47.011 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 08:15:09.338 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 08:15:09.438 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 08:15:09.556 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 08:15:09.786 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 08:15:09.920 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36c5247d, org.springframework.security.web.context.SecurityContextPersistenceFilter@e506f8b, org.springframework.security.web.header.HeaderWriterFilter@6417aed5, org.springframework.web.filter.CorsFilter@4950f102, org.springframework.security.web.authentication.logout.LogoutFilter@1540335e, com.aceex.wscairu.security.JWTAuthenticationFilter@372754c4, com.aceex.wscairu.security.JWTAuthorizationFilter@2ff98794, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a66d120, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@783efc86, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3000a8da, org.springframework.security.web.session.SessionManagementFilter@790db2e7, org.springframework.security.web.access.ExceptionTranslationFilter@1c2b0562, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@729d8725]
+2021-06-23 08:15:09.976 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 08:15:32.084 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.InformixDialect
+2021-06-23 08:15:33.770 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 08:15:33.779 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 08:15:34.232 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 08:15:56.331 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 08:15:56.333 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 08:15:56.337 [] INFO  - org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2021-06-23 08:15:56.351 [] INFO  - o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-23 08:17:15.073 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 9724 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 08:17:15.076 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: tst
+2021-06-23 08:17:15.118 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 08:17:15.118 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 08:17:15.119 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 08:17:15.119 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 08:17:15.856 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 08:17:16.106 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 242ms. Found 50 JPA repository interfaces.
+2021-06-23 08:17:16.749 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 08:17:16.758 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 08:17:16.758 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 08:17:16.861 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 08:17:16.862 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1743 ms
+2021-06-23 08:17:16.960 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 08:17:47.555 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 12648 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 08:17:47.558 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 08:17:47.601 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 08:17:47.601 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 08:17:47.602 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 08:17:47.602 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 08:17:48.375 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 08:17:48.617 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 234ms. Found 50 JPA repository interfaces.
+2021-06-23 08:17:49.229 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 08:17:49.237 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 08:17:49.238 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 08:17:49.348 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 08:17:49.349 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1747 ms
+2021-06-23 08:17:49.449 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 08:17:50.377 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-23 08:17:50.386 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 08:17:50.484 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 08:17:50.552 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 08:17:50.600 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 08:17:50.742 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 08:17:50.866 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 08:17:50.925 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19f4e5f9, org.springframework.security.web.context.SecurityContextPersistenceFilter@4cdb5323, org.springframework.security.web.header.HeaderWriterFilter@3c3e540b, org.springframework.web.filter.CorsFilter@5ac58a3a, org.springframework.security.web.authentication.logout.LogoutFilter@5bc022b4, com.aceex.wscairu.security.JWTAuthenticationFilter@3e7e288e, com.aceex.wscairu.security.JWTAuthorizationFilter@595e4034, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5695eb12, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f593048, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@673badcb, org.springframework.security.web.session.SessionManagementFilter@55b041ca, org.springframework.security.web.access.ExceptionTranslationFilter@7ff75930, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@efdb0ab]
+2021-06-23 08:17:52.428 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 08:17:52.436 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 08:17:53.707 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 08:17:53.818 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 08:17:53.820 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 08:17:54.705 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 08:17:54.715 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 7.551 seconds (JVM running for 8.494)
+2021-06-23 08:17:54.718 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 08:19:03.356 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 08:19:03.356 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 08:19:03.363 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2021-06-23 08:19:03.407 [] INFO  - com.aceex.wscairu.service.EmpresaService - Consulta de empresas
+2021-06-23 08:19:43.731 [] INFO  - o.s.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-06-23 08:19:44.047 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 08:19:44.049 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 08:19:44.051 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-23 08:19:44.054 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-23 09:15:39.170 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 1944 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 09:15:39.170 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 09:15:39.271 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 09:15:39.271 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 09:15:39.271 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 09:15:39.271 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 09:15:40.628 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 09:15:40.907 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 248ms. Found 51 JPA repository interfaces.
+2021-06-23 09:15:41.731 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 09:15:41.748 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 09:15:41.748 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 09:15:41.916 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 09:15:41.916 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2645 ms
+2021-06-23 09:15:42.264 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 09:15:43.251 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-23 09:15:43.265 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 09:15:43.382 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 09:15:43.464 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 09:15:43.595 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 09:15:43.894 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 09:15:44.056 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f116f31, org.springframework.security.web.context.SecurityContextPersistenceFilter@20e4608b, org.springframework.security.web.header.HeaderWriterFilter@286867a9, org.springframework.web.filter.CorsFilter@72fc7b4b, org.springframework.security.web.authentication.logout.LogoutFilter@1fbdf057, com.aceex.wscairu.security.JWTAuthenticationFilter@c854282, com.aceex.wscairu.security.JWTAuthorizationFilter@2e7d3015, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@562229ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47e18e2d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1aa1aa0c, org.springframework.security.web.session.SessionManagementFilter@54dcc6c1, org.springframework.security.web.access.ExceptionTranslationFilter@566bddf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a1a5365]
+2021-06-23 09:15:44.154 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 09:15:45.804 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 09:15:45.818 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 09:15:47.427 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 09:15:47.496 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 09:15:47.496 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 09:15:47.681 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 09:15:47.681 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 09:15:47.697 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-23 09:15:47.697 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-23 09:15:47.969 [] INFO  - org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2021-06-23 09:15:48.060 [] INFO  - o.s.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-06-23 09:17:14.568 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 6324 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 09:17:14.568 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 09:17:14.609 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 09:17:14.609 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 09:17:14.609 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 09:17:14.609 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 09:17:15.326 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 09:17:15.629 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 288ms. Found 51 JPA repository interfaces.
+2021-06-23 09:17:16.402 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 09:17:16.424 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 09:17:16.424 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 09:17:16.502 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 09:17:16.517 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1908 ms
+2021-06-23 09:17:16.624 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 09:17:17.427 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-23 09:17:17.429 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 09:17:17.526 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 09:17:17.605 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 09:17:17.658 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 09:17:17.789 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 09:17:17.905 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 09:17:17.943 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f0b6bb1, org.springframework.security.web.context.SecurityContextPersistenceFilter@5294e89c, org.springframework.security.web.header.HeaderWriterFilter@3fbda3bd, org.springframework.web.filter.CorsFilter@75cfc2a7, org.springframework.security.web.authentication.logout.LogoutFilter@548c86e, com.aceex.wscairu.security.JWTAuthenticationFilter@1b2917ca, com.aceex.wscairu.security.JWTAuthorizationFilter@35040ca2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f3ea07a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f2cd709, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4126bf50, org.springframework.security.web.session.SessionManagementFilter@400ec0c9, org.springframework.security.web.access.ExceptionTranslationFilter@150f9013, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11fc130e]
+2021-06-23 09:17:19.231 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 09:17:19.231 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 09:17:20.682 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 09:17:20.682 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 09:17:21.600 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 09:17:21.612 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 7.428 seconds (JVM running for 8.378)
+2021-06-23 09:17:21.612 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 09:17:41.158 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 09:17:41.164 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 09:17:41.166 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2021-06-23 09:19:20.364 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:19:20.379 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:19:20.379 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:19:49.896 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:21:20.385 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:21:20.387 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:21:20.388 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:21:44.324 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:23:20.475 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:23:20.477 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:23:20.478 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:23:45.439 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:25:20.521 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:25:20.521 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:25:20.521 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:25:44.253 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:27:20.424 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:27:20.424 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:27:20.424 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:27:43.836 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:29:20.367 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:29:20.367 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:29:20.367 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:29:43.339 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:31:20.510 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:31:20.510 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:31:20.510 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:31:44.276 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:33:20.353 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 09:33:20.368 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 09:33:20.368 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 09:33:43.407 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 09:33:48.035 [] INFO  - o.s.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-06-23 09:33:48.397 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 09:33:48.397 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 09:33:48.397 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-23 09:33:48.397 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-23 09:58:29.329 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 7336 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 09:58:29.329 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 09:58:29.360 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 09:58:29.360 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 09:58:29.360 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 09:58:29.360 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 09:58:30.142 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 09:58:30.413 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 260ms. Found 51 JPA repository interfaces.
+2021-06-23 09:58:30.991 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 09:58:31.003 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 09:58:31.003 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 09:58:31.108 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 09:58:31.108 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1748 ms
+2021-06-23 09:58:31.204 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 09:58:32.193 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-23 09:58:32.203 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 09:58:32.308 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 09:58:32.374 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 09:58:32.425 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 09:58:32.562 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 09:58:32.681 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 09:58:32.727 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ad3c795, org.springframework.security.web.context.SecurityContextPersistenceFilter@55e15038, org.springframework.security.web.header.HeaderWriterFilter@5376f282, org.springframework.web.filter.CorsFilter@37072c40, org.springframework.security.web.authentication.logout.LogoutFilter@29bb0b8c, com.aceex.wscairu.security.JWTAuthenticationFilter@2841d3b3, com.aceex.wscairu.security.JWTAuthorizationFilter@70c5b16f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54fbcfbf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78921b62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@346e3f8d, org.springframework.security.web.session.SessionManagementFilter@7cc1d84f, org.springframework.security.web.access.ExceptionTranslationFilter@3dcf0841, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2730beda]
+2021-06-23 09:58:34.231 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 09:58:34.247 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 09:58:35.866 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 09:58:35.913 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 09:58:35.913 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 09:58:36.782 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 09:58:36.790 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 7.851 seconds (JVM running for 8.788)
+2021-06-23 09:58:36.790 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 09:59:20.569 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 09:59:20.569 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 09:59:20.576 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2021-06-23 10:00:35.567 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:00:35.567 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:00:35.567 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:00:58.632 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:02:35.588 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:02:35.588 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:02:35.589 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:02:58.399 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:04:35.640 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:04:35.640 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:04:35.640 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:04:58.735 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:05:07.249 [] INFO  - o.s.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-06-23 10:05:07.548 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 10:05:07.551 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 10:05:07.552 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-23 10:05:07.557 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-23 10:08:41.641 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 4740 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 10:08:41.641 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 10:08:41.688 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 10:08:41.688 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 10:08:41.688 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 10:08:41.688 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 10:08:42.391 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 10:08:42.617 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 219ms. Found 51 JPA repository interfaces.
+2021-06-23 10:08:43.196 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 10:08:43.211 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 10:08:43.211 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 10:08:43.311 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 10:08:43.311 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1623 ms
+2021-06-23 10:08:43.412 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 10:08:44.394 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-23 10:08:44.404 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 10:08:44.512 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 10:08:44.575 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 10:08:44.625 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 10:08:44.765 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 10:08:44.885 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 10:08:44.930 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63bdc697, org.springframework.security.web.context.SecurityContextPersistenceFilter@2074e877, org.springframework.security.web.header.HeaderWriterFilter@5a83f6c8, org.springframework.web.filter.CorsFilter@45090581, org.springframework.security.web.authentication.logout.LogoutFilter@648c9f86, com.aceex.wscairu.security.JWTAuthenticationFilter@c876672, com.aceex.wscairu.security.JWTAuthorizationFilter@f8c4c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19156350, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@268f9333, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@dfc3332, org.springframework.security.web.session.SessionManagementFilter@61ccf086, org.springframework.security.web.access.ExceptionTranslationFilter@214f7d35, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@572a1b33]
+2021-06-23 10:08:46.385 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 10:08:46.395 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 10:08:47.568 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 10:08:47.613 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 10:08:47.615 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 10:08:48.525 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 10:08:48.533 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 7.243 seconds (JVM running for 8.154)
+2021-06-23 10:08:48.536 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 10:10:47.292 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:10:47.293 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:10:47.294 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:10:47.844 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 10:10:47.845 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 10:10:47.848 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2021-06-23 10:11:10.437 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:12:47.277 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:12:47.277 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:12:47.277 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:13:10.120 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:13:26.252 [] INFO  - o.s.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-06-23 10:13:26.584 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 10:13:26.599 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 10:13:26.599 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-23 10:13:26.599 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-23 10:14:16.528 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 7484 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 10:14:16.528 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 10:14:16.560 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 10:14:16.560 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 10:14:16.560 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 10:14:16.560 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 10:14:17.261 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 10:14:17.484 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 221ms. Found 51 JPA repository interfaces.
+2021-06-23 10:14:18.063 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 10:14:18.063 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 10:14:18.063 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 10:14:18.164 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 10:14:18.164 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1604 ms
+2021-06-23 10:14:18.264 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 10:14:19.076 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-23 10:14:19.095 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 10:14:19.223 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 10:14:19.300 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 10:14:19.377 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 10:14:19.621 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 10:14:19.667 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21f2690a, org.springframework.security.web.context.SecurityContextPersistenceFilter@305540d1, org.springframework.security.web.header.HeaderWriterFilter@4aeb044b, org.springframework.web.filter.CorsFilter@468ae7f2, org.springframework.security.web.authentication.logout.LogoutFilter@71dc4600, com.aceex.wscairu.security.JWTAuthenticationFilter@1301eb7, com.aceex.wscairu.security.JWTAuthorizationFilter@661ba8ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ddf85bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@45d34c5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5413375b, org.springframework.security.web.session.SessionManagementFilter@dd7fe95, org.springframework.security.web.access.ExceptionTranslationFilter@3218e815, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d1e607d]
+2021-06-23 10:14:19.768 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 10:14:21.086 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 10:14:21.093 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 10:14:22.296 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 10:14:22.343 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 10:14:22.343 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 10:14:23.198 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 10:14:23.210 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 7.126 seconds (JVM running for 8.066)
+2021-06-23 10:14:23.210 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 10:14:29.736 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 10:14:29.737 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 10:14:29.742 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-06-23 10:16:22.004 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:16:22.004 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:16:22.004 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:16:45.089 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:18:22.014 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:18:22.015 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:18:22.015 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:18:44.837 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:20:22.000 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:20:22.001 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:20:22.001 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:20:44.792 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:22:22.003 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:22:22.003 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:22:22.003 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:22:44.825 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:24:21.997 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:24:21.997 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:24:21.997 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:24:44.825 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:26:22.018 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:26:22.020 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:26:22.021 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:26:44.881 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:28:22.008 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:28:22.009 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:28:22.010 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:28:44.758 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:30:22.003 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 10:30:22.003 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 10:30:22.003 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 10:30:44.894 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 10:30:50.473 [] INFO  - o.s.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-06-23 10:30:50.805 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 10:30:50.821 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 10:30:50.821 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-23 10:30:50.821 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-23 11:22:58.109 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 10576 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 11:22:58.109 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 11:22:58.178 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2021-06-23 11:22:58.178 [] INFO  - org.springframework.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\Ivo Barbosa\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/Ivo%20Barbosa/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2021-06-23 11:22:58.178 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-23 11:22:58.178 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-23 11:22:58.956 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 11:22:59.172 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 218ms. Found 51 JPA repository interfaces.
+2021-06-23 11:22:59.727 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 11:22:59.727 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 11:22:59.727 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 11:22:59.843 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 11:22:59.843 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1665 ms
+2021-06-23 11:22:59.928 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-06-23 11:23:01.109 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-06-23 11:23:01.119 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 11:23:01.209 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:23:01.262 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 11:23:01.309 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.21.Final
+2021-06-23 11:23:01.447 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-06-23 11:23:01.547 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 11:23:01.578 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41514b50, org.springframework.security.web.context.SecurityContextPersistenceFilter@3810796, org.springframework.security.web.header.HeaderWriterFilter@11f6f4c4, org.springframework.web.filter.CorsFilter@54428f35, org.springframework.security.web.authentication.logout.LogoutFilter@6d76cf61, com.aceex.wscairu.security.JWTAuthenticationFilter@786de063, com.aceex.wscairu.security.JWTAuthorizationFilter@632efb52, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56ec4803, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@184ddd83, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28ee37ac, org.springframework.security.web.session.SessionManagementFilter@1e2fc41, org.springframework.security.web.access.ExceptionTranslationFilter@5bc192d3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25953de0]
+2021-06-23 11:23:03.584 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 11:23:03.584 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:23:05.357 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 11:23:05.404 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 11:23:05.404 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 11:23:06.275 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 11:23:06.290 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 8.562 seconds (JVM running for 9.528)
+2021-06-23 11:23:06.290 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 11:23:18.273 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 11:23:18.274 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 11:23:18.279 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2021-06-23 11:25:05.094 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando estoque para o ecommerce.
+2021-06-23 11:25:05.094 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de estoque comcluída.
+2021-06-23 11:25:05.094 [] INFO  - com.aceex.wscairu.service.ExportaService - Expotando produtos para o ecommerce.
+2021-06-23 11:25:28.392 [] INFO  - com.aceex.wscairu.service.ExportaService - Exportação de produtos comcluída.
+2021-06-23 11:26:37.074 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:26:37.076 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:26:37.076 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-06-23 11:26:37.076 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-06-23 11:26:37.290 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 10576 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 11:26:37.290 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 11:26:37.537 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 11:26:37.706 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 154ms. Found 51 JPA repository interfaces.
+2021-06-23 11:26:37.853 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 11:26:37.853 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 11:26:37.853 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 11:26:37.891 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 11:26:37.891 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 586 ms
+2021-06-23 11:26:37.907 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2021-06-23 11:26:38.080 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2021-06-23 11:26:38.080 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 11:26:38.107 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:26:38.138 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 11:26:38.154 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 11:26:38.277 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b64cc71, org.springframework.security.web.context.SecurityContextPersistenceFilter@4bf6a77f, org.springframework.security.web.header.HeaderWriterFilter@3ea630ff, org.springframework.web.filter.CorsFilter@6245be2d, org.springframework.security.web.authentication.logout.LogoutFilter@37d26d90, com.aceex.wscairu.security.JWTAuthenticationFilter@2fe8e7ab, com.aceex.wscairu.security.JWTAuthorizationFilter@46146148, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ff0818e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e7947, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b9e3abf, org.springframework.security.web.session.SessionManagementFilter@147bb1b9, org.springframework.security.web.access.ExceptionTranslationFilter@b29fd62, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67a1d688]
+2021-06-23 11:26:38.871 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 11:26:38.871 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:26:39.694 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 11:26:39.710 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 11:26:39.710 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 11:26:40.412 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 11:26:40.427 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 3.168 seconds (JVM running for 223.664)
+2021-06-23 11:26:40.427 [] INFO  - o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2021-06-23 11:26:40.427 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 11:29:54.820 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:29:54.828 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:29:54.828 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2021-06-23 11:29:54.828 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2021-06-23 11:29:55.083 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 10576 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 11:29:55.083 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 11:29:55.321 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 11:29:55.469 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152ms. Found 51 JPA repository interfaces.
+2021-06-23 11:29:55.653 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 11:29:55.653 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 11:29:55.653 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 11:29:55.669 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 11:29:55.669 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 579 ms
+2021-06-23 11:29:55.669 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2021-06-23 11:29:55.854 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2021-06-23 11:29:55.870 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 11:29:55.938 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:29:55.969 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 11:29:55.980 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 11:29:56.095 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63fa9f1a, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a13634, org.springframework.security.web.header.HeaderWriterFilter@a3b9fb6, org.springframework.web.filter.CorsFilter@2899104e, org.springframework.security.web.authentication.logout.LogoutFilter@4f3cea30, com.aceex.wscairu.security.JWTAuthenticationFilter@1d66bf51, com.aceex.wscairu.security.JWTAuthorizationFilter@2a9c92ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47cf06b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@115fe7d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1da9daeb, org.springframework.security.web.session.SessionManagementFilter@2e4ffc58, org.springframework.security.web.access.ExceptionTranslationFilter@68552f46, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4166b63]
+2021-06-23 11:29:56.621 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 11:29:56.622 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:29:57.344 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 11:29:57.360 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 11:29:57.360 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 11:29:58.046 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 11:29:58.046 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 3.01 seconds (JVM running for 421.282)
+2021-06-23 11:29:58.046 [] INFO  - o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2021-06-23 11:29:58.046 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 11:31:44.007 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:31:44.022 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:31:44.023 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2021-06-23 11:31:44.023 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2021-06-23 11:31:44.254 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 10576 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 11:31:44.254 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 11:31:44.485 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 11:31:44.621 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 149ms. Found 51 JPA repository interfaces.
+2021-06-23 11:31:44.778 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 11:31:44.778 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 11:31:44.778 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 11:31:44.778 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 11:31:44.778 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 524 ms
+2021-06-23 11:31:44.794 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2021-06-23 11:31:44.979 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2021-06-23 11:31:44.979 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 11:31:45.041 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:31:45.064 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 11:31:45.079 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 11:31:45.242 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b29c478, org.springframework.security.web.context.SecurityContextPersistenceFilter@6524b241, org.springframework.security.web.header.HeaderWriterFilter@5d1466c6, org.springframework.web.filter.CorsFilter@4cdd9d8, org.springframework.security.web.authentication.logout.LogoutFilter@5804651c, com.aceex.wscairu.security.JWTAuthenticationFilter@52345cca, com.aceex.wscairu.security.JWTAuthorizationFilter@60af8347, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@116cbc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fcaaf7b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7530812e, org.springframework.security.web.session.SessionManagementFilter@4074f57e, org.springframework.security.web.access.ExceptionTranslationFilter@320adb8f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@548cc4b7]
+2021-06-23 11:31:45.660 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 11:31:45.660 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:31:46.264 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 11:31:46.282 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 11:31:46.282 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 11:31:46.978 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 11:31:46.988 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 2.767 seconds (JVM running for 530.22)
+2021-06-23 11:31:46.988 [] INFO  - o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2021-06-23 11:31:46.988 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 11:32:04.713 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 11:32:04.713 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 11:32:04.721 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2021-06-23 11:33:16.487 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:33:16.504 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:33:16.504 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2021-06-23 11:33:16.504 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2021-06-23 11:33:16.756 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 10576 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 11:33:16.756 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 11:33:16.972 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 11:33:17.120 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152ms. Found 51 JPA repository interfaces.
+2021-06-23 11:33:17.273 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 11:33:17.273 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 11:33:17.273 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 11:33:17.289 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 11:33:17.289 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 533 ms
+2021-06-23 11:33:17.305 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2021-06-23 11:33:17.521 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2021-06-23 11:33:17.522 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 11:33:17.539 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:33:17.574 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 11:33:17.589 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 11:33:17.690 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@769a0e3b, org.springframework.security.web.context.SecurityContextPersistenceFilter@cff2cb, org.springframework.security.web.header.HeaderWriterFilter@1b015fb5, org.springframework.web.filter.CorsFilter@50979ee4, org.springframework.security.web.authentication.logout.LogoutFilter@c20868f, com.aceex.wscairu.security.JWTAuthenticationFilter@684950b6, com.aceex.wscairu.security.JWTAuthorizationFilter@2619a19a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fec5cc6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e014e79, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5498b4, org.springframework.security.web.session.SessionManagementFilter@754b0c23, org.springframework.security.web.access.ExceptionTranslationFilter@387ef256, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8c8dac7]
+2021-06-23 11:33:18.254 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 11:33:18.254 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:33:18.910 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 11:33:18.926 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 11:33:18.941 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 11:33:19.611 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 11:33:19.611 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 2.898 seconds (JVM running for 622.854)
+2021-06-23 11:33:19.611 [] INFO  - o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2021-06-23 11:33:19.611 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 11:33:23.438 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 11:33:23.438 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 11:33:23.441 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2021-06-23 11:37:30.608 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:37:30.610 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:37:30.610 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2021-06-23 11:37:30.616 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2021-06-23 11:37:30.828 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 10576 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 11:37:30.829 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 11:37:31.072 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 11:37:31.238 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 165ms. Found 51 JPA repository interfaces.
+2021-06-23 11:37:31.387 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 11:37:31.388 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 11:37:31.388 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 11:37:31.401 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 11:37:31.401 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 570 ms
+2021-06-23 11:37:31.416 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2021-06-23 11:37:31.593 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2021-06-23 11:37:31.594 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 11:37:31.625 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:37:31.656 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 11:37:31.667 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 11:37:31.779 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ee6622e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e3ec5ca, org.springframework.security.web.header.HeaderWriterFilter@5d8f50bb, org.springframework.web.filter.CorsFilter@d959294, org.springframework.security.web.authentication.logout.LogoutFilter@535377f5, com.aceex.wscairu.security.JWTAuthenticationFilter@4e8c98e0, com.aceex.wscairu.security.JWTAuthorizationFilter@5321a684, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d8b0686, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7aa69f04, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5edb49dc, org.springframework.security.web.session.SessionManagementFilter@9e50536, org.springframework.security.web.access.ExceptionTranslationFilter@1845251, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55091732]
+2021-06-23 11:37:32.304 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 11:37:32.305 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:37:32.959 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 11:37:32.980 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 11:37:32.981 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 11:37:33.811 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 11:37:33.815 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 3.026 seconds (JVM running for 877.045)
+2021-06-23 11:37:33.817 [] INFO  - o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2021-06-23 11:37:33.817 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 11:37:41.860 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 11:37:41.860 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 11:37:41.863 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2021-06-23 11:40:19.900 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:40:19.910 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:40:19.910 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2021-06-23 11:40:19.911 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2021-06-23 11:40:20.185 [] INFO  - com.aceex.wscairu.WscairuApplication - Starting WscairuApplication on DESKTOP-QSSSMPN with PID 10576 (C:\Desenv\Spring\wscairu\target\classes started by Ivo Barbosa in C:\Desenv\Spring\wscairu)
+2021-06-23 11:40:20.185 [] INFO  - com.aceex.wscairu.WscairuApplication - The following profiles are active: sql
+2021-06-23 11:40:20.401 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-06-23 11:40:20.571 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 166ms. Found 51 JPA repository interfaces.
+2021-06-23 11:40:20.702 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2021-06-23 11:40:20.702 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-06-23 11:40:20.702 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-23 11:40:20.718 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-06-23 11:40:20.718 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 533 ms
+2021-06-23 11:40:20.733 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2021-06-23 11:40:20.934 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2021-06-23 11:40:20.934 [] INFO  - org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:sqlserver://SRVBD:1433;useFmtOnly=false;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;sendTimeAsDatetime=true;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=30;lockTimeout=-1;lastUpdateCount=true;encrypt=false;disableStatementPooling=true;databaseName=logixdsv;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;'
+2021-06-23 11:40:20.957 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-23 11:40:20.987 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-23 11:40:21.003 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-06-23 11:40:21.103 [] INFO  - org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7af14dc5, org.springframework.security.web.context.SecurityContextPersistenceFilter@25e8e282, org.springframework.security.web.header.HeaderWriterFilter@3b1b51e, org.springframework.web.filter.CorsFilter@3a9480fa, org.springframework.security.web.authentication.logout.LogoutFilter@478dc54a, com.aceex.wscairu.security.JWTAuthenticationFilter@357dca4b, com.aceex.wscairu.security.JWTAuthorizationFilter@286ce489, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66e1350a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6876658d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58031b24, org.springframework.security.web.session.SessionManagementFilter@4c503f04, org.springframework.security.web.access.ExceptionTranslationFilter@7c87f9ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6e6e6c49]
+2021-06-23 11:40:21.604 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-23 11:40:21.604 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 11:40:22.249 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-06-23 11:40:22.265 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2021-06-23 11:40:22.265 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2021-06-23 11:40:22.938 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2021-06-23 11:40:22.940 [] INFO  - com.aceex.wscairu.WscairuApplication - Started WscairuApplication in 2.783 seconds (JVM running for 1046.171)
+2021-06-23 11:40:22.940 [] INFO  - o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2021-06-23 11:40:22.940 [] INFO  - com.aceex.wscairu.WscairuApplication - API VERSÃO 1.01
+2021-06-23 11:48:08.846 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-23 11:48:08.847 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-06-23 11:48:08.850 [] INFO  - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2021-06-23 13:31:13.858 [] INFO  - o.s.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-06-23 13:31:14.159 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-06-23 13:31:14.176 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-23 13:31:14.176 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2021-06-23 13:31:14.178 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.

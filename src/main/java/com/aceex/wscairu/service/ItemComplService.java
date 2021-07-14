@@ -9,7 +9,7 @@ import com.aceex.wscairu.dao.FichaTecnicaDao;
 import com.aceex.wscairu.dao.LinhaProdDao;
 import com.aceex.wscairu.dao.ListaItemDao;
 import com.aceex.wscairu.dao.ParametroDao;
-import com.aceex.wscairu.dto.Agrupamento;
+import com.aceex.wscairu.dto.Modelo;
 import com.aceex.wscairu.dto.Categoria;
 import com.aceex.wscairu.dto.Cor;
 import com.aceex.wscairu.dto.FichaTecnicaDto;
@@ -48,17 +48,17 @@ public class ItemComplService {
 		return cat;
 	}
 	
-	public Agrupamento getAgrupamento(Item obj) {
-		LinhaProd lp = linDao.findByKey(obj.getCategoria(), obj.getAgrupamento(), 0, 0);			
-		Agrupamento agru = new Agrupamento();
-		agru.setCodigo(obj.getAgrupamento());
-		agru.setDescricao(lp.getDescricao());
-		return agru;
+	public Modelo getModelo(Item obj) {
+		LinhaProd lp = linDao.findByKey(obj.getCategoria(), obj.getModelo(), 0, 0);			
+		Modelo mod = new Modelo();
+		mod.setCodigo(obj.getModelo());
+		mod.setDescricao(lp.getDescricao());
+		return mod;
 	}
 
 	public Tamanho getTamanho(Item obj) {
 		LinhaProd lp = linDao.findByKey(obj.getCategoria(), 
-				obj.getAgrupamento(), obj.getTamanho(), 0);			
+				obj.getModelo(), obj.getTamanho(), 0);			
 		Tamanho tam = new Tamanho();
 		tam.setCodigo(obj.getTamanho());
 		tam.setDescricao(lp.getDescricao());
@@ -67,7 +67,7 @@ public class ItemComplService {
 
 	public Cor getCor(Item obj) {
 		LinhaProd lp = linDao.findByKey(obj.getCategoria(), 
-				obj.getAgrupamento(), obj.getTamanho(), obj.getCor());			
+				obj.getModelo(), obj.getTamanho(), obj.getCor());			
 		Cor cor = new Cor();
 		cor.setCodigo(obj.getCor());
 		cor.setDescricao(lp.getDescricao());
@@ -96,7 +96,7 @@ public class ItemComplService {
 		if (et == null) {
 			return "";
 		}
-		return et.getDescTecnica();
+		return et.getDescTecnica().trim();
 	}
 	
 	public Double getPreco(Empresa empresa, String item) {
